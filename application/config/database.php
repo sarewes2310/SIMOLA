@@ -73,6 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+/*
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
@@ -80,6 +81,29 @@ $db['default'] = array(
 	'password' => '',
 	'database' => '',
 	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+*/
+
+$db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => 'pgsql:host=ec2-50-17-193-83.compute-1.amazonaws.com;dbname=d5epe3nnvnupdq',
+	'username' => 'hvvclmieazyhvu',//$url["user"],
+	'password' => '5ceb80f1bc4fddebad585094eb501da971e8ac1b7d714841d39a7c79a2cea9f8',//$url["pass"],
+	'database' => 'd5epe3nnvnupdq',//substr($url["path"], 1),
+	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
