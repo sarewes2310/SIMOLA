@@ -27,7 +27,7 @@ class User extends CI_Controller {
 	public function index()
 	{
 		$this->load->model("UserModel");
-		echo $this->usermodel->getListAuth();
+		echo $this->UserModel->getListAuth();
 		echo sys_get_temp_dir();
 
         #$this->load->view('login');
