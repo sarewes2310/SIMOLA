@@ -20,6 +20,9 @@ class User extends CI_Controller {
 	 */
 	public function index()
 	{
-        $this->load->view('login');
+		$this->load->model("UserModel");
+		echo $this->usermodel->getListAuth();
+
+        #$this->load->view('login');
 	}
 }
