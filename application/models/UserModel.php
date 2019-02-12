@@ -1,7 +1,7 @@
 <?php
 class UserModel extends CI_Model{
     function getListAuth(){
-        return $this->db->query("SELECT * FROM user;")->result_array();
+        return $this->db->query("SELECT * FROM users;")->result_array();
     }
 }
 ?>
