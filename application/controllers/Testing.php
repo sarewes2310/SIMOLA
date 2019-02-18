@@ -23,5 +23,9 @@ class Testing extends CI_Controller {
         var_dump($output);
         echo $output;
         curl_close($ch); 
-	}
+    }
+    
+    public function getFromServerJS(){
+        
+    }
 }
