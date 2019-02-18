@@ -17,7 +17,7 @@ class Testing extends CI_Controller {
         # $this->load->view('login');
         # set_time_limit(1);
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://simolasocket-nodejs.herokuapp.com/");
+        curl_setopt($ch, CURLOPT_URL, "https://simolasocket-nodejs.herokuapp.com/home");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
         $output = curl_exec($ch);
         var_dump($output);
