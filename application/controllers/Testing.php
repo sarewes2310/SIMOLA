@@ -15,7 +15,7 @@ class Testing extends CI_Controller {
 	{
 		# fungsi yang digunakan untuk memanggil halaman awal
         # $this->load->view('login');
-        set_time_limit(1);
+        # set_time_limit(1);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://simolasocket-nodejs.herokuapp.com/");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
