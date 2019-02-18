@@ -26,6 +26,6 @@ class Testing extends CI_Controller {
     }
     
     public function getFromServerJS(){
-        
+        var_dump($_POST);
     }
 }
