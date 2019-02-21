@@ -58,6 +58,7 @@ class Testing extends CI_Controller {
             echo "cURL Error #:" . $err;
         } else {
             echo $response;
+            $response = json_decode($response);
         }
         $ch = curl_init();
         curl_setopt_array($ch, array(
@@ -65,10 +66,10 @@ class Testing extends CI_Controller {
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
+            CURLOPT_TIMEOUT => 60,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
-            //CURLOPT_POSTFIELDS => "code=".substr($_SERVER['QUERY_STRING'],5)."&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fsimola.herokuapp.com%2Findex.php%2Ftesting%2FgetDropBoxAT%2F",
+            CURLOPT_POSTFIELDS => $response->{'access_token'},
             //CURLOPT_HTTPHEADER => array(
             //    "Authorization: Basic NTJ1OW13eGxjeGd2MWoyOmV0cG1vYjkwOW0yM3hlMg==",
             //    "cache-control: no-cache"
