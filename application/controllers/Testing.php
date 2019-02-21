@@ -30,12 +30,12 @@ class Testing extends CI_Controller {
     }
 
     public function testDropboxAccessToken(){
-        header('Location: https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/index.php/testing/getDropBoxAT');
+        header('Location: https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/index.php/testing/getDropBoxAT/');
     }
 
     public function getDropBoxAT(){
         #echo $_SERVER['HTTP_HOST']; 
-        #echo $_SERVER['QUERY_STRING'];
+        echo substr($_SERVER['QUERY_STRING'],5);
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://api.dropboxapi.com/oauth2/token",
@@ -45,7 +45,7 @@ class Testing extends CI_Controller {
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => "code=".substr($_SERVER['QUERY_STRING'],5)."&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fsimola.herokuapp.com%2F",
+            CURLOPT_POSTFIELDS => "code=".substr($_SERVER['QUERY_STRING'],5)."&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fsimola.herokuapp.com%2Findex.php%2Ftesting%2FgetDropBoxAT%2F",
             CURLOPT_HTTPHEADER => array(
                 "Authorization: Basic NTJ1OW13eGxjeGd2MWoyOmV0cG1vYjkwOW0yM3hlMg==",
                 "cache-control: no-cache"
