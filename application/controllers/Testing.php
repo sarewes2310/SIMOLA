@@ -63,7 +63,7 @@ class Testing extends CI_Controller {
         $ch = curl_init();
         curl_setopt_array($ch, array(
             CURLOPT_URL => "https://simolasocket-nodejs.herokuapp.com/sendAT",
-            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_RETURNTRANSFER => false,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 60,
