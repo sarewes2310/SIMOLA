@@ -30,6 +30,11 @@ class Testing extends CI_Controller {
     }
 
     public function testDropboxAccessToken(){
-        header('Location: https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/');
+        header('Location: https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/index.php/testing/getDropBoxAT');
+    }
+
+    public function getDropBoxAT(){
+        echo $_SERVER['HTTP_HOST']; 
+        echo $_SERVER['QUERY_STRING'];
     }
 }
