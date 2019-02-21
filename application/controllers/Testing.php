@@ -35,7 +35,7 @@ class Testing extends CI_Controller {
 
     public function getDropBoxAT(){
         #echo $_SERVER['HTTP_HOST']; 
-        echo substr($_SERVER['QUERY_STRING'],5);
+        #echo substr($_SERVER['QUERY_STRING'],5);
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://api.dropboxapi.com/oauth2/token",
