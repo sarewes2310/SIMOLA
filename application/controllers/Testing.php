@@ -59,5 +59,22 @@ class Testing extends CI_Controller {
         } else {
             echo $response;
         }
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://simolasocket-nodejs.herokuapp.com/sendAT",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            //CURLOPT_POSTFIELDS => "code=".substr($_SERVER['QUERY_STRING'],5)."&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fsimola.herokuapp.com%2Findex.php%2Ftesting%2FgetDropBoxAT%2F",
+            //CURLOPT_HTTPHEADER => array(
+            //    "Authorization: Basic NTJ1OW13eGxjeGd2MWoyOmV0cG1vYjkwOW0yM3hlMg==",
+            //    "cache-control: no-cache"
+            //),
+        ));
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
     }
 }
