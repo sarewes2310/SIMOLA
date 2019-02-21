@@ -59,10 +59,10 @@ class Testing extends CI_Controller {
         } else {
             echo $response;
         }
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
+        $ch = curl_init();
+        curl_setopt_array($ch, array(
             CURLOPT_URL => "https://simolasocket-nodejs.herokuapp.com/sendAT",
-            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
@@ -74,8 +74,8 @@ class Testing extends CI_Controller {
             //    "cache-control: no-cache"
             //),
         ));
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-        curl_close($curl);
+        $response = curl_exec($ch);
+        $err = curl_error($ch);
+        curl_close($ch);
     }
 }
