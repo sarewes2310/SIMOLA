@@ -57,7 +57,7 @@ class Testing extends CI_Controller {
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            echo $response;
+            #echo $response;
             $response = json_decode($response);
         }
         $ch = curl_init();
@@ -78,5 +78,10 @@ class Testing extends CI_Controller {
         $response = curl_exec($ch);
         $err = curl_error($ch);
         curl_close($ch);
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            echo $response;
+        }
     }
 }
