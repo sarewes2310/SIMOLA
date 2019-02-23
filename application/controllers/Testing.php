@@ -26,7 +26,8 @@ class Testing extends CI_Controller {
     }
     
     public function getFromServerJS(){
-        var_dump($_POST[0]);
+        var_dump($_POST);
+        echo "coge";
     }
 
     public function testDropboxAccessToken(){
@@ -63,7 +64,7 @@ class Testing extends CI_Controller {
         $ch = curl_init();
         curl_setopt_array($ch, array(
             CURLOPT_URL => "https://simolasocket-nodejs.herokuapp.com/sendAT?at=".$response->{'access_token'},
-            CURLOPT_RETURNTRANSFER => false,
+            CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 60,
