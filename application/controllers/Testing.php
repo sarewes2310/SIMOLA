@@ -27,7 +27,10 @@ class Testing extends CI_Controller {
     
     public function getFromServerJS(){
         var_dump($_POST);
-        echo $_POST;
+        foreach($_POST as $val){
+            echo $val;
+        }
+        #echo $_POST;
     }
 
     public function testDropboxAccessToken(){
