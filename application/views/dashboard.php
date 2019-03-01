@@ -9,10 +9,10 @@
 	<!-- Our Custom CSS -->
     <link rel="stylesheet" href="https://simola.herokuapp.com/assets/css/style.css">
 
-    <!-- Font Awesome JS
+    <!-- Font Awesome JS-->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <script src="Assets/My/js/variabel_utama.js" type="text/javascript" charset="utf-8" async defer></script>-->
+    <!--<script src="Assets/My/js/variabel_utama.js" type="text/javascript" charset="utf-8" async defer></script>-->
 </head>
 <body>
     <div class="wrapper">
