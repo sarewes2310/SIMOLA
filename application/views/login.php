@@ -35,7 +35,11 @@
               <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
                 <input type="text" class="form-control" id="username_login" placeholder="Username" required>
               </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
+                <input type="text" class="form-control" id="username_login" placeholder="Username" required>
+              </div>
             </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
           </form>
         </div>
       </div>
