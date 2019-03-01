@@ -1,26 +1,47 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-//
-// Class yang digunakan untuk memanggil tammpilan pada website (sebagai route dari aplikasi)
-//
-class User extends CI_Controller {
-	public function __construct(){
+class User extends CI_Controller 
+{
+    ##########################################################################################################################################
+    # Class yang digunakan untuk memanggil tammpilan pada website (sebagai route dari aplikasi)
+    # seluruh tampilan di control dengan menggunakan kelas ini. untuk alur proses penggunaan data menggunakan class Controller DataUser
+    ##########################################################################################################################################
+    
+    public function __construct()
+    {
         parent::__construct();
         header('Access-Control-Allow-Origin: *');
     }
 	
 	public function index() 
 	{
-		# fungsi yang digunakan untuk memanggil halaman login 
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # Fungsi yang digunakan untuk memanggil halaman login 
+        # Output berupa page login
+        # ------------------------------------------------------------------------------------------------------------------------------------
 		$this->load->view('login');
-	}
+    }
+    
+    public function dashboard()
+    {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # Fungsi yang digunakan untuk memanggil halaman login 
+        # Output berupa page dashboard
+        # ------------------------------------------------------------------------------------------------------------------------------------
+		$this->load->view('dashboard');
+    }
 
-	public function getDropboxLink(){
-		# fungsi yang digunakan untuk mendapatkan link authorization dropbox
+    public function getDropboxLink()
+    {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # Fungsi yang digunakan untuk mendapatkan link authorization dropbox
+        # Output berupa link menuju page authorization yang disediakan oleh dropbox dan callback ke function getDropBoxAT()
+        # ------------------------------------------------------------------------------------------------------------------------------------
 		header('Location: https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/index.php/user/getDropBoxAT/');
 	}
 
-	public function getDropboxAT(){
+    public function getDropboxAT()
+    {
 		#echo $_SERVER['HTTP_HOST']; 
         #echo substr($_SERVER['QUERY_STRING'],5);
         $curl = curl_init();

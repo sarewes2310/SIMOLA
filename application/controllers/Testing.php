@@ -1,12 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-//
-// Class yang digunakan untuk memanggil tammpilan pada website
-//
-class Testing extends CI_Controller {
-
-
-	public function __construct(){
+class Testing extends CI_Controller 
+{
+    ##########################################################################################################################################
+    # Class yang digunakan untuk mentest function dari seluruh controller sebelum di pakai.
+    # hanya digunakan pada saat proses debugging saja.
+    ##########################################################################################################################################
+    public function __construct()
+    {
         parent::__construct();
         header('Access-Control-Allow-Origin: *');
     }
@@ -25,7 +26,8 @@ class Testing extends CI_Controller {
         curl_close($ch); 
     }
     
-    public function getFromServerJS(){
+    public function getFromServerJS()
+    {
         var_dump($_POST);
         //var_dump($_GET);
         foreach($_POST as $val){
@@ -34,11 +36,13 @@ class Testing extends CI_Controller {
         #echo $_POST;
     }
 
-    public function testDropboxAccessToken(){
+    public function testDropboxAccessToken()
+    {
         header('Location: https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/index.php/testing/getDropBoxAT/');
     }
 
-    public function getDropBoxAT(){
+    public function getDropBoxAT()
+    {
         #echo $_SERVER['HTTP_HOST']; 
         #echo substr($_SERVER['QUERY_STRING'],5);
         $curl = curl_init();
@@ -90,7 +94,8 @@ class Testing extends CI_Controller {
         }
     }
 
-    public function testFCM(){
+    public function testFCM()
+    {
         $this->load->view('testfcm');
     }
 }
