@@ -22,38 +22,21 @@
                 <h3>Welcome <?php echo $this->session->nama?></h3>
             </div>
             <ul class="list-unstyled components">
-                <li class="active" id="KD">
+                <li class="active" id="dashboard">
                     <a href="#dashboard" data-toggle="collapse" aria-expanded="false">Dashboard</a>
                 </li>
-                <li id="tujuan">
-                    <a href="#">Kelas</a>
+                <li id="tambah_user">
+                    <a href="#">User</a>
                 </li>
-                <li id="kegiatan">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Kegiatan</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Kegiatan 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Kegiatan 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Kegiatan 3</a>
-                        </li>
-                    </ul>
+                <li id="dropbox">
+                    <a href="#">DropBox</a>
+                </li>
+                <li id="edit_profil">
+                    <a href="#">Edit Profil</a>
                 </li>
                 <li id="logout">
                     <a href="#">Log Out</a>
                 </li>	
-            </ul>
-
-            <ul class="list-unstyled CTAs">
-                <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-                </li>
-                <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-                </li>
             </ul>
         </nav>
 
