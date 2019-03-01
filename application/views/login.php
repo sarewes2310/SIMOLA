@@ -36,10 +36,10 @@
                 <input type="text" class="form-control" id="username_login" placeholder="Username" required>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
-                <input type="text" class="form-control" id="username_login" placeholder="Username" required>
+                <input type="password" class="form-control" id="password_login" placeholder="Password" required>
               </div>
             </div>
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <button class="btn btn-primary" type="submit">LOGIN</button>
           </form>
         </div>
       </div>
