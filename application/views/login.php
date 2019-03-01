@@ -31,21 +31,11 @@
         </div>
         <div class="isi">
           <form method="POST" action="#">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">@</span>
+            <div class="form-row">
+              <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
+                <input type="text" class="form-control" id="username_login" placeholder="Username" required>
               </div>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
             </div>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">@</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
-            </div>
-            <!--<input type="text" name="username" alt="input username">
-            <input type="password" name="username" alt="input username">-->
-            <input type="submit">
           </form>
         </div>
       </div>
