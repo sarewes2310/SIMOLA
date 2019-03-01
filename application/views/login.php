@@ -26,7 +26,7 @@
     <div class="row">
       <div class="col-sm col-ml col-lg">
         <div class="isi">
-            <img src="assets/Logo/SIM.png">
+            <img src="assets/logo/SIM.png">
         </div>
         <div class="isi">
             <form method="POST" action="#">
