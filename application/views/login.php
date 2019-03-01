@@ -27,7 +27,7 @@
     <div class="row">
       <div class="col-sm col-ml col-lg">
         <div class="isi">
-            <img src="assets/logo/SIM.png">
+            <img src="http://simola.herokuapp.com/assets/logo/SIM.png">
         </div>
         <div class="isi">
           <form method="POST" action="#">
