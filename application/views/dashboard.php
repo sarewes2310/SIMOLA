@@ -7,7 +7,7 @@
 	<title>Lembar Kerja Praktik Siswa</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<!-- Our Custom CSS -->
-    <link rel="stylesheet" href="<?php echo base_url()?>Assets/css/style.css">
+    <link rel="stylesheet" href="https://simola.herokuapp.com/assets/css/style.css">
 
     <!-- Font Awesome JS
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
