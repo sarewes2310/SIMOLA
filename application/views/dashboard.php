@@ -64,7 +64,7 @@
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-	<!--<script type="text/javascript" src="<?php echo base_url()?>Assets/My/js/menuSiswa.js"></script>-->
+	<!--<script type="text/javascript" src="Assets/My/js/menuSiswa.js"></script>-->
 
     <script type="text/javascript">
         $(document).ready(function () {
