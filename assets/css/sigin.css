@@ -1,5 +1,6 @@
 img{
     width: calc(100% / 1.5);
+    margin: 25px 0px;
 }
 button{
     width: 100%;
