@@ -39,7 +39,7 @@
                 <input type="password" class="form-control" id="password_login" placeholder="Password" required>
               </div>
             </div>
-            <button class="btn btn-primary" type="submit">LOGIN</button>
+            <button class="btn btn-primary" type="submit" style="width:100%">LOGIN</button>
           </form>
         </div>
       </div>
