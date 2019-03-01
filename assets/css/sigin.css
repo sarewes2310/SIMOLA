@@ -1,0 +1,6 @@
+img{
+    width: calc(100% / 1.5);
+}
+button{
+    width: 100%;
+}
