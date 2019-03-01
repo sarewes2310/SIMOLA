@@ -7,7 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- Custom styles for this template -->
-    <link href="https://simola.herokuapp.com/assets/css/signin.css" rel="stylesheet">
+    <link href="https://simola.herokuapp.com/assets/css/sigin.css" rel="stylesheet">
     <!--<link rel="manifest" href="assets/manifest.json">-->
     <style>
         .bd-placeholder-img {
@@ -27,7 +27,7 @@
     <div class="row">
       <div class="col-sm col-ml col-lg">
         <div class="isi">
-            <img src="https://simola.herokuapp.com/assets/logo/SIM_1.png" style="width: calc(100% / 2);">
+            <img src="https://simola.herokuapp.com/assets/logo/SIM_1.png">
         </div>
         <div class="isi">
           <form method="POST" action="#">
