@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
+    <!--<link rel="manifest" href="assets/manifest.json">-->
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -36,8 +37,14 @@
               </div>
               <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
             </div>
-            <input type="text" name="username" alt="input username">
-            <input type="password" name="username" alt="input username">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+            </div>
+            <!--<input type="text" name="username" alt="input username">
+            <input type="password" name="username" alt="input username">-->
             <input type="submit">
           </form>
         </div>
