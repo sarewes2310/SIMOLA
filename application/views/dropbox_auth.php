@@ -1,7 +1,7 @@
 <?php
 echo json_encode('
 <p>Opsss!! akun anda belum terdaftar pada aplikasi ini</p>
-<img src="'.base_url().'assets\logo\dropbox-logo">
+<img src="'.base_url().'assets/logo/dropbox-logo_2.jpg">
 <button id="get_dropbox" type="button" class="btn btn-primary">Login DropBox</button>
 <!--<form action="https://lembarkerjasiswa.herokuapp.com/index.php/Login/submitGuru" method="post" accept-charset="utf-8" id="guruLogin">
 	<div class="form-group row">
