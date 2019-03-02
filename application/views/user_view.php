@@ -31,7 +31,7 @@ echo json_encode('
 img{
     width: calc(100% / 2.5);
     vertical-align: baseline;
-    margin: 0px calc(100% / 4);
+    margin: 0px calc(100% / 3.5);
 }
 </style>
 <script>
@@ -77,7 +77,7 @@ img{
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Tambah User</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -109,7 +109,7 @@ img{
             </div>
             <div class="boxfingerprint">
                 <img src="'.base_url().'assets/logo/fingerprints.png">
-                <button id="editfingerprint" type="button" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
+                <button id="addfingerprint" type="button" class="btn btn-primary" style="width:100%">Add Fingerprint</button>
             </div>
             <div class="form-group row" style="display:none">
                 <div class="col-sm-10">
