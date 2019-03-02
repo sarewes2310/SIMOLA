@@ -53,7 +53,8 @@ $(document).ready(() => {
 				break;
 			case "dropbox" :
 				cekNavbar = false;
-				//window.location.href = base_url + "user/getDropboxLink";
+                //window.location.href = base_url + "user/getDropboxLink";
+                console.log("DROPBOX RUNN");
                 fetch(base_url+'user/getViewDropbox',{
 					method : 'GET'
 				}).then(response => {

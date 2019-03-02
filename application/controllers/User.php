@@ -45,7 +45,7 @@ class User extends CI_Controller
 
     public function getViewDropbox()
     {
-        $this->load->view('dropbox');
+        $this->load->view('dropbox_auth');
     }
 
     public function getDropboxLink()
