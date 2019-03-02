@@ -1,3 +1,4 @@
+var base_url = "https://simola.herokuapp.com/index.php/";
 function load(){
     // ------------------------------------------------------------------------------------------------------
     // Fungsi yang di gunakan untuk memanggil load page dashboard awal
