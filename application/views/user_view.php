@@ -33,6 +33,9 @@ img{
     vertical-align: baseline;
     margin: 0px calc(100% / 3.5);
 }
+body{
+    font-size: 0.9 rem;
+}
 </style>
 <script>
     const inputModal = d
@@ -84,27 +87,27 @@ img{
         </div>
         <div class="modal-body">
             <div class="form-group row">
-                <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+                <label for="inputnama" class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nama" placeholder="Nama">
+                    <input type="text" class="form-control" id="inputnama" placeholder="Nama">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="username" class="col-sm-2 col-form-label">Username</label>
+                <label for="inputusername" class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="username" placeholder="Username">
+                    <input type="text" class="form-control" id="inputusername" placeholder="Username">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <label for="inputemail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <input type="email" class="form-control" id="inputemail" placeholder="Email">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <label for="inputpassword" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="inputpassword" placeholder="Password">
                 </div>
             </div>
             <div class="boxfingerprint">
@@ -113,7 +116,7 @@ img{
             </div>
             <div class="form-group row" style="display:none">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="fingerprint" placeholder="fingerprint">
+                    <input type="text" class="form-control" id="inputfingerprint" placeholder="fingerprint">
                 </div>
             </div>
             <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->
