@@ -18,14 +18,15 @@ echo json_encode('
 	    <div class="col-sm-10">
 	    	<input type="email" class="form-control" id="email" placeholder="Email">
 	    </div>
-	</div>
-	<div class="form-group row">
-	    <label for="password" class="col-sm-2 col-form-label">Password</label>
+    </div>
+    <div><img src="'.base_url().'ass"></div>
+    <div><button id="buttonSubmit" type="submit" class="btn btn-primary">SUBMIT</button></div>
+	<div class="form-group row" style="display:none">
 	    <div class="col-sm-10">
 	    	<input type="password" class="form-control" id="password" placeholder="Password">
 	    </div>
-	</div>
-	<div><button id="buttonSubmit" type="submit" class="btn btn-primary">Login</button></div>
+    </div>
+	<div><button id="buttonSubmit" type="submit" class="btn btn-success" stye="width:100%">SUBMIT</button></div>
 </form>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
 ?>
