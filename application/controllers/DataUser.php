@@ -18,7 +18,8 @@ class DataUser extends CI_Controller {
     }
     public function submitUserLogin()
     {
-        
+        //$
+        //$this->UserModel->searchUserMAND();
     }
     
     public function inputUser()

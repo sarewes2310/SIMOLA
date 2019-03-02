@@ -32,15 +32,15 @@ class User extends CI_Controller
     }
 
     public function getViewDashboard(){
-
+    
     }
 
     public function getViewUser(){
-
+        $this->load->view('view_user');
     }
 
     public function getViewEditProfil(){
-
+        $this->load->view('edit_profil');
     }
 
     public function getViewDropbox()
