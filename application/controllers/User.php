@@ -31,6 +31,23 @@ class User extends CI_Controller
 		$this->load->view('dashboard');
     }
 
+    public function getViewDashboard(){
+
+    }
+
+    public function getViewTambahUser(){
+
+    }
+
+    public function getViewEditProfil(){
+
+    }
+
+    public function getViewDropbox()
+    {
+        $this->load->view('dropbox');
+    }
+
     public function getDropboxLink()
     {
         # ------------------------------------------------------------------------------------------------------------------------------------

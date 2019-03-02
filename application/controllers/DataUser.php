@@ -16,23 +16,38 @@ class DataUser extends CI_Controller {
 		var_dump($this->UserModel->getListAuth());
 		echo sys_get_temp_dir();
     }
-    public function submitUserLogin(){
+    public function submitUserLogin()
+    {
         
     }
     
-    public function inputUser(){
+    public function inputUser()
+    {
 
     }
 
-    public function getDataEditUser(){
+    public function getDataEditUser()
+    {
 
     }
     
-    public function saveEditUser(){
+    public function saveEditUser()
+    {
 
     }
 
-    public function deleteUser(){
+    public function deleteUser()
+    {
+
+    }
+
+    public function getSaveEditProfil()
+    {
+
+    }
+
+    public function saveEditProfil()
+    {
 
     }
 }
