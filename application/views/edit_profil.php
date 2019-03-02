@@ -19,14 +19,16 @@ echo json_encode('
 	    	<input type="email" class="form-control" id="email" placeholder="Email">
 	    </div>
     </div>
-    <div><img src="'.base_url().'ass"></div>
-    <div><button id="buttonSubmit" type="submit" class="btn btn-primary">SUBMIT</button></div>
+    <div>
+        <img src="'.base_url().'ass">
+        <button id="buttonSubmit" type="submit" class="btn btn-primary">ADD Fingerprint</button>
+    </div>
 	<div class="form-group row" style="display:none">
 	    <div class="col-sm-10">
-	    	<input type="password" class="form-control" id="password" placeholder="Password">
+	    	<input type="text" class="form-control" id="fingerprint" placeholder="fingerprint">
 	    </div>
     </div>
-	<div><button id="buttonSubmit" type="submit" class="btn btn-success" stye="width:100%">SUBMIT</button></div>
+	<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>
 </form>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
 ?>
