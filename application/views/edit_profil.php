@@ -9,6 +9,9 @@ echo json_encode('
         border-radius: 8px;
         margin: 10px 0px;
     }
+    img{
+        width: calc(100% / 1);
+    }
 </style>
 <form action="#" id="editprofil">
     <div class="form-group row">
