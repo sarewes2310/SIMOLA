@@ -42,7 +42,7 @@ echo json_encode('
     </div>
     <div id="boxfingerprint">
         <img src="'.base_url().'assets/logo/fingerprints.png">
-        <button id="buttonSubmit" type="submit" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
+        <button id="editfingerprint" type="button" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
     </div>
 	<div class="form-group row" style="display:none">
 	    <div class="col-sm-10">

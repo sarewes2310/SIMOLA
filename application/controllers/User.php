@@ -36,7 +36,7 @@ class User extends CI_Controller
     }
 
     public function getViewUser(){
-        $this->load->view('view_user');
+        $this->load->view('user_view');
     }
 
     public function getViewEditProfil(){
