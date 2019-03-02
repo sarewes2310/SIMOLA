@@ -5,8 +5,8 @@ echo json_encode('
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:40px;
-	right:40px;
+	bottom:20px;
+	right:20px;
 	background-color:#0C9;
 	color:#FFF;
 	border-radius:50px;
@@ -15,7 +15,10 @@ echo json_encode('
 }
 
 .my-float{
-	margin-top:22px;
+	margin-top:20px;
+}
+#sub-content{
+    padding: 0px;
 }
 </style>
 <table class="table">
