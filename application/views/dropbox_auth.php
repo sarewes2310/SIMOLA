@@ -12,6 +12,9 @@ echo json_encode('
     button > #get_dropbox{
         width:100%;
     }
+    body{
+        background: #f2f3f2;
+    }
 </style>
 <p>Opsss!! akun anda belum terdaftar pada aplikasi ini</p>
 <img src="'.base_url().'assets/logo/dropbox-logo_2.jpg">
