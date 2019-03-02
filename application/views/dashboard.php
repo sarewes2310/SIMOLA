@@ -49,7 +49,6 @@
                         <i class="fas fa-align-left"></i>
                         <span>Toggle Sidebar</span>
                     </button>
-                    <div><img src="<?php echo base_url()?>assets/logo/SIM_3.png"></div>
                     <div id="navKegiatan">
                     	
                     </div>
