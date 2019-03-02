@@ -2,8 +2,10 @@
 echo json_encode('
 <style>
     #boxfingerprint{
+        border: 3px solid #a9a9a938;
+        border-style: dashed;
+        background: #a9a9a938;
         padding: 9px;
-        border: 1px solid #9E9E9E;
         border-radius: 8px;
         margin: 10px 0px;
     }
