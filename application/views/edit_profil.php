@@ -10,7 +10,9 @@ echo json_encode('
         margin: 10px 0px;
     }
     img{
-        width: calc(100% / 1);
+        width: calc(100% / 2.5);
+        vertical-align: baseline;
+        margin: 0px calc(100% / 4);
     }
 </style>
 <form action="#" id="editprofil">
