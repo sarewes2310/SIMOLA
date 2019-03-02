@@ -20,6 +20,19 @@ echo json_encode('
 #sub-content{
     padding: 0px;
 }
+.boxfingerprint{
+    border: 3px solid #a9a9a938;
+    border-style: dashed;
+    background: #a9a9a938;
+    padding: 9px;
+    border-radius: 8px;
+    margin: 10px 0px;
+}
+img{
+    width: calc(100% / 2.5);
+    vertical-align: baseline;
+    margin: 0px calc(100% / 4);
+}
 </style>
 <script>
     const inputModal = d
@@ -94,7 +107,7 @@ echo json_encode('
                     <input type="password" class="form-control" id="password" placeholder="Password">
                 </div>
             </div>
-            <div id="boxfingerprint">
+            <div class="boxfingerprint">
                 <img src="'.base_url().'assets/logo/fingerprints.png">
                 <button id="editfingerprint" type="button" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
             </div>
