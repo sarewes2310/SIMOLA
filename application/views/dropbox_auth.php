@@ -1,5 +1,18 @@
 <?php
 echo json_encode('
+<style>
+    p{
+        text-align: center;
+        font-size: 0.9em;
+    }
+    img{
+        width: calc(100%);
+        margin: 10px 0px;
+    }
+    button{
+        width:100%;
+    }
+</style>
 <p>Opsss!! akun anda belum terdaftar pada aplikasi ini</p>
 <img src="'.base_url().'assets/logo/dropbox-logo_2.jpg">
 <button id="get_dropbox" type="button" class="btn btn-primary">Login DropBox</button>
