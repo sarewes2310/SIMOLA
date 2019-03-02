@@ -9,7 +9,7 @@ echo json_encode('
         width: calc(100%);
         margin: 10px 0px;
     }
-    button{
+    button > #get_dropbox{
         width:100%;
     }
 </style>
