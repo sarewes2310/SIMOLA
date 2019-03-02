@@ -45,6 +45,10 @@ class User extends CI_Controller
 
     public function getViewDropbox()
     {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # Fungsi yang digunakan untuk memanggil halaman dropbox
+        # Output berupa page dropbox
+        # ------------------------------------------------------------------------------------------------------------------------------------
         $this->load->view('dropbox_auth');
     }
 
@@ -109,4 +113,9 @@ class User extends CI_Controller
             echo $response;
         }
 	}
+
+    public function logout()
+    {
+
+    }
 }

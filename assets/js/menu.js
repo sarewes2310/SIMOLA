@@ -43,7 +43,7 @@ $(document).ready(() => {
 				break;
 			case "tambah_user" :
 				cekNavbar = false;
-				fetch(base_url+'user/getViewTambahUser',{
+				fetch(base_url+'user/getViewUser',{
 					method : 'GET'
 				}).then(response => {
 					return response.json();
@@ -54,7 +54,7 @@ $(document).ready(() => {
 			case "dropbox" :
 				cekNavbar = false;
                 //window.location.href = base_url + "user/getDropboxLink";
-                console.log("DROPBOX RUNN");
+                //console.log("DROPBOX RUNN");
                 fetch(base_url+'user/getViewDropbox',{
 					method : 'GET'
 				}).then(response => {

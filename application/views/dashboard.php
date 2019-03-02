@@ -35,7 +35,7 @@
                     <a href="#">Edit Profil</a>
                 </li>
                 <li id="logout">
-                    <a href="#">Log Out</a>
+                    <a href="<?php echo base_url()?>index.php/user/logout">Log Out</a>
                 </li>	
             </ul>
         </nav>
