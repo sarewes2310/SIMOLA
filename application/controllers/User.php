@@ -35,7 +35,7 @@ class User extends CI_Controller
 
     }
 
-    public function getViewTambahUser(){
+    public function getViewUser(){
 
     }
 
@@ -116,6 +116,6 @@ class User extends CI_Controller
 
     public function logout()
     {
-
+        $this->session->sess_destroy();
     }
 }
