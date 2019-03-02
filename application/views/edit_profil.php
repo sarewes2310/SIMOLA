@@ -1,5 +1,13 @@
 <?php
 echo json_encode('
+<style>
+    #boxfingerprint{
+        padding: 9px;
+        border: 1px solid #9E9E9E;
+        border-radius: 8px;
+        margin: 10px 0px;
+    }
+</style>
 <form action="https://lembarkerjasiswa.herokuapp.com/index.php/Login/submitGuru" method="post" accept-charset="utf-8" id="guruLogin">
     <div class="form-group row">
 	    <label for="nama" class="col-sm-2 col-form-label">Nama</label>
@@ -19,9 +27,15 @@ echo json_encode('
 	    	<input type="email" class="form-control" id="email" placeholder="Email">
 	    </div>
     </div>
-    <div>
+    <div class="form-group row">
+	    <label for="password" class="col-sm-2 col-form-label">Password</label>
+	    <div class="col-sm-10">
+	    	<input type="password" class="form-control" id="password" placeholder="Password">
+	    </div>
+    </div>
+    <div id="boxfingerprint">
         <img src="'.base_url().'ass">
-        <button id="buttonSubmit" type="submit" class="btn btn-primary">ADD Fingerprint</button>
+        <button id="buttonSubmit" type="submit" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
     </div>
 	<div class="form-group row" style="display:none">
 	    <div class="col-sm-10">
