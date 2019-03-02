@@ -25,7 +25,7 @@
                 <li class="active" id="dashboard">
                     <a href="#dashboard" data-toggle="collapse" aria-expanded="false">Dashboard</a>
                 </li>
-                <li id="tambah_user">
+                <li id="tambahuser">
                     <a href="#">User</a>
                 </li>
                 <li id="dropbox">

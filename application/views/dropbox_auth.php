@@ -9,7 +9,7 @@ echo json_encode('
         width: calc(100%);
         margin: 10px 0px;
     }
-    button > #get_dropbox{
+    #getdropbox{
         width:100%;
     }
     body{
@@ -18,7 +18,7 @@ echo json_encode('
 </style>
 <p>Opsss!! akun anda belum terdaftar pada aplikasi ini</p>
 <img src="'.base_url().'assets/logo/dropbox-logo_2.jpg">
-<button id="get_dropbox" type="button" class="btn btn-primary" href="'.base_url().'index.php/user/getDropboxLink">Login DropBox</button>
+<button id="getdropbox" type="button" class="btn btn-primary" href="'.base_url().'index.php/user/getDropboxLink">Login DropBox</button>
 <!--<form action="https://lembarkerjasiswa.herokuapp.com/index.php/Login/submitGuru" method="post" accept-charset="utf-8" id="guruLogin">
 	<div class="form-group row">
 		<label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>

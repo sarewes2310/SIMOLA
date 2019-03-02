@@ -41,7 +41,7 @@ $(document).ready(() => {
 					$("div#sub-content").html(hasil);
 				});
 				break;
-			case "tambah_user" :
+			case "tambahuser" :
 				cekNavbar = false;
 				fetch(base_url+'user/getViewUser',{
 					method : 'GET'

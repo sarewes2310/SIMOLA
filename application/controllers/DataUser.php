@@ -18,7 +18,7 @@ class DataUser extends CI_Controller {
     }
     public function submitUserLogin()
     {
-        //$
+        var_dump($this->input->post());
         //$this->UserModel->searchUserMAND();
     }
     
