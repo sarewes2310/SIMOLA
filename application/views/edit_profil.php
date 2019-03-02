@@ -10,7 +10,7 @@ echo json_encode('
         margin: 10px 0px;
     }
 </style>
-<form action="https://lembarkerjasiswa.herokuapp.com/index.php/Login/submitGuru" method="post" accept-charset="utf-8" id="guruLogin">
+<form action="#" id="editprofil">
     <div class="form-group row">
 	    <label for="nama" class="col-sm-2 col-form-label">Nama</label>
 	    <div class="col-sm-10">
@@ -36,7 +36,7 @@ echo json_encode('
 	    </div>
     </div>
     <div id="boxfingerprint">
-        <img src="'.base_url().'ass">
+        <img src="'.base_url().'assets/logo/fingerprints.png">
         <button id="buttonSubmit" type="submit" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
     </div>
 	<div class="form-group row" style="display:none">
