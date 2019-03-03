@@ -58,7 +58,7 @@ form.addEventListener('submit', function(e){
         'password' : document.getElementById('password_login').value
     };
     console.log(hasil);
-    fetch(base_url+'datauser/submitUserLogin',
+    fetch(base_url+'DataUser/submitUserLogin',
     {
         method : 'post',
         body : parserData(hasil),
