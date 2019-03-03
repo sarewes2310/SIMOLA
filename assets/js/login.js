@@ -4,6 +4,7 @@ function submitLogin(){
     
 }
 form.addEventListener('submit', function(e){
+    e.preventDefault();
     const hasil = {
         'username' : document.getElementById('username_login').value,
         'password' : document.getElementById('password_login').value
@@ -19,7 +20,6 @@ form.addEventListener('submit', function(e){
     }).then(function(res){
        return res.json(); 
     });
-    e.preventDefault();
 });
 
 function parserData(data){
