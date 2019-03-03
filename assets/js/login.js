@@ -25,7 +25,8 @@ form.addEventListener('submit', function(e){
         if(response.status == 0){
             window.location = base_url + 'User/dashboard';
         }else{
-            const card = document.getElementById('');
+            const card = document.getElementById('status');
+            card.innerHTML = "";
         }
     });
     return e.preventDefault();
