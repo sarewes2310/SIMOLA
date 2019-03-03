@@ -82,6 +82,10 @@ class UserModel extends CI_Model
     }
     
     function saveATDropbox(){
+
+    }
+
+    function saveSHA256FP(){
         
     }
 }

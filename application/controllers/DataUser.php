@@ -63,7 +63,8 @@ class DataUser extends CI_Controller {
     }
 
     public function getFingerPrint(){
-        
+        var_dump($this->input->post());
+        $this->UserModel->saveSHA256FP($this->input->post());
     }
 
     public function removeFingerPrint(){
