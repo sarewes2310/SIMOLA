@@ -11,6 +11,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         header('Access-Control-Allow-Origin: *');
+        $this->load->model("UserModel");
     }
 	
 	public function index() 
@@ -104,6 +105,7 @@ class User extends CI_Controller
             //    "cache-control: no-cache"
             //),
         ));
+        $this->UserModel->saveATDropbox($response->{'access_token'});
         $response = curl_exec($ch);
         $err = curl_error($ch);
         curl_close($ch);
@@ -111,6 +113,7 @@ class User extends CI_Controller
             echo "cURL Error #:" . $err;
         } else {
             echo $response;
+            $this->load->view('');
         }
 	}
 

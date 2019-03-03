@@ -19,7 +19,18 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Welcome <?php echo $this->session->nama?></h3>
+                <h3>Welcome 
+                    <?php 
+                        if(empty($this->session->nama)){
+                            echo '
+                                <script>
+                                    
+                                </script>
+                            ';
+                        }
+                        else echo $this->session->nama;
+                    ?>
+                </h3>
             </div>
             <ul class="list-unstyled components">
                 <li class="active" id="dashboard">

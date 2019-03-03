@@ -22,14 +22,17 @@ class DataUser extends CI_Controller {
         # fungsi yang digunakan untuk menghasilkan output PENCARIAN DATA pada tabel users dalam database PostgresSql dalam bentuk array.
         # bernilai null atau 0 jika saat data yang dicari tidak ada.
         # ------------------------------------------------------------------------------------------------------------------------------------
-        foreach($this->input->post() as $key => $value){
-            echo $key." ".$value."<br>";
-        }
+        // foreach($this->input->post() as $key => $value){
+        //    echo $key." ".$value."<br>";
+        // }
         $hasil = $this->UserModel->searchUserMAND($this->input->post());
         //var_dump($hasil);
         if(empty($hasil)){
             //header('Location:'.base_url());   
-            return json_encode(base_url(),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+            $satus = array(
+                'status' => 1
+            );
+            return json_encode($satus,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }else{
             $session = [];
 			foreach ($hasil as $value) {
@@ -38,7 +41,8 @@ class DataUser extends CI_Controller {
 				}
             }
             $this->session->set_userdata($session);
-			return json_encode(base_url().'index.php/User/dashboard',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+            array_push($session, 0, base_url().'index.php/User/dashboard');
+			return json_encode($session,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }
     }
     
@@ -59,6 +63,10 @@ class DataUser extends CI_Controller {
     }
 
     public function getFingerPrint(){
+        
+    }
+
+    public function removeFingerPrint(){
 
     }
 
