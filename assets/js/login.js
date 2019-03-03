@@ -23,6 +23,10 @@ form.addEventListener('submit', function(e){
     }).then(function(response){
         //console.log(response);
         if(response.status == 0){
+            var post = {
+                idus:response.idus,
+                nama:response.nama
+            }
             writeData('login', response)
             window.location = base_url + 'User/dashboard';
         }else{
