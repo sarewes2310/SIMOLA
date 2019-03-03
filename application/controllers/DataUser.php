@@ -41,7 +41,8 @@ class DataUser extends CI_Controller {
     
     public function inputUser()
     {
-
+        $hasil = $this->UserModel->inputUserM($this->input->post());
+        var_dump($hasil);
     }
 
     public function getDataEditUser()
