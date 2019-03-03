@@ -74,13 +74,14 @@ body{
 <a class="float" id="tambahUserModal" data-toggle="modal" data-target="#inputModal">
     <i class="fa fa-plus my-float"></i>
 </a>
-<!-- Modal -->
+
+<!-- Modal Tambah User-->
 <form>
     <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tambah User</h5>
+            <h5 class="modal-title" id="inputModalLabel">Tambah User</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -117,6 +118,62 @@ body{
             <div class="form-group row" style="display:none">
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="inputfingerprint" placeholder="fingerprint">
+                </div>
+            </div>
+            <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</form>
+
+<!-- Modal Edit User-->
+<form>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edit User</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group row">
+                <label for="editnama" class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="editnama" placeholder="Nama">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="editusername" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="editusername" placeholder="Username">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="editemail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="editemail" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="editpassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="editpassword" placeholder="Password">
+                </div>
+            </div>
+            <div class="boxfingerprint">
+                <img src="'.base_url().'assets/logo/fingerprints.png">
+                <button id="addfingerprint" type="button" class="btn btn-primary" style="width:100%">Add Fingerprint</button>
+            </div>
+            <div class="form-group row" style="display:none">
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="editfingerprint" placeholder="fingerprint">
                 </div>
             </div>
             <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->
