@@ -53,7 +53,6 @@
 <script>
 var form = document.querySelector('form');
 form.addEventListener('submit', function(e){
-    e.preventDefault();
     const hasil = {
         'username' : document.getElementById('username_login').value,
         'password' : document.getElementById('password_login').value
@@ -71,6 +70,7 @@ form.addEventListener('submit', function(e){
     }).then(function(response){
         console.log(response);
     });
+    return e.preventDefault();
 });
 
 function parserData(data){
