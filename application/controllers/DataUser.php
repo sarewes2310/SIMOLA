@@ -37,7 +37,7 @@ class DataUser extends CI_Controller {
 				}
             }
             $this->session->set_userdata($session);
-			header('Location:https://lembarkerjasiswa.herokuapp.com/index.php/Guru');
+			header('Location:https:'.base_url().'index.php/User/dashboard');
         }
     }
     
