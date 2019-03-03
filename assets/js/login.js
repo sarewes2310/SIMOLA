@@ -24,13 +24,15 @@ form.addEventListener('submit', function(e){
                 nama:response.nama
             }
             console.log(post);
-            writeData('login', post)
-            .then(function(response){
-                console.log(response);
-            })
-            .catch(function(err){
-                console.log(err);
-            });
+            if ('indexedDB' in window) {
+                writeData('login', post)
+                .then(function(response){
+                    console.log(response);
+                })
+                .catch(function(err){
+                    console.log(err);
+                });
+            }
             window.location = base_url + 'User/dashboard';
         }else{
             const card = document.getElementById('status');
