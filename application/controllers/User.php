@@ -34,7 +34,11 @@ class User extends CI_Controller
         # Fungsi yang digunakan untuk memanggil halaman login 
         # Output berupa page dashboard
         # ------------------------------------------------------------------------------------------------------------------------------------
-		$this->load->view('dashboard');
+        if(empty($this->session->nama)){
+            $this->index();
+        }else{
+            $this->load->view('dashboard');
+        }
     }
 
     public function getViewDashboard(){
