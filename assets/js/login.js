@@ -24,7 +24,13 @@ form.addEventListener('submit', function(e){
                 nama:response.nama
             }
             writeData('login', response)
-            window.location = base_url + 'User/dashboard';
+            .then(function(response){
+                console.log(response);
+            })
+            .catch(function(err){
+                console.log(err);
+            });
+            //window.location = base_url + 'User/dashboard';
         }else{
             const card = document.getElementById('status');
             card.innerHTML = "";
