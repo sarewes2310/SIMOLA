@@ -18,12 +18,13 @@ class DataUser extends CI_Controller {
     }
     public function submitUserLogin()
     {
-        var_dump($this->input->post());
-        var_dump($_POST);
+        //var_dump($this->input->post());
+        //var_dump($_POST);
         foreach($this->input->post() as $key => $value){
             echo $key." ".$value."<br>";
         }
-        //$this->UserModel->searchUserMAND();
+        $hasil = $this->UserModel->searchUserMAND($this->input->post());
+        var_dump($hasil);
     }
     
     public function inputUser()
