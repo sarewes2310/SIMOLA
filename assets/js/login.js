@@ -18,10 +18,15 @@ form.addEventListener('submit', function(e){
             "Content-Type": "application/x-www-form-urlencoded",
         }
     }).then(function(res){
-        console.log(res);
+        //console.log(res);
         return res.json(); 
     }).then(function(response){
-        console.log(response);
+        //console.log(response);
+        if(response.status == 0){
+            window.location = base_url + 'User/dashboard';
+        }else{
+            const card = document.getElementById('');
+        }
     });
     return e.preventDefault();
 });
