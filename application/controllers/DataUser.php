@@ -28,7 +28,8 @@ class DataUser extends CI_Controller {
         $hasil = $this->UserModel->searchUserMAND($this->input->post());
         //var_dump($hasil);
         if(empty($hasil)){
-            header('Location:'.base_url());   
+            //header('Location:'.base_url());   
+            return json_encode(base_url(),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }else{
             $session = [];
 			foreach ($hasil as $value) {
@@ -37,7 +38,7 @@ class DataUser extends CI_Controller {
 				}
             }
             $this->session->set_userdata($session);
-			header('Location:https:'.base_url().'index.php/User/dashboard');
+			return json_encode(base_url().'index.php/User/dashboard',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }
     }
     
