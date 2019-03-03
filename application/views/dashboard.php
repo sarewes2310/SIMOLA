@@ -13,6 +13,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     <script src="<?php echo base_url()?>assets/js/variabel_utama.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/idb.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/utility.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -25,7 +27,15 @@
                             echo '
                                 <div id="namaW"></div>
                                 <script>
-
+                                    if ("indexedDB" in window) {
+                                        readAllData("login")
+                                        .then(function(data) {
+                                            console.log(data);
+                                            for(var i = 0; i < data.length; i++){
+                                                document.getElementById("namaW").innerHTML = data[i]
+                                            }
+                                        });
+                                    }
                                 </script>
                             ';
                         }
@@ -77,9 +87,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/menu.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/js/idb.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/js/utility.js"></script>
-
     <script type="text/javascript">
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
