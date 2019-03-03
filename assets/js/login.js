@@ -1,5 +1,8 @@
 var form = document.querySelector('form');
 
+function submitLogin(){
+    
+}
 form.addEventListener('submit', function(e){
     const hasil = {
         'username' : document.getElementById('username_login').value,
