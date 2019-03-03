@@ -1,4 +1,4 @@
-var form = document.getElementById('loginForm');
+var form = document.querySelector('form');
 
 form.addEventListener('submit', function(e){
     const hasil = {
