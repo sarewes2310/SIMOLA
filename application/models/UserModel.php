@@ -25,7 +25,7 @@ class UserModel extends CI_Model
         $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
         foreach($data as $key => $value){
             $num++;
-            $hasil .= $key."=".$value;
+            $hasil .= $key."='".$value."'";
             if($num<=$length)$hasil .= " AND ";
         }
         return $this->db->query("SELECT * FROM users WHERE ".$hasil.";")->result_array();      
