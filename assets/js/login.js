@@ -20,7 +20,7 @@ form.addEventListener('submit', function(e){
         //console.log(response);
         if(response.status == 0){
             var post = {
-                idus:response.idus,
+                id:response.idus,
                 nama:response.nama
             }
             writeData('login', response)
