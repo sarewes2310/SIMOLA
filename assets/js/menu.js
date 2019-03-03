@@ -33,7 +33,7 @@ $(document).ready(() => {
                 // Output yang dihasilkan berupa page dengan menu pilihan dashboard
                 // ------------------------------------------------------------------------------------------------------
 				cekNavbar = false;
-				fetch(base_url+'user/getViewDashboard',{
+				fetch(base_url+'User/getViewDashboard',{
 					method : 'GET',
 					mode : 'cors'
 				}).then(response => {
@@ -44,7 +44,7 @@ $(document).ready(() => {
 				break;
 			case "tambahuser" :
 				cekNavbar = false;
-				fetch(base_url+'user/getViewUser',{
+				fetch(base_url+'User/getViewUser',{
 					method : 'GET'
 				}).then(response => {
 					return response.json();
@@ -56,7 +56,7 @@ $(document).ready(() => {
 				cekNavbar = false;
                 //window.location.href = base_url + "user/getDropboxLink";
                 //console.log("DROPBOX RUNN");
-                fetch(base_url+'user/getViewDropbox',{
+                fetch(base_url+'User/getViewDropbox',{
 					method : 'GET'
 				}).then(response => {
 					return response.json();
@@ -66,7 +66,7 @@ $(document).ready(() => {
                 break;
 			case "edit_profil" :
                 cekNavbar = false;
-                fetch(base_url+'user/getViewEditProfil',{
+                fetch(base_url+'User/getViewEditProfil',{
                     method : 'GET'
                 }).then(response => {
                     return response.json();

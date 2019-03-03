@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-//
-// Class yang digunakan untuk memanggil fungsi yang ada pada website (sebagai CRUD dari aplikasi)
-//
+#
+# Class yang digunakan untuk memanggil fungsi yang ada pada website (sebagai CRUD dari aplikasi)
+#
 class DataUser extends CI_Controller {
 
 	public function __construct(){
@@ -18,8 +18,10 @@ class DataUser extends CI_Controller {
     }
     public function submitUserLogin()
     {
-        //var_dump($this->input->post());
-        //var_dump($_POST);
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk menghasilkan output PENCARIAN DATA pada tabel users dalam database PostgresSql dalam bentuk array.
+        # bernilai null atau 0 jika saat data yang dicari tidak ada.
+        # ------------------------------------------------------------------------------------------------------------------------------------
         foreach($this->input->post() as $key => $value){
             echo $key." ".$value."<br>";
         }
