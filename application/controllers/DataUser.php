@@ -36,7 +36,7 @@ class DataUser extends CI_Controller {
             $session = [];
 			foreach ($hasil as $value) {
 				foreach ($value as $key => $isi) {
-                    if($key == 'idus' && $key == 'nama')$session[$key] = $isi; # Inisialisasi dari session
+                    if($key == 'idus' || $key == 'nama')$session[$key] = $isi; # Inisialisasi dari session
 				}
             }
             $this->session->set_userdata($session);
