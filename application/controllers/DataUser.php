@@ -24,7 +24,20 @@ class DataUser extends CI_Controller {
             echo $key." ".$value."<br>";
         }
         $hasil = $this->UserModel->searchUserMAND($this->input->post());
-        var_dump($hasil);
+        //var_dump($hasil);
+        if(empty($hasil)){
+            header('Location:'.base_url());   
+        }else{
+            $session = [];
+			foreach ($hasil as $value) {
+				foreach ($value as $key => $isi) {
+					# code...
+					$session[$key] = $isi;
+				}
+            }
+            $this->session->set_userdata($session);
+			header('Location:https://lembarkerjasiswa.herokuapp.com/index.php/Guru');
+        }
     }
     
     public function inputUser()
