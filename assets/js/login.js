@@ -19,6 +19,8 @@ form.addEventListener('submit', function(e){
         }
     }).then(function(res){
        return res.json(); 
+    }).then(function(response){
+        console.log(response);
     });
 });
 
