@@ -31,7 +31,7 @@
             <img src="https://simola.herokuapp.com/assets/logo/SIM_1.png">
         </div>
         <div class="isi">
-          <form method="POST" id="login_form">
+          <form id="loginForm">
             <div class="form-row">
               <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
                 <input type="text" class="form-control" id="username_login" placeholder="Username" required>
