@@ -23,6 +23,7 @@
                     <?php 
                         if(empty($this->session->nama)){
                             echo '
+                                <div id="namaW"></div>
                                 <script>
 
                                 </script>
