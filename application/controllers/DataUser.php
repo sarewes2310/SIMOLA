@@ -41,7 +41,9 @@ class DataUser extends CI_Controller {
 				}
             }
             $this->session->set_userdata($session);
-            array_push($session, 0, base_url().'index.php/User/dashboard');
+            #array_push($session, 0, base_url().'index.php/User/dashboard');
+            $session['status'] = 0;
+            $session['link'] = base_url().'index.php/User/dashboard';
 			return json_encode($session,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }
     }

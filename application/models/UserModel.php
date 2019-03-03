@@ -81,12 +81,34 @@ class UserModel extends CI_Model
         return $this->db->query("DELETE FROM users WHERE idus=".$id.";")->result_array();
     }
     
-    function saveATDropbox(){
-
+    function saveATDropbox()
+    {
+        # BELUM JADI
+        $hasil = 'SET ';
+        $length = count($data); # menghitung jumlah panjang dari array variabel data
+        $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
+        foreach($data as $key => $value){
+            $num++;
+            $hasil .= $key."='".$value."'";
+            if($num<=$length)$hasil .= ",";
+        }
+        $hasil .= ")";
+        return $this->db->query("UPDATE  fingerP ".$hasil." WHERE idus=".$id.";")->result_array();
     }
 
-    function saveSHA256FP(){
-        
+    function saveSHA256FP()
+    {
+        # BELUM JADI
+        $hasil = 'SET ';
+        $length = count($data); # menghitung jumlah panjang dari array variabel data
+        $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
+        foreach($data as $key => $value){
+            $num++;
+            $hasil .= $key."='".$value."'";
+            if($num<=$length)$hasil .= ",";
+        }
+        $hasil .= ")";
+        return $this->db->query("UPDATE  fingerP ".$hasil." WHERE idus=".$id.";")->result_array();
     }
 }
 ?>
