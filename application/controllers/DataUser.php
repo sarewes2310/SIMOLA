@@ -20,6 +20,9 @@ class DataUser extends CI_Controller {
     {
         var_dump($this->input->post());
         var_dump($_POST);
+        foreach($this->input->post() as $key => $value){
+            echo $key." ".$value."<br>";
+        }
         //$this->UserModel->searchUserMAND();
     }
     
