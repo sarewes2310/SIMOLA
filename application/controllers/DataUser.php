@@ -31,7 +31,7 @@ class DataUser extends CI_Controller {
             $satus = array(
                 'status' => 1 # Inisialisasi dari data yang tidak ditemukan   
             );
-            return json_encode($satus,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+            echo json_encode($satus,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }else{
             $session = [];
 			foreach ($hasil as $value) {
@@ -43,7 +43,7 @@ class DataUser extends CI_Controller {
             #array_push($session, 0, base_url().'index.php/User/dashboard');
             $session['status'] = 0;
             $session['link'] = base_url().'index.php/User/dashboard';
-			return json_encode($session,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+			echo json_encode($session,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }
     }
     
