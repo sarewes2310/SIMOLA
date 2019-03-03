@@ -9,7 +9,7 @@ form.addEventListener('submit', function(e){
         'username' : document.getElementById('username_login').value,
         'password' : document.getElementById('password_login').value
     };
-    console.log(hasil);
+    //console.log(hasil);
     fetch(base_url+'DataUser/submitUserLogin',
     {
         method : 'post',
@@ -18,7 +18,8 @@ form.addEventListener('submit', function(e){
             "Content-Type": "application/x-www-form-urlencoded",
         }
     }).then(function(res){
-       return res.json(); 
+        console.log(res);
+        return res.json(); 
     }).then(function(response){
         console.log(response);
     });
