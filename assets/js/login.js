@@ -23,6 +23,7 @@ form.addEventListener('submit', function(e){
     }).then(function(response){
         //console.log(response);
         if(response.status == 0){
+            writeData('login', response)
             window.location = base_url + 'User/dashboard';
         }else{
             const card = document.getElementById('status');
