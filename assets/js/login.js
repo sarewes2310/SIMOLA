@@ -17,7 +17,7 @@ form.addEventListener('submit', function(e){
         //console.log(res);
         return res.json(); 
     }).then(function(response){
-        //console.log(response);
+        console.log(response);
         if(response.status == 0){
             var post = {
                 id:response.idus,
