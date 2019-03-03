@@ -1,8 +1,4 @@
 
-function submitLogin(){
-    
-}
-
 var form = document.querySelector('form');
 form.addEventListener('submit', function(e){
     const hasil = {
