@@ -19,25 +19,24 @@ class DataUser extends CI_Controller {
     public function submitUserLogin()
     {
         # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk menghasilkan output PENCARIAN DATA pada tabel users dalam database PostgresSql dalam bentuk array.
-        # bernilai null atau 0 jika saat data yang dicari tidak ada.
+        # fungsi yang digunakan untuk menghasilkan output SESSION LOGIN pada tabel users dalam database PostgresSql dalam bentuk array.
+        # bernilai 1 jika saat data yang dicari tidak ada.
         # ------------------------------------------------------------------------------------------------------------------------------------
         // foreach($this->input->post() as $key => $value){
         //    echo $key." ".$value."<br>";
         // }
-        $hasil = $this->UserModel->searchUserMAND($this->input->post());
+        $hasil = $this->UserModel->searchUserMAND($this->input->post()); # Get from UserModel Model Class
         //var_dump($hasil);
         if(empty($hasil)){
-            //header('Location:'.base_url());   
             $satus = array(
-                'status' => 1
+                'status' => 1 # Inisialisasi dari data yang tidak ditemukan   
             );
             return json_encode($satus,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }else{
             $session = [];
 			foreach ($hasil as $value) {
 				foreach ($value as $key => $isi) {
-					$session[$key] = $isi; # inisialisasi dari session
+					$session[$key] = $isi; # Inisialisasi dari session
 				}
             }
             $this->session->set_userdata($session);
