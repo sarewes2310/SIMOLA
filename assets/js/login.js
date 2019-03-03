@@ -31,7 +31,7 @@ form.addEventListener('submit', function(e){
             .catch(function(err){
                 console.log(err);
             });
-            //window.location = base_url + 'User/dashboard';
+            window.location = base_url + 'User/dashboard';
         }else{
             const card = document.getElementById('status');
             card.innerHTML = "";
