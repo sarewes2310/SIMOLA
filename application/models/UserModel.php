@@ -143,7 +143,6 @@ class UserModel extends CI_Model
             $hasil .= $key."='".$value."'";
             if($num<=$length)$hasil .= ",";
         }
-        $hasil .= ")";
         return $this->db->query("UPDATE device ".$hasil." WHERE nama='".$id."';");
         #return $this->db->query("INSERT INTO device(nama,check_connect) ".$hasil.";");
         #return $this->db->query("insert into device(nama,check_connect) values;");
