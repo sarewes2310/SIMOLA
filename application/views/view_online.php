@@ -1,4 +1,13 @@
 <?php
+$dataT = '';
+foreach($data as $key => $value){
+    $dataT .= '
+        <tr>
+            <td>'.$value['nama'].'</td>
+            <td>'.$value['check_connect'].'</td>
+        </tr>
+    ';
+}
 echo json_encode('
 <style>
 .float{
@@ -42,30 +51,6 @@ body{
   <tbody>
     <tr>
       <td>Username</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <td>Larry</td>
-    </tr>
-    <tr>
-      <td>Username</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <td>Larry</td>
-    </tr>
-    <tr>
-      <td>Username</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <td>Larry</td>
     </tr>
   </tbody>
 </table>
