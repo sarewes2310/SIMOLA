@@ -14,6 +14,37 @@ foreach($data as $key => $value){
         </tr>
     ';
 }
+$js = '
+function peringatan(id)
+{
+    const hasil = {
+        "device_id" : id
+    };
+    fetch(base_url+"DataUser/getDevice",{
+		method : "POST",
+		body : parserData(hasil),
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        }
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+        //$("div#sub-content").html(hasil);
+        //document.getElementById("device_id").value = hasil.;
+        console.log(hasil);
+	});
+    return false;
+}
+
+function parserData(data){
+	hasil = "";
+	for(var i in data){
+		hasil = hasil+(i+"="+data[i]);
+		hasil = hasil+"&";
+	}
+	return new URLSearchParams(hasil)
+}
+';
 echo json_encode('
 <style>
 .float{
@@ -52,7 +83,9 @@ body{
     font-size: 0.9 rem;
 }
 </style>
-<script type="text/javascript" src="'.base_url().'assets/js/view_online.js"></script>
+<script type="text/javascript">
+'.$js.'
+</script>
 <table class="table">
   <tbody>
     '.$dataT.'
