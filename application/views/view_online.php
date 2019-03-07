@@ -4,7 +4,13 @@ foreach($data as $key => $value){
     $dataT .= '
         <tr>
             <td>'.$value['nama'].'</td>
-            <td>'.$value['check_connect'].'</td>
+    ';
+    if($value['check_connect'] == 1){
+        $dataT .= '<td><button type="button" class="btn btn-outline-success">ON</button></td>';
+    }else{
+        $dataT .= '<td><button type="button" class="btn btn-outline-danger">OFF</button></td>';
+    }
+    $dataT .= '
         </tr>
     ';
 }
