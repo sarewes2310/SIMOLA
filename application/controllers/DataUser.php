@@ -105,7 +105,7 @@ class DataUser extends CI_Controller {
         );
         $check = $this->UserModel->checkDeviceM($data['nama']);
         var_dump(empty($check));
-        if(!empty($check)){
+        if(empty($check)){
             $hasil = $this->UserModel->saveDeviceM($data);
             var_dump($hasil);
         }else{
