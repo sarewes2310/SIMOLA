@@ -3,7 +3,7 @@ $dataT = '';
 foreach($data as $key => $value){
     $dataT .= '
         <tr>
-            <td>'.$value['nama'].'</td>
+            <td style="width:80%">'.$value['nama'].'</td>
     ';
     if($value['check_connect'] == 1){
         $dataT .= '<td><button type="button" class="btn btn-outline-success">ON</button></td>';
