@@ -98,6 +98,21 @@ class DataUser extends CI_Controller {
     }
 
     public function checkDevice(){
-        var_dump($this->input->post());   
+        #var_dump($this->input->post());   
+        $data = array(
+            'nama' => $this->input->post('device'),
+            'check_connect' => 1
+        );
+        $check = $this->UserModel->checkDeviceM($data['nama']);
+        if(!empty($check)){
+            $hasil = $this->UserModel->saveDeviceM($data);
+            var_dump($hasil);
+        }else{
+            $data = array(
+                'check_connect' => 1
+            );
+            $hasil = $this->UserModel->editDeviceM($data['nama'],$data);
+            var_dump($hasil);
+        }
     }
 }

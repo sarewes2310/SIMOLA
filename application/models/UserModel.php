@@ -115,5 +115,38 @@ class UserModel extends CI_Model
         $hasil .= ")";
         return $this->db->query("UPDATE  fingerP ".$hasil." WHERE idus=".$id.";")->result_array();
     }
+
+    function saveDeviceM($data){
+        $hasil = 'VALUES (';
+        $length = count($data); # menghitung jumlah panjang dari array variabel data
+        $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
+        foreach($data as $key => $value){
+            $num++;
+            $hasil .= "'".$value."'";
+            if($num<=$length)$hasil .= ",";
+        }
+        $hasil .= ")";
+        return $this->db->query("INSERT INTO device(nama,check_connect) ".$hasil.";");
+        #return $this->db->query("insert into device(nama,check_connect) values;");
+    }
+
+    function checkDeviceM($id){
+        return $this->db->query("SELECT * FROM device WHERE nama='".$id."';")->result_array();
+    }
+
+    function editDeviceM($id,$data){
+        $hasil = 'SET ';
+        $length = count($data); # menghitung jumlah panjang dari array variabel data
+        $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
+        foreach($data as $key => $value){
+            $num++;
+            $hasil .= $key."='".$value."'";
+            if($num<=$length)$hasil .= ",";
+        }
+        $hasil .= ")";
+        return $this->db->query("UPDATE device ".$hasil." WHERE nama='".$id."';");
+        #return $this->db->query("INSERT INTO device(nama,check_connect) ".$hasil.";");
+        #return $this->db->query("insert into device(nama,check_connect) values;");
+    }
 }
 ?>
