@@ -4,6 +4,7 @@ function load(){
     // Fungsi yang di gunakan untuk memanggil load page dashboard awal
     // Output yang dihasilkan berupa page dengan menu pilihan dashboard
     // ------------------------------------------------------------------------------------------------------
+	document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 	fetch(base_url+'user/getViewDashboard',{
 		method : 'GET',
 		mode : 'cors'
