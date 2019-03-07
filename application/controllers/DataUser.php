@@ -96,4 +96,8 @@ class DataUser extends CI_Controller {
     {
 
     }
+
+    public function checkDevice(){
+        var_dump($this->input->post());   
+    }
 }
