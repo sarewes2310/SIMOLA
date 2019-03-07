@@ -130,4 +130,12 @@ class DataUser extends CI_Controller {
             var_dump($hasil);
         }
     }
+    
+    public function getDevice()
+    {
+        $hasil = $this->UserModel->checkDeviceMid($this->input->post('device_id'));
+        if(!empty($hasil)){
+            echo json_encode($hasil,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+        }
+    }
 }

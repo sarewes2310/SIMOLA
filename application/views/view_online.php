@@ -6,7 +6,7 @@ foreach($data as $key => $value){
             <td style="width:80%">'.$value['nama'].'</td>
     ';
     if($value['check_connect'] == 1){
-        $dataT .= '<td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#inputModal">ON</button></td>';
+        $dataT .= '<td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#inputModal" onclick="return peringatan('.$value['device_id'].')">ON</button></td>';
     }else{
         $dataT .= '<td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#inputModal">OFF</button></td>';
     }
@@ -52,7 +52,7 @@ body{
     font-size: 0.9 rem;
 }
 </style>
-<script src="'.base_url().'assets/js/"></script>
+<script src="'.base_url().'assets/js/view_online.js"></script>
 <table class="table">
   <tbody>
     '.$dataT.'
@@ -72,9 +72,9 @@ body{
         </div>
         <div class="modal-body">
             <div>Apakah anda yakin ingin mematikan device ini ?</div>
-            <div class="form-group row" style="display:none">
+            <div class="form-group row" style="#">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputfingerprint" placeholder="fingerprint">
+                    <input type="text" class="form-control" id="device_id" placeholder="device_id">
                 </div>
             </div>
             <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->

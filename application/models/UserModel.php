@@ -151,9 +151,9 @@ class UserModel extends CI_Model
         #return $this->db->query("insert into device(nama,check_connect) values;");
     }
 
-    function checkATDropboxM($id)
+    function checkDeviceMid($id)
     {
-        return $this->db->query("SELECT * FROM device WHERE nama='".$id."';")->result_array();
+        return $this->db->query("SELECT device_id FROM device WHERE device_id=".$id.";")->result_array();
     }
 }
 ?>
