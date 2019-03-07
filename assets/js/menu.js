@@ -39,7 +39,7 @@ $(document).ready(() => {
 				}).then(response => {
 					return response.json();
 				}).then(hasil => {
-					$("div#sub-content").html(hasil);
+					document.getElementById("sub-content").innerHTML = hasil;
 				});
 				break;
 			case "tambahuser" :
@@ -49,7 +49,7 @@ $(document).ready(() => {
 				}).then(response => {
 					return response.json();
 				}).then(hasil => {
-					$("div#sub-content").html(hasil);
+					document.getElementById("sub-content").innerHTML = hasil;
 				});
 				break;
 			case "dropbox" :
@@ -72,7 +72,7 @@ $(document).ready(() => {
                 }).then(response => {
                     return response.json();
                 }).then(hasil => {
-                    $("div#sub-content").html(hasil);
+                    document.getElementById("sub-content").innerHTML = hasil;
                 });
 				break;
 		}
