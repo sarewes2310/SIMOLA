@@ -108,10 +108,10 @@ class DataUser extends CI_Controller {
             $hasil = $this->UserModel->saveDeviceM($data);
             var_dump($hasil);
         }else{
-            $data = array(
+            $data1 = array(
                 'check_connect' => 1
             );
-            $hasil = $this->UserModel->editDeviceM($data['nama'],$data);
+            $hasil = $this->UserModel->editDeviceM($data['nama'],$data1);
             var_dump($hasil);
         }
     }
