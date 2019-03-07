@@ -42,7 +42,7 @@ class User extends CI_Controller
     }
 
     public function getViewDashboard(){
-    
+        $this->load->view('view_online');
     }
 
     public function getViewUser(){
