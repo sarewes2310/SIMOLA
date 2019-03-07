@@ -58,9 +58,9 @@ class DataUser extends CI_Controller {
         curl_setopt($ch, CURLOPT_URL, "https://simolasocket-nodejs.herokuapp.com/home");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
         $output = curl_exec($ch);
-        var_dump($output);
-        echo $output;
+        //var_dump($output);
         curl_close($ch); 
+        echo json_encode($output);
     }
 
     public function getFingerPrint(){
