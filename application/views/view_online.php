@@ -71,34 +71,7 @@ body{
             </button>
         </div>
         <div class="modal-body">
-            <div class="form-group row">
-                <label for="inputnama" class="col-sm-2 col-form-label">Nama</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputnama" placeholder="Nama">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputusername" class="col-sm-2 col-form-label">Username</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputusername" placeholder="Username">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputemail" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputemail" placeholder="Email">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputpassword" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputpassword" placeholder="Password">
-                </div>
-            </div>
-            <div class="boxfingerprint">
-                <img src="'.base_url().'assets/logo/fingerprints.png">
-                <button id="addfingerprint" type="button" class="btn btn-primary" style="width:100%" onclick="return saveFP()">Add Fingerprint</button>
-            </div>
+            <div>Apakah anda yakin ingin mematikan device ini ?</div>
             <div class="form-group row" style="display:none">
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="inputfingerprint" placeholder="fingerprint">
@@ -107,8 +80,8 @@ body{
             <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+            <button type="submit" class="btn btn-danger">YES</button>
         </div>
         </div>
     </div>
