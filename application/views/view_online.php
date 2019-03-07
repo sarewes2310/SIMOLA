@@ -6,7 +6,7 @@ foreach($data as $key => $value){
             <td style="width:80%">'.$value['nama'].'</td>
     ';
     if($value['check_connect'] == 1){
-        $dataT .= '<td><button type="button" class="btn btn-outline-success">ON</button></td>';
+        $dataT .= '<td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#inputModal">ON</button></td>';
     }else{
         $dataT .= '<td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#inputModal">OFF</button></td>';
     }
@@ -65,7 +65,7 @@ body{
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="inputModalLabel">Tambah User</h5>
+            <h5 class="modal-title" id="inputModalLabel">Peringatan</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
