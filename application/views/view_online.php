@@ -69,9 +69,6 @@ body{
     </tr>
   </tbody>
 </table>
-<a class="float" id="tambahUserModal" data-toggle="modal" data-target="#inputModal">
-    <i class="fa fa-plus my-float"></i>
-</a>
 
 <!-- Modal Tambah User-->
 <form>

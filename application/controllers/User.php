@@ -42,7 +42,9 @@ class User extends CI_Controller
     }
 
     public function getViewDashboard(){
-        $this->load->view('view_online');
+        $hasil = $this->UserModel->getListDevice();
+        var_dump($hasil);
+        #$this->load->view('view_online',$hasil);
     }
 
     public function getViewUser(){

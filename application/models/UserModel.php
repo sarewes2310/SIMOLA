@@ -9,6 +9,11 @@ class UserModel extends CI_Model
     # 3. $offset (mengambil kelipatan dari sebuah pencarian data hanya digunakan pada function getAllUserM)
     ##########################################################################################################################################
 
+    function getListDevice()
+    {
+        return $this->db->query("SELECT * FROM device;")->result_array();
+    }
+    
     function getListAuth()
     {
         return $this->db->query("SELECT * FROM users;")->result_array();
