@@ -52,7 +52,7 @@ body{
     font-size: 0.9 rem;
 }
 </style>
-<script src="'.base_url().'assets/js/view_online.js"></script>
+<script type="text/javascript" src="'.base_url().'assets/js/view_online.js"></script>
 <table class="table">
   <tbody>
     '.$dataT.'
