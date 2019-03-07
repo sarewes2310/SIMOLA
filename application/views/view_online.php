@@ -49,9 +49,7 @@ body{
 <script src="'.base_url().'assets/js/"></script>
 <table class="table">
   <tbody>
-    <tr>
-      <td>Username</td>
-    </tr>
+    '.$dataT.'
   </tbody>
 </table>
 
