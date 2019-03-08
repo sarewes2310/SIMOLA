@@ -130,6 +130,9 @@ body{
                     <input type="text" class="form-control" id="device_id" placeholder="device_id">
                 </div>
             </div>
+            <div class="alert alert-primary" role="alert">
+                A simple primary alert—check it out!
+            </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
