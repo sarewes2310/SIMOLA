@@ -140,7 +140,7 @@ class DataUser extends CI_Controller {
                 'status' => 1,
                 'device_id' => $hasil[0]['device_id']
             );
-           // echo json_encode($hasil,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+           echo json_encode($hasil,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }
     }
 }
