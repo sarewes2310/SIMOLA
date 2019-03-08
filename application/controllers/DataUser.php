@@ -143,4 +143,18 @@ class DataUser extends CI_Controller {
            echo json_encode($hasil,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }
     }
+
+    public function offDevice()
+    {
+        var_dump($this->input->post('device_id'));
+        #$hasil = $this->UserModel->checkDeviceMid($this->input->post('device_id'));
+        #var_dump($hasil);
+        #if(!empty($hasil)){
+        #    $hasil = array(
+        #        'status' => 1,
+        #        'device_id' => $hasil[0]['device_id']
+        #    );
+        #   echo json_encode($hasil,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+        #}
+    }
 }

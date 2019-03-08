@@ -44,6 +44,26 @@ function parserData(data){
 	}
 	return new URLSearchParams(hasil)
 }
+
+function offDevice(){
+    const hasil = {
+        "device_id" : document.getElementById("device_id").value
+    };
+    fetch(base_url+"DataUser/offDevice",{
+		method : "POST",
+		body : parserData(hasil),
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        }
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+        //$("div#sub-content").html(hasil);
+        document.getElementById("device_id").value = hasil.device_id;
+        console.log(hasil);
+	});
+    return false;
+}
 ';
 echo json_encode('
 <style>
@@ -93,7 +113,7 @@ body{
 </table>
 
 <!-- Modal Tambah User-->
-<form>
+<form onsubmit="return offDevice();">
     <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -110,7 +130,6 @@ body{
                     <input type="text" class="form-control" id="device_id" placeholder="device_id">
                 </div>
             </div>
-            <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
