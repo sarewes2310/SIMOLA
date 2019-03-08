@@ -134,7 +134,7 @@ class DataUser extends CI_Controller {
     public function getDevice()
     {
         $hasil = $this->UserModel->checkDeviceMid($this->input->post('device_id'));
-        var_dump($hasil);
+        #var_dump($hasil);
         if(!empty($hasil)){
             $hasil = array(
                 'status' => 1,
