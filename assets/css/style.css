@@ -4,7 +4,6 @@
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
-    font-family: 'Poppins', sans-serif;
     background: #fff;
 }
 
@@ -60,6 +59,7 @@ a:focus {
     max-width: 250px;
     background: #7386D5;
     color: #fff;
+    font-family: 'Poppins', sans-serif;
     transition: all 0.3s;
 }
 
