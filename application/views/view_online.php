@@ -62,7 +62,7 @@ function offDevice(){
         //$("div#sub-content").html(hasil);
         //document.getElementById("device_id").value = hasil.device_id;
         document.getElementById("hasil").innerHTML = "HASIL";
-        console.log(hasil);
+        console.log("OFF DEVICE",hasil);
 	});
     return false;
 }
