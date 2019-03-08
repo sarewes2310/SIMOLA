@@ -14,6 +14,7 @@ foreach($data as $key => $value){
         </tr>
     ';
 }
+$alertP = '<div class="alert alert-primary" role="alert">Device berhasil dimatikan</div>';
 $js = '
 function peringatan(id)
 {
@@ -60,7 +61,7 @@ function offDevice(){
 	}).then(hasil => {
         //$("div#sub-content").html(hasil);
         //document.getElementById("device_id").value = hasil.device_id;
-        document.getElementById("hasil").innerHTML = "<div class="alert alert-primary" role="alert">Device berhasil dimatikan</div>"
+        document.getElementById("hasil").innerHTML = "'.$alertP.'"
         console.log(hasil);
 	});
     return false;
