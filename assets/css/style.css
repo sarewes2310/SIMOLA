@@ -24,6 +24,7 @@ a:focus {
 }
 
 .navbar {
+    font-family: 'Poppins', sans-serif;
     padding: 8px 10px;
     background: #fff;
     border: none;
@@ -59,7 +60,6 @@ a:focus {
     max-width: 250px;
     background: #7386D5;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
     transition: all 0.3s;
 }
 
@@ -73,6 +73,7 @@ a:focus {
 }
 
 #sidebar ul.components {
+    padding: 20px 0;
     border-bottom: 1px solid #47748b;
 }
 
