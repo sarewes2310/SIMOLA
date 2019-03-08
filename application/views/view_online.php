@@ -18,6 +18,7 @@ $alertP = '<div class="alert alert-primary" role="alert">Device berhasil dimatik
 $js = '
 function peringatan(id)
 {
+    document.getElementById("hasil").innerHTML = "";
     const hasil = {
         "device_id" : id
     };
