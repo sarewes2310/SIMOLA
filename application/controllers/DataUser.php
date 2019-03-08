@@ -146,7 +146,8 @@ class DataUser extends CI_Controller {
 
     public function offDevice()
     {
-        var_dump($this->input->post('device_id'));
+        echo json_encode($this->input->post('device_id'),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+        #var_dump($this->input->post('device_id'));
         #$hasil = $this->UserModel->checkDeviceMid($this->input->post('device_id'));
         #var_dump($hasil);
         #if(!empty($hasil)){
