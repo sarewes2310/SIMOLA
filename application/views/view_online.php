@@ -61,7 +61,7 @@ function offDevice(){
 	}).then(hasil => {
         //$("div#sub-content").html(hasil);
         //document.getElementById("device_id").value = hasil.device_id;
-        document.getElementById("hasil").innerHTML = "<div class="alert alert-primary" role="alert">A simple primary alert—check it out!</div>";
+        document.getElementById("hasil").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">\r\n  A simple primary alert\u2014check it out!\r\n<\/div>";
         console.log("OFF DEVICE",hasil);
 	});
     return false;
