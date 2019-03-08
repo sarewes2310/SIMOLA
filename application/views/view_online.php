@@ -59,7 +59,8 @@ function offDevice(){
 		return response.json();
 	}).then(hasil => {
         //$("div#sub-content").html(hasil);
-        document.getElementById("device_id").value = hasil.device_id;
+        //document.getElementById("device_id").value = hasil.device_id;
+        document.getElementById("hasil").innerHTML = "<div class="alert alert-primary" role="alert">Device berhasil dimatikan</div>"
         console.log(hasil);
 	});
     return false;
@@ -112,7 +113,7 @@ body{
   </tbody>
 </table>
 
-<!-- Modal Tambah User-->
+<!-- Modal OFF Device-->
 <form onsubmit="return offDevice();" action="#">
     <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -130,9 +131,7 @@ body{
                     <input type="text" class="form-control" id="device_id" placeholder="device_id">
                 </div>
             </div>
-            <div class="alert alert-primary" role="alert">
-                A simple primary alert—check it out!
-            </div>
+            <div id="hasil"></div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
