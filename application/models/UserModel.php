@@ -155,5 +155,18 @@ class UserModel extends CI_Model
     {
         return $this->db->query("SELECT device_id FROM device WHERE device_id=".$id.";")->result_array();
     }
+
+    function offDeviceM($id, $data)
+    {
+        $hasil = 'SET ';
+        $length = count($data); # menghitung jumlah panjang dari array variabel data
+        $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
+        foreach($data as $key => $value){
+            $num++;
+            $hasil .= $key."='".$value."'";
+            if($num<=$length)$hasil .= ",";
+        }
+        return $this->db->query("UPDATE device ".$hasil." WHERE device_id=".$id.";");
+    }
 }
 ?>

@@ -62,7 +62,8 @@ function offDevice(){
 	}).then(hasil => {
         //$("div#sub-content").html(hasil);
         //document.getElementById("device_id").value = hasil.device_id;
-        document.getElementById("hasil").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mematikan device<\/div>";
+        if(hasil.status == 1) document.getElementById("hasil").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mematikan device<\/div>";
+        else document.getElementById("hasil").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Berhasil mematikan device<\/div>";
         console.log("OFF DEVICE",hasil);
 	});
     return false;

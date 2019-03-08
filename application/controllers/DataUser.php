@@ -146,9 +146,40 @@ class DataUser extends CI_Controller {
 
     public function offDevice()
     {
-        echo json_encode($this->input->post('device_id'),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+        #echo json_encode($this->input->post('device_id'),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         #var_dump($this->input->post('device_id'));
-        #$hasil = $this->UserModel->checkDeviceMid($this->input->post('device_id'));
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://simolasocket-nodejs.herokuapp.com/shutdown",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_POSTFIELDS => "",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache"
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+        if ($err) {
+            echo "cURL Error #:" . $err;
+            echo json_encode(array(
+                'status' => 0
+            ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+        } else {
+            $data = array(
+                'check_connect' => 0
+            );
+            $hasil = $this->UserModel->offDeviceM($this->input->post('device_id'),$data);
+            echo json_encode(array(
+                'status' => 1
+            ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+        }
         #var_dump($hasil);
         #if(!empty($hasil)){
         #    $hasil = array(

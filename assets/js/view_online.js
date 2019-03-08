@@ -16,6 +16,7 @@ function peringatan(id)
         //$("div#sub-content").html(hasil);
         //document.getElementById("device_id").value = hasil.;
         console.log(hasil);
+        document.getElementById("hasil").innerHTML = "";
 	});
     return false;
 }
