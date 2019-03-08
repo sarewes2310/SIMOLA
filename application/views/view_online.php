@@ -113,7 +113,7 @@ body{
 </table>
 
 <!-- Modal Tambah User-->
-<form onsubmit="return offDevice();">
+<form onsubmit="return offDevice();" action="#">
     <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
