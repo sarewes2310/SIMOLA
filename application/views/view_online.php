@@ -30,7 +30,7 @@ function peringatan(id)
 		return response.json();
 	}).then(hasil => {
         //$("div#sub-content").html(hasil);
-        //document.getElementById("device_id").value = hasil[0].device_id;
+        document.getElementById("device_id").value = hasil.device_id;
         console.log(hasil);
 	});
     return false;
