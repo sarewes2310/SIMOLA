@@ -8,7 +8,7 @@ foreach($data as $key => $value){
     if($value['check_connect'] == 1){
         $dataT .= '<td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#inputModal" onclick="return peringatan('.$value['device_id'].')">ON</button></td>';
     }else{
-        $dataT .= '<td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#inputModal">OFF</button></td>';
+        $dataT .= '<td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#inputModal" onclick="return peringatan('.$value['device_id'].')">OFF</button></td>';
     }
     $dataT .= '
         </tr>
