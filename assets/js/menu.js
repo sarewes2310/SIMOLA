@@ -77,7 +77,10 @@ $(document).ready(() => {
 						//	'idus' : data[0].id
 						//};
 						for (var i = 0; i < data.length; i++) {
-							console.log(data[i]);
+							//console.log(data[i]);
+							hasil = {
+								'idus' : data[i].id
+							}
 						}
 					  });
 				}
