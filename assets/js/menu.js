@@ -247,7 +247,7 @@ function editUser(id){
 				document.getElementById('editusername').value = hasil[0].username;
 				document.getElementById('editpassword').value = hasil[0].password;
 				document.getElementById('editemail').value = hasil[0].email;
-				document.getElementById('editidus').value = hasil.[0]idus;
+				document.getElementById('editidus').value = hasil[0].idus;
 	});
   return false;
 }
