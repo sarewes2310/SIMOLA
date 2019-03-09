@@ -72,10 +72,10 @@ $(document).ready(() => {
 				if ('indexedDB' in window) {
 					readAllData('login')
 					  .then(function(data) {
-						//#console.log(data);
-						hasil = {
-							'idus' : data[0].id
-						};
+						console.log(data);
+						//hasil = {
+						//	'idus' : data[0].id
+						//};
 					  });
 				}
                 fetch(base_url+'User/getViewEditProfil',{
