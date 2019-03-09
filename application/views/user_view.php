@@ -11,9 +11,9 @@ foreach($data as $key => $value){
     $dataT .= '
         <tr>
             <td style="width:80%">
-                <div>'.$value['nama'].'</div>
-                <div>'.$stat.'</div>
+                '.$value['nama'].'
             </td>
+            <td>'.$stat.'</td>
             <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return peringatan('.$value['idus'].')">Edit</button></td>
             <td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return peringatan('.$value['idus'].')">Delete</button></td>        
         </tr>
@@ -59,6 +59,13 @@ body{
 </style>
 <script src="'.base_url().'assets/js/"></script>
 <table class="table">
+  <thead>
+    <tr>
+        <th>Nama</th>
+        <th>Status</th>
+        <th colspan="2">Aksi</th>
+    </tr>
+  </thead>
   <tbody>
     '.$dataT.'
   </tbody>
