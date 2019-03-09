@@ -93,7 +93,7 @@ $(document).ready(() => {
 							}).then(hasil => {
 								document.getElementById("sub-content").innerHTML = hasil;
 							});
-					  });
+					});
 				}
 				console.log("HASIL",hasil);
 				break;
