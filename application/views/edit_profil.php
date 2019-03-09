@@ -6,7 +6,7 @@ function parserData(data){
 		hasil = hasil+(i+"="+data[i]);
 		hasil = hasil+"&";
 	}
-	return new URLSearchParams(hasil)
+	return new URLSearchParams(hasil);
 }
 
 function simpanProfil(){
@@ -53,6 +53,7 @@ echo json_encode('
 <script type="text/javascript">
 '.$js.'
 </script>
+
 <form onsubmit="return simpanProfil();" action="#">
     <div id="hasil"></div>
     <div class="form-group row">
