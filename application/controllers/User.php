@@ -43,13 +43,13 @@ class User extends CI_Controller
 
     public function getViewDashboard(){
         $hasil = $this->UserModel->getListDevice();
-        #var_dump($hasil);
+        var_dump($hasil);
         $h['data'] = $hasil;
         $this->load->view('view_online',$h);
     }
 
     public function getViewUser(){
-        $hasil = $this->UserModel->getListDevice();
+        $hasil = $this->UserModel->getAllUserM(1);
         $h['data'] = $hasil;
         $this->load->view('user_view',$h);
     }
