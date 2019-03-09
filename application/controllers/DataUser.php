@@ -136,16 +136,38 @@ class DataUser extends CI_Controller {
             echo $response;
         }
     }
+    
+    public function removeFingerPrint()
+    {
+        $ch = curl_init();
+        curl_setopt_array($ch, array(
+            CURLOPT_URL => "https://simolasocket-nodejs.herokuapp.com/removefingerprint?us=".$this->input->post("username"),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 60,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            //CURLOPT_POSTFIELDS => "at=".$response->{'access_token'},
+            //CURLOPT_HTTPHEADER => array(
+            //    "Authorization: Basic NTJ1OW13eGxjeGd2MWoyOmV0cG1vYjkwOW0yM3hlMg==",
+            //    "cache-control: no-cache"
+            //),
+        ));
+        $response = curl_exec($ch);
+        $err = curl_error($ch);
+        curl_close($ch);
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+            echo $response;
+        }
+    }
 
     public function getFingerPrint()
     {
         var_dump($this->input->post());
         $this->UserModel->saveSHA256FP($this->input->post());
-    }
-
-    public function removeFingerPrint()
-    {
-
     }
 
     public function getDataEditUser()
