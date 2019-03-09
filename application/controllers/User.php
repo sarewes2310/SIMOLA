@@ -49,7 +49,7 @@ class User extends CI_Controller
 
     public function getViewUser(){
         $hasil = $this->UserModel->getAllUserM(0);
-        #var_dump($hasil);
+        var_dump($hasil);
         $h['data'] = $hasil;
         $this->load->view('user_view',$h);
     }
