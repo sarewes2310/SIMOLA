@@ -68,15 +68,23 @@ $(document).ready(() => {
                 break;
 			case "edit_profil" :
 				cekNavbar = false;
+				const hasil = null;
 				if ('indexedDB' in window) {
 					readAllData('login')
 					  .then(function(data) {
-						console.log(data);
+						//#console.log(data);
+						hasil = {
+							'idus' : data[0].id
+						};
 					  });
 				}
                 fetch(base_url+'User/getViewEditProfil',{
-                    method : 'GET'
-                }).then(response => {
+					method : 'post',
+					body : parserData1(hasil),
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded",
+					}
+				}).then(response => {
                     return response.json();
                 }).then(hasil => {
                     document.getElementById("sub-content").innerHTML = hasil;
@@ -86,3 +94,12 @@ $(document).ready(() => {
 		$('#sidebar').removeClass('active');
 	});
 });
+
+function parserData1(data){ // fungsi yang sama dengan parserData()
+	hasil = '';
+	for(var i in data){
+		hasil = hasil+(i+'='+data[i]);
+		hasil = hasil+'&';
+	}
+	return new URLSearchParams(hasil)
+}
