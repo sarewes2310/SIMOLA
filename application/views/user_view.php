@@ -1,6 +1,7 @@
 <?php
 $dataT = '';
-foreach($data as $key => $value){
+
+foreach($dataH as $key => $value){
     $dataT .= '
         <tr>
             <td style="width:80%">'.$value['nama'].'</td>
