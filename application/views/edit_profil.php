@@ -33,8 +33,7 @@ function saveProfilM(){
         console.log("OFF DEVICE",hasil);
 	});
     return false;
-}
-';
+}';
 echo json_encode('
 <style>
     #boxfingerprint{
