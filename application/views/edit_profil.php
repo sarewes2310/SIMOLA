@@ -1,11 +1,10 @@
 <?php
-$script1 = '<script>';
+$script1 = '<>';
 foreach($data as $key => $value){
     $script1 .= '
         document.getElementById("'.$key.'").value = "'.$value.'";
     ';
 }
-$script1 .= '</script>';
 echo json_encode('
 <style>
     #boxfingerprint{
@@ -58,6 +57,8 @@ echo json_encode('
     </div>
 	<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>
 </form>
+<script type="text/javascript">
 '.$script1.'
+</script>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
 ?>
