@@ -209,7 +209,7 @@ function deleteUser(id){
 function deleteUserM(){
 	document.getElementById("hasilDelete").innerHTML = "";
 	const hasil = {
-			"idus" : id
+			"idus" : document.getElementById("idus_delete").value
 	};
 	fetch(base_url+"DataUser/deleteUser",{
 	method : "POST",
