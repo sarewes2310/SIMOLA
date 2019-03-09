@@ -107,9 +107,6 @@ body{
     font-size: 0.9 rem;
 }
 </style>
-<script type="text/javascript">
-'.$js.'
-</script>
 <table class="table">
   <tbody>
     '.$dataT.'

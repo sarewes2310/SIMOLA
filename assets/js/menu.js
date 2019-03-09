@@ -142,6 +142,47 @@ function parserData(data){
 	}
 	return new URLSearchParams(hasil);
 }
-function jancok(){
-	alert("JANCOK KAU");
+
+function peringatan(id)
+{
+	document.getElementById("hasil").innerHTML = "";
+	const hasil = {
+			"device_id" : id
+	};
+	fetch(base_url+"DataUser/getDevice",{
+	method : "POST",
+	body : parserData(hasil),
+			headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+			}
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+        //$("div#sub-content").html(hasil);
+        document.getElementById("device_id").value = hasil.device_id;
+        console.log(hasil);
+	});
+  return false;
+}
+
+function offDevice(){
+	const hasil = {
+			"device_id" : document.getElementById("device_id").value
+	};
+	fetch(base_url+"DataUser/offDevice",{
+	method : "POST",
+	body : parserData(hasil),
+			headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+			}
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+        //$("div#sub-content").html(hasil);
+        //document.getElementById("device_id").value = hasil.device_id;
+        if(hasil.status == 1) document.getElementById("hasil").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mematikan device<\/div>";
+        else document.getElementById("hasil").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Berhasil mematikan device<\/div>";
+        console.log("OFF DEVICE",hasil);
+	});
+  return false;
 }
