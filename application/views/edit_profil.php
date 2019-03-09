@@ -5,6 +5,7 @@ foreach($data as $key => $value){
         document.getElementById("'.$key.'").value = "'.$value.'";
     ';
 }
+$script1 .= '</script>';
 echo json_encode('
 <style>
     #boxfingerprint{
@@ -21,6 +22,7 @@ echo json_encode('
         margin: 0px calc(100% / 3.5);
     }
 </style>
+'.$script1.'
 <form action="#" id="editprofil">
     <div class="form-group row">
 	    <label for="nama" class="col-sm-2 col-form-label">Nama</label>
