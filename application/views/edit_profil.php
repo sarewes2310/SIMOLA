@@ -33,7 +33,11 @@ function simpanProfil(){
         console.log("OFF DEVICE",hasil);
 	});
     return false;
-}';
+}
+function jancok(){
+    alert("JANCOK KAU");
+}
+';
 echo json_encode('
 <style>
     #boxfingerprint{
