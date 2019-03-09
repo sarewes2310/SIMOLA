@@ -89,8 +89,14 @@ class DataUser extends CI_Controller {
 
     public function saveEditProfil()
     {
-        var_dump($this->input->post());
-        $hasil = $this->UserModel->saveEditProfilM($this->input->post('idus'),$this->input->post());
+        #var_dump($this->input->post());
+        $data = array(
+            'nama' => $this->input->post('nama'),
+            'email' => $this->input->post('email'),
+            'username' => $this->input->post('username'),
+            'password' => $this->input->post('password'),
+        );
+        $hasil = $this->UserModel->saveEditProfilM($this->input->post('idus'),$data);
         if($hasil){
             echo json_encode(array(
                 'status' => 1
