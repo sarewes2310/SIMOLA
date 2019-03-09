@@ -9,7 +9,7 @@ function parserData(data){
 	return new URLSearchParams(hasil)
 }
 
-function saveProfilM(){
+function simpanProfil(){
     const hasil = {
         "nama" : document.getElementById("nama").value,
         "email" : document.getElementById("email").value,
@@ -53,7 +53,7 @@ echo json_encode('
 <script type="text/javascript">
 '.$js.'
 </script>
-<form onsubmit="return saveProfilM();" action="#">
+<form onsubmit="return simpanProfil();" action="#">
     <div id="hasil"></div>
     <div class="form-group row">
 	    <label for="nama" class="col-sm-2 col-form-label">Nama</label>
