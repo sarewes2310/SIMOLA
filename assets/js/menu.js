@@ -68,7 +68,7 @@ $(document).ready(() => {
                 break;
 			case "edit_profil" :
 				cekNavbar = false;
-				const hasil = null;
+				var hasil = null;
 				if ('indexedDB' in window) {
 					readAllData('login')
 					  .then(function(data) {
