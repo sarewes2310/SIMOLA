@@ -60,9 +60,9 @@ class User extends CI_Controller
         else
         {
             $hasil = $this->UserModel->getViewEditProfilM($this->input->post('idus'));
-            #var_dump($hasil);
-            $h['data'] = $hasil;
-            $this->load->view('edit_profil',$h);
+            var_dump($hasil);
+            $h['data'] = $hasil[0];
+            #$this->load->view('edit_profil',$h);
         }
         #var_dump($this->input->post('idus'));
     }
