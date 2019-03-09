@@ -168,5 +168,10 @@ class UserModel extends CI_Model
         }
         return $this->db->query("UPDATE device ".$hasil." WHERE device_id=".$id.";");
     }
+
+    function getViewEditProfilM()
+    {
+        
+    }
 }
 ?>

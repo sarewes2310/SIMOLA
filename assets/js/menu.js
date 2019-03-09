@@ -67,7 +67,13 @@ $(document).ready(() => {
 				});
                 break;
 			case "edit_profil" :
-                cekNavbar = false;
+				cekNavbar = false;
+				if ('indexedDB' in window) {
+					readAllData('login')
+					  .then(function(data) {
+						console.log(data);
+					  });
+				}
                 fetch(base_url+'User/getViewEditProfil',{
                     method : 'GET'
                 }).then(response => {
