@@ -116,6 +116,9 @@ class User extends CI_Controller
             $response = json_decode($response);
         }
         $ch = curl_init();
+        $data = array(
+            
+        );
         curl_setopt_array($ch, array(
             CURLOPT_URL => "https://simolasocket-nodejs.herokuapp.com/sendAT?at=".$response->{'access_token'},
             CURLOPT_RETURNTRANSFER => true,

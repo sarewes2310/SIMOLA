@@ -187,20 +187,6 @@ function offDevice(){
   return false;
 }
 
-function editfingerprint(){
-	fetch("simolasocket-nodejs.herokuapp.com/editfingerprint",{
-		method : "GET"
-		}).then(response => {
-			return response.json();
-		}).then(hasil => {
-					//$("div#sub-content").html(hasil);
-					//document.getElementById("device_id").value = hasil.device_id;
-					if(hasil.status == 1) document.getElementById("efp").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mematikan device<\/div>";
-					else document.getElementById("efp").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mematikan device<\/div>";
-					console.log("OFF DEVICE",hasil);
-		});
-}
-
 function deleteUser(id){
 	document.getElementById("hasilDelete").innerHTML = "";
 	document.getElementById("idus_delete").value = id;
@@ -291,6 +277,30 @@ function insertUserM(){
 			"idau" : document.getElementById('inputstatus').value
 	};
 	fetch(base_url+"DataUser/inputUser",{
+	method : "POST",
+	body : parserData(hasil),
+			headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+			}
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+				//$("div#sub-content").html(hasil);
+			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mengedit user<\/div>";
+			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mengedit user<\/div>";
+	});
+  return false;
+}
+
+function clickDropbox(){
+	window.location = "https://simola.herokuapp.com/index.php/user/getDropboxLink";
+}
+
+function editFingerprint(){
+	const hasil = {
+			"username" : document.getElementById('inputusername').value
+	};
+	fetch(base_url+"DataUser/editFingerPrint",{
 	method : "POST",
 	body : parserData(hasil),
 			headers: {
