@@ -168,6 +168,13 @@ th{
                     <input type="password" class="form-control" id="editpassword" placeholder="Password">
                 </div>
             </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Status</label>
+                <select multiple class="form-control" id="editstatus">
+                    <option value="4">Admin</option>
+                    <option value="5">User</option>
+                </select>
+            </div>
             <div class="boxfingerprint">
                 <img src="'.base_url().'assets/logo/fingerprints.png">
                 <button id="editfingerprint" type="button" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>

@@ -254,6 +254,7 @@ function editUser(id){
 
 function editUserM(){
 	document.getElementById("hasilEdit").innerHTML = "";
+	alert(document.getElementById('editstatus').value);
 	const hasil = {
 			"idus" : document.getElementById('editidus').value,
 			"nama" : document.getElementById('editnama').value,
