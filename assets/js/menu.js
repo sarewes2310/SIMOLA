@@ -220,8 +220,8 @@ function deleteUserM(){
 	}).then(response => {
 		return response.json();
 	}).then(hasil => {
-		if(hasil.status == 1) document.getElementById("hasilDelete").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mematikan device<\/div>";
-		else document.getElementById("hasilDelete").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mematikan device<\/div>";
+		if(hasil.status == 1) document.getElementById("hasilDelete").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil menghapus user<\/div>";
+		else document.getElementById("hasilDelete").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal menghapus user<\/div>";
 		console.log("OFF DEVICE",hasil);
 	});
   return false;
@@ -248,19 +248,21 @@ function editUser(id){
 				document.getElementById('editpassword').value = hasil[0].password;
 				document.getElementById('editemail').value = hasil[0].email;
 				document.getElementById('editidus').value = hasil[0].idus;
+				document.getElementById('editstatus').value = hasil[0].idau;
 	});
   return false;
 }
 
 function editUserM(){
 	document.getElementById("hasilEdit").innerHTML = "";
-	alert(document.getElementById('editstatus').value);
+	//alert(document.getElementById('editstatus').value);
 	const hasil = {
 			"idus" : document.getElementById('editidus').value,
 			"nama" : document.getElementById('editnama').value,
 			"username" : document.getElementById('editusername').value,
 			"password" : document.getElementById('editpassword').value,
-			"email" : document.getElementById('editemail').value
+			"email" : document.getElementById('editemail').value,
+			"idau" : document.getElementById('editstatus').value
 	};
 	fetch(base_url+"DataUser/saveEditUser",{
 	method : "POST",
@@ -272,8 +274,8 @@ function editUserM(){
 		return response.json();
 	}).then(hasil => {
 				//$("div#sub-content").html(hasil);
-			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mematikan device<\/div>";
-			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mematikan device<\/div>";
+			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mengedit user<\/div>";
+			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mengedit user<\/div>";
 	});
   return false;
 }
