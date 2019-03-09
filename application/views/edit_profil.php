@@ -1,4 +1,10 @@
 <?php
+$script1 = '<script>';
+foreach($data as $key => $value){
+    $script1 .= '
+        document.getElementById("'.$key.'").value = "'.$value.'";
+    ';
+}
 echo json_encode('
 <style>
     #boxfingerprint{
@@ -12,7 +18,7 @@ echo json_encode('
     img{
         width: calc(100% / 2.5);
         vertical-align: baseline;
-        margin: 0px calc(100% / 4);
+        margin: 0px calc(100% / 3.5);
     }
 </style>
 <form action="#" id="editprofil">
@@ -46,7 +52,7 @@ echo json_encode('
     </div>
 	<div class="form-group row" style="display:none">
 	    <div class="col-sm-10">
-	    	<input type="text" class="form-control" id="fingerprint" placeholder="fingerprint">
+	    	<input type="text" class="form-control" id="idus" placeholder="idus">
 	    </div>
     </div>
 	<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>
