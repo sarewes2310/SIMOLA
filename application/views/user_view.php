@@ -55,6 +55,9 @@ img{
 body{
     font-size: 0.9 rem;
 }
+th{
+    text-align:center;
+}
 </style>
 <script src="'.base_url().'assets/js/"></script>
 <table class="table">
