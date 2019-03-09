@@ -44,7 +44,7 @@ function parserData(data){
 		hasil = hasil+(i+"="+data[i]);
 		hasil = hasil+"&";
 	}
-	return new URLSearchParams(hasil)
+	return new URLSearchParams(hasil);
 }
 
 function offDevice(){

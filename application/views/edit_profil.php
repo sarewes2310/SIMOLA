@@ -1,14 +1,5 @@
 <?php
 $js = '
-function parserData(data){
-	hasil = "";
-	for(var i in data){
-		hasil = hasil+(i+"="+data[i]);
-		hasil = hasil+"&";
-	}
-	return new URLSearchParams(hasil);
-}
-
 function simpanProfil(){
     const hasil = {
         "nama" : document.getElementById("nama").value,
@@ -33,6 +24,15 @@ function simpanProfil(){
         console.log("OFF DEVICE",hasil);
 	});
     return false;
+}
+
+function parserData(data){
+	hasil = "";
+	for(var i in data){
+		hasil = hasil+(i+"="+data[i]);
+		hasil = hasil+"&";
+	}
+	return new URLSearchParams(hasil);
 }
 function jancok(){
     alert("JANCOK KAU");
