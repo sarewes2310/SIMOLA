@@ -242,7 +242,36 @@ function editUser(id){
 		return response.json();
 	}).then(hasil => {
 				//$("div#sub-content").html(hasil);
-				console.log(hasil);
+				document.getElementById('editnama').value = hasil.nama;
+				document.getElementById('editusername').value = hasil.username;
+				document.getElementById('editpassword').value = hasil.password;
+				document.getElementById('editemail').value = hasil.email;
+				document.getElementById('editidus').value = hasil.idus;
+	});
+  return false;
+}
+
+function editUserM(id){
+	document.getElementById("hasilEdit").innerHTML = "";
+	const hasil = {
+			"idus" : document.getElementById('editidus').value,
+			"nama" : document.getElementById('editnama').value,
+			"username" : document.getElementById('editusername').value,
+			"password" : document.getElementById('editpassword').value,
+			"email" : document.getElementById('editemail').value
+	};
+	fetch(base_url+"DataUser/saveEditUser",{
+	method : "POST",
+	body : parserData(hasil),
+			headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+			}
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+				//$("div#sub-content").html(hasil);
+			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mematikan device<\/div>";
+			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mematikan device<\/div>";
 	});
   return false;
 }

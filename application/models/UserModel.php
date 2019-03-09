@@ -74,7 +74,7 @@ class UserModel extends CI_Model
             if($num<=$length)$hasil .= ",";
         }
         $hasil .= ")";
-        return $this->db->query("UPDATE users ".$hasil." WHERE idus=".$id.";")->result_array();
+        return $this->db->query("UPDATE users ".$hasil." WHERE idus=".$id.";");
     }
 
     function deleteUserM($id)

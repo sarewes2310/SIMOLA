@@ -174,7 +174,7 @@ th{
             </div>
             <div class="form-group row" style="display:none">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="editfingerprint" placeholder="fingerprint">
+                    <input type="text" class="form-control" id="editidus" placeholder="idus">
                 </div>
             </div>
             <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->
