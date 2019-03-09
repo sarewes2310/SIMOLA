@@ -241,6 +241,7 @@ function editUser(id){
 	}).then(response => {
 		return response.json();
 	}).then(hasil => {
+				console.log(hasil);
 				//$("div#sub-content").html(hasil);
 				document.getElementById('editnama').value = hasil.nama;
 				document.getElementById('editusername').value = hasil.username;
