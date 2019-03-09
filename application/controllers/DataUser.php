@@ -50,11 +50,41 @@ class DataUser extends CI_Controller {
     
     public function inputUser()
     {
-        $hasil = $this->UserModel->inputUserM($this->input->post());
-        var_dump($hasil);
+        $data = array(
+            'nama' => $this->input->post('nama'),
+            'email' => $this->input->post('email'),
+            'username' => $this->input->post('username'),
+            'password' => $this->input->post('password')
+        );   
+        $hasil = $this->UserModel->inputUserM($data);
+        if($hasil){
+            $data = array(
+                'username' => $this->input->post('username'),
+                'password' => $this->input->post('password')
+            );
+            $hasil = $this->UserModel->searchUserinputUserMAuth($data);
+            if($hasil){
+                var_dump($hasil);
+                $data = array(
+                    "idau" => $this->input->post('idau'),
+                    "idus" => $hasil[0]['idus']
+                );
+                $hasil = $this->UserModel->inputUserMAuth($data);
+                if($hasil){
+                    echo json_encode(array(
+                        'status' => 1
+                    ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+                }else{
+                    echo json_encode(array(
+                        'status' => 0
+                    ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+                }
+            }
+        }
     }
 
-    public function addFingerPrint(){
+    public function addFingerPrint()
+    {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://simolasocket-nodejs.herokuapp.com/home");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
@@ -64,17 +94,23 @@ class DataUser extends CI_Controller {
         echo json_encode($output);
     }
 
-    public function getFingerPrint(){
+    public function getFingerPrint()
+    {
         var_dump($this->input->post());
         $this->UserModel->saveSHA256FP($this->input->post());
     }
 
-    public function removeFingerPrint(){
+    public function removeFingerPrint()
+    {
 
     }
 
     public function getDataEditUser()
     {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk menampilkan data users pada tabel users untuk diedit dalam database PostgresSql dalam bentuk array.
+        # bernilai 1 jika saat data berhasil disimpan.
+        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = $this->UserModel->getViewEditProfilM($this->input->post('idus'));
         if(!empty($hasil)){
             echo json_encode(array(
@@ -85,6 +121,10 @@ class DataUser extends CI_Controller {
     
     public function saveEditUser()
     {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk mengedit data users pada tabel users dalam database PostgresSql dalam bentuk array.
+        # bernilai 1 jika saat data berhasil disimpan.
+        # ------------------------------------------------------------------------------------------------------------------------------------
         $data = array(
             'nama' => $this->input->post('nama'),
             'email' => $this->input->post('email'),
@@ -116,6 +156,10 @@ class DataUser extends CI_Controller {
 
     public function deleteUser()
     {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk menghapus data user pada tabel users dalam database PostgresSql dalam bentuk array.
+        # bernilai 1 jika saat data berhasil disimpan.
+        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = $this->UserModel->deleteUserM($this->input->post('idus'));
         if($hasil){
             echo json_encode(array(
@@ -131,7 +175,7 @@ class DataUser extends CI_Controller {
     public function saveEditProfil()
     {
         # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk mengedit data profil pada tabel users dalam database PostgresSql dalam bentuk array.
+        # fungsi yang digunakan untuk mengedit data profil pada tabel profil dalam database PostgresSql dalam bentuk array.
         # bernilai 1 jika saat data berhasil disimpan.
         # ------------------------------------------------------------------------------------------------------------------------------------
         #var_dump($this->input->post());
@@ -153,7 +197,8 @@ class DataUser extends CI_Controller {
         }
     }
 
-    public function checkDevice(){
+    public function checkDevice()
+    {
         # ------------------------------------------------------------------------------------------------------------------------------------
         # fungsi yang digunakan untuk  mengedit keadaan device pada tabel device dalam 
         # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya

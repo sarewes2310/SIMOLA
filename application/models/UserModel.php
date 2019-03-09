@@ -56,11 +56,46 @@ class UserModel extends CI_Model
         $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
         foreach($data as $key => $value){
             $num++;
-            $hasil .= $key."='".$value."'";
+            $hasil .= "'".$value."'";
             if($num<=$length)$hasil .= ",";
         }
         $hasil .= ")";
-        return $this->db->query("INSERT INTO users (nama,username,password,email) ".$hasil.";")->result_array();
+        return $this->db->query("INSERT INTO users (nama,username,password,email) ".$hasil.";");
+    }
+
+    function inputUserMAuth($data)
+    {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk INPUT DATA pada tabel authorizations dalam database PostgresSql.
+        # hasil bernilai null jika atau 0 saat data yang di simpan berhasil.
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        $hasil = 'VALUES (';
+        $length = count($data); # menghitung jumlah panjang dari array variabel data
+        $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
+        foreach($data as $key => $value){
+            $num++;
+            $hasil .= $value;
+            if($num<=$length)$hasil .= ",";
+        }
+        $hasil .= ")";
+        return $this->db->query("INSERT INTO authorizations (idau,idus) ".$hasil.";");
+    }
+
+    function searchUserinputUserMAuth($data)
+    {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk menghasilkan output PENCARIAN DATA pada tabel users dalam database PostgresSql dalam bentuk array.
+        # bernilai null atau 0 jika saat data yang dicari tidak ada.
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        $hasil = '';
+        $length = count($data); # menghitung jumlah panjang dari array variabel data
+        $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
+        foreach($data as $key => $value){
+            $num++;
+            $hasil .= $key."='".$value."'";
+            if($num<=$length)$hasil .= " AND ";
+        }
+        return $this->db->query("SELECT idus FROM users WHERE ".$hasil.";")->result_array();      
     }
 
     function saveEditUserM($id,$data)

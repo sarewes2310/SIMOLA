@@ -279,3 +279,29 @@ function editUserM(){
 	});
   return false;
 }
+
+function insertUserM(){
+	document.getElementById("hasilEdit").innerHTML = "";
+	//alert(document.getElementById('editstatus').value);
+	const hasil = {
+			"nama" : document.getElementById('inputnama').value,
+			"username" : document.getElementById('inputusername').value,
+			"password" : document.getElementById('inputpassword').value,
+			"email" : document.getElementById('inputemail').value,
+			"idau" : document.getElementById('inputstatus').value
+	};
+	fetch(base_url+"DataUser/inputUser",{
+	method : "POST",
+	body : parserData(hasil),
+			headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+			}
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+				//$("div#sub-content").html(hasil);
+			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mengedit user<\/div>";
+			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mengedit user<\/div>";
+	});
+  return false;
+}

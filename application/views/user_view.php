@@ -76,7 +76,7 @@ th{
 </a>
 
 <!-- Modal Tambah User-->
-<form>
+<form onsubmit="return insertUserM();" action="#">
     <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -111,14 +111,16 @@ th{
                     <input type="password" class="form-control" id="inputpassword" placeholder="Password">
                 </div>
             </div>
+            <div class="form-group">
+                <label for="editstatus">Status</label>
+                <select class="form-control" id="inputstatus">
+                    <option value="4">Admin</option>
+                    <option value="5">User</option>
+                </select>
+            </div>
             <div class="boxfingerprint">
                 <img src="'.base_url().'assets/logo/fingerprints.png">
                 <button id="addfingerprint" type="button" class="btn btn-primary" style="width:100%" onclick="return saveFP()">Add Fingerprint</button>
-            </div>
-            <div class="form-group row" style="display:none">
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputfingerprint" placeholder="fingerprint">
-                </div>
             </div>
             <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->
         </div>
