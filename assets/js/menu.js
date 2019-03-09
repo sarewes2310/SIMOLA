@@ -94,6 +94,8 @@ $(document).ready(() => {
 								document.getElementById("sub-content").innerHTML = hasil;
 							});
 					});
+				}else{
+					
 				}
 				console.log("HASIL",hasil);
 				break;
