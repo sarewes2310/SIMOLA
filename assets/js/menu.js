@@ -252,7 +252,7 @@ function editUser(id){
   return false;
 }
 
-function editUserM(id){
+function editUserM(){
 	document.getElementById("hasilEdit").innerHTML = "";
 	const hasil = {
 			"idus" : document.getElementById('editidus').value,
