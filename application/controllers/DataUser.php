@@ -52,9 +52,9 @@ class DataUser extends CI_Controller {
     {
         $data = array(
             'nama' => $this->input->post('nama'),
-            'email' => $this->input->post('email'),
             'username' => $this->input->post('username'),
-            'password' => $this->input->post('password')
+            'password' => $this->input->post('password'),
+            'email' => $this->input->post('email')
         );   
         $hasil = $this->UserModel->inputUserM($data);
         if($hasil){
