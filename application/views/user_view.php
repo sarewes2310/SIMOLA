@@ -143,6 +143,7 @@ th{
             </button>
         </div>
         <div class="modal-body">
+            <div id="hasilEdit"></div>
             <div class="form-group row">
                 <label for="editnama" class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-sm-10">
@@ -187,7 +188,7 @@ th{
     </div>
 </form>
 
-<form onsubmit="#" action="#">
+<form onsubmit="return deleteUserM();" action="#">
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -201,7 +202,7 @@ th{
             <div>Apakah anda yakin ingin menghapus user ini ?</div>
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="idus_delete" placeholder="idus">
+                    <input type="text" class="form-control" id="idus_delete" placeholder="idus" style="display:none">
                 </div>
             </div>
             <div id="hasilDelete"></div>

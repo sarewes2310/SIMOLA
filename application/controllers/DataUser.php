@@ -75,7 +75,12 @@ class DataUser extends CI_Controller {
 
     public function getDataEditUser()
     {
-
+        $hasil = $this->UserModel->getViewEditProfilM($this->input->post('idus'));
+        if(!empty($hasil)){
+            echo json_encode(array(
+                $hasil
+            ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);       
+        }
     }
     
     public function saveEditUser()

@@ -226,3 +226,23 @@ function deleteUserM(){
 	});
   return false;
 }
+
+function editUser(id){
+	document.getElementById("hasilEdit").innerHTML = "";
+	const hasil = {
+			"idus" : id
+	};
+	fetch(base_url+"DataUser/getDataEditUser",{
+	method : "POST",
+	body : parserData(hasil),
+			headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+			}
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+				//$("div#sub-content").html(hasil);
+				console.log(hasil);
+	});
+  return false;
+}
