@@ -54,7 +54,8 @@ class User extends CI_Controller
 
     public function getViewEditProfil(){
         #$this->UserModel->getViewEditProfilM($this->input->post('idus'));
-        if(empty($this->input->post('idus')))var_dump($this->input->post('idus'));
+        #if(empty($this->input->post('idus')))var_dump($this->input->post('idus'));
+        var_dump($this->input->post('idus'));
         $this->load->view('edit_profil');
     }
 
