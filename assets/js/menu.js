@@ -76,6 +76,9 @@ $(document).ready(() => {
 						//hasil = {
 						//	'idus' : data[0].id
 						//};
+						for (var i = 0; i < data.length; i++) {
+							console.log(data[i]);
+						}
 					  });
 				}
                 fetch(base_url+'User/getViewEditProfil',{
