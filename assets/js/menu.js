@@ -243,11 +243,11 @@ function editUser(id){
 	}).then(hasil => {
 				console.log(hasil);
 				//$("div#sub-content").html(hasil);
-				document.getElementById('editnama').value = hasil.nama;
-				document.getElementById('editusername').value = hasil.username;
-				document.getElementById('editpassword').value = hasil.password;
-				document.getElementById('editemail').value = hasil.email;
-				document.getElementById('editidus').value = hasil.idus;
+				document.getElementById('editnama').value = hasil[0].nama;
+				document.getElementById('editusername').value = hasil[0].username;
+				document.getElementById('editpassword').value = hasil[0].password;
+				document.getElementById('editemail').value = hasil[0].email;
+				document.getElementById('editidus').value = hasil.[0]idus;
 	});
   return false;
 }
