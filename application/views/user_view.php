@@ -2,10 +2,19 @@
 $dataT = '';
 
 foreach($data as $key => $value){
+    $stat = "";
+    if($value['idau'] == 4){
+        $stat = "Admin";
+    }else{
+        $stat = "User";
+    }
     $dataT .= '
         <tr>
-            <td style="width:80%">'.$value['nama'].'</td>
-            <!--<td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return peringatan('.$value['idus'].')">Edit</button></td>-->
+            <td style="width:80%">
+                <div>'.$value['nama'].'</div>
+                <div>'.$stat.'</div>
+            </td>
+            <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return peringatan('.$value['idus'].')">Edit</button></td>
             <td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return peringatan('.$value['idus'].')">Delete</button></td>        
         </tr>
     ';
