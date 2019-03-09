@@ -192,7 +192,7 @@ class UserModel extends CI_Model
             $hasil .= $key."='".$value."'";
             if($num<=$length)$hasil .= ",";
         }
-        return $this->db->query("UPDATE users ".$hasil." WHERE idus=".$id.";")->result_array();
+        return $this->db->query("UPDATE users ".$hasil." WHERE idus=".$id.";");
     }
 }
 ?>
