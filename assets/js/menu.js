@@ -201,8 +201,9 @@ function editfingerprint(){
 		});
 }
 
-function deleteUser(){
+function deleteUser(id){
 	document.getElementById("hasilDelete").innerHTML = "";
+	document.getElementById("idus_delete").value = id;
 }
 
 function deleteUserM(){

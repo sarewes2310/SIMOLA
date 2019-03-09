@@ -201,7 +201,7 @@ th{
             <div>Apakah anda yakin ingin menghapus user ini ?</div>
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="idus" placeholder="idus">
+                    <input type="text" class="form-control" id="idus_delete" placeholder="idus">
                 </div>
             </div>
             <div id="hasilDelete"></div>
