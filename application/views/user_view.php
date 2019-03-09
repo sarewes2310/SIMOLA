@@ -13,7 +13,6 @@ foreach($data as $key => $value){
             <td style="width:80%">
                 '.$value['nama'].'
             </td>
-            <td>'.$stat.'</td>
             <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return peringatan('.$value['idus'].')">Edit</button></td>
             <td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return peringatan('.$value['idus'].')">Delete</button></td>        
         </tr>
