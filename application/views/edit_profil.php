@@ -21,6 +21,9 @@ echo json_encode('
         margin: 0px calc(100% / 3.5);
     }
 </style>
+<script type="text/javascript">
+'.$script1.'
+</script>
 <form action="#" id="editprofil">
     <div class="form-group row">
 	    <label for="nama" class="col-sm-2 col-form-label">Nama</label>
@@ -57,8 +60,5 @@ echo json_encode('
     </div>
 	<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>
 </form>
-<script type="text/javascript">
-'.$script1.'
-</script>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
 ?>
