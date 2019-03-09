@@ -93,9 +93,20 @@ class DataUser extends CI_Controller {
         );
         $hasil = $this->UserModel->saveEditUserM($this->input->post('idus'),$data);
         if($hasil){
-            echo json_encode(array(
-                'status' => 1
-            ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+            $data = array(
+                'idus' => $this->input->post('idus'),
+                'idau' => $this->input->post('idau')
+            );
+            $hasil = $this->UserModel->saveEditUserMAuth($this->input->post('idus'),$data);
+            if($hasil){
+                echo json_encode(array(
+                    'status' => 1
+                ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+            }else{
+                echo json_encode(array(
+                    'status' => 0
+                ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+            }
         }else{
             echo json_encode(array(
                 'status' => 0
