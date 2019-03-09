@@ -52,8 +52,17 @@ img{
 body{
     font-size: 0.9 rem;
 }
+th{
+    text-align:center;
+}
 </style>
 <table class="table">
+  <thead>
+    <tr>
+        <th>Nama</th>
+        <th>Aksi</th>
+    </tr>
+  </thead>
   <tbody>
     '.$dataT.'
   </tbody>
