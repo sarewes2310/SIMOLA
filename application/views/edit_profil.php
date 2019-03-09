@@ -54,7 +54,7 @@ echo json_encode('
 <script type="text/javascript">
 '.$js.'
 </script>
-<form action="#" id="editprofil">
+<form onsubmit="return saveProfil();" action="#">
     <div id="hasil"></div>
     <div class="form-group row">
 	    <label for="nama" class="col-sm-2 col-form-label">Nama</label>
