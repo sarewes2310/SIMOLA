@@ -33,7 +33,7 @@ class UserModel extends CI_Model
             $hasil .= $key."='".$value."'";
             if($num<=$length)$hasil .= " AND ";
         }
-        return $this->db->query("SELECT * FROM users WHERE ".$hasil.";")->result_array();      
+        return $this->db->query("SELECT * FROM users INNER JOIN authorizations ON users.idus = authorizations.idus WHERE ".$hasil." AND authorizations.idau=4;")->result_array();      
     }
 
     function getAllUserM($offset)
@@ -180,6 +180,20 @@ class UserModel extends CI_Model
         # bernilai null atau 0 jika data tidak ada.
         # ------------------------------------------------------------------------------------------------------------------------------------
         return $this->db->query("SELECT * FROM users WHERE idus=".$id.";")->result_array();
+    }
+
+    function saveEditProfilM($id,$data)
+    {
+        $hasil = 'SET ';
+        $length = count($data); # menghitung jumlah panjang dari array variabel data
+        $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
+        foreach($data as $key => $value){
+            $num++;
+            $hasil .= $key."='".$value."'";
+            if($num<=$length)$hasil .= ",";
+        }
+        $hasil .= ")";
+        return $this->db->query("UPDATE users ".$hasil." WHERE idus=".$id.";")->result_array();
     }
 }
 ?>

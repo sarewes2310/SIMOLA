@@ -90,6 +90,16 @@ class DataUser extends CI_Controller {
     public function saveEditProfil()
     {
         var_dump($this->input->post());
+        $hasil = $this->UserModel->saveEditProfilM($this->input->post('idus'),$this->input->post());
+        if($hasil){
+            echo json_encode(array(
+                'status' => 1
+            ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+        }else{
+            echo json_encode(array(
+                'status' => 0
+            ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+        }
     }
 
     public function checkDevice(){
