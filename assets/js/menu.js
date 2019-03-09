@@ -11,7 +11,7 @@ function load(){
 	}).then(response => {
 		return response.json();
 	}).then(hasil => {
-		$("div#sub-content").html(hasil);
+		document.getElementById("sub-content").innerHTML = hasil;
 	});
 }
 
