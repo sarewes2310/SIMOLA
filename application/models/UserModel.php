@@ -158,6 +158,10 @@ class UserModel extends CI_Model
 
     function offDeviceM($id, $data)
     {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk mematikan device pada tabel device dalam database PostgresSql dalam bentuk array.
+        # bernilai null atau 0 jika data gagal di update.
+        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = 'SET ';
         $length = count($data); # menghitung jumlah panjang dari array variabel data
         $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
@@ -169,9 +173,13 @@ class UserModel extends CI_Model
         return $this->db->query("UPDATE device ".$hasil." WHERE device_id=".$id.";");
     }
 
-    function getViewEditProfilM()
+    function getViewEditProfilM($id)
     {
-        
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk menghasilkan output SEMUA DATA pada tabel users dalam database PostgresSql dalam bentuk array.
+        # bernilai null atau 0 jika data tidak ada.
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        return $this->db->query("SELECT * FROM users WHERE idus=".$id.";")->result_array();
     }
 }
 ?>

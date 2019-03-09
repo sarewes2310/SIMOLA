@@ -1,4 +1,6 @@
 <?php
+foreach($data as $key => $value){
+}
 echo json_encode('
 <style>
     #boxfingerprint{
@@ -19,7 +21,7 @@ echo json_encode('
     <div class="form-group row">
 	    <label for="nama" class="col-sm-2 col-form-label">Nama</label>
 	    <div class="col-sm-10">
-	    	<input type="text" class="form-control" id="nama" placeholder="Nama">
+	    	<input type="text" class="form-control" id="nama" placeholder="Nama" value="nasodjhsadjk">
 	    </div>
 	</div>
     <div class="form-group row">
