@@ -169,8 +169,8 @@ th{
                 </div>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect2">Status</label>
-                <select multiple class="form-control" id="editstatus">
+                <label for="editstatus">Status</label>
+                <select class="form-control" id="editstatus">
                     <option value="4">Admin</option>
                     <option value="5">User</option>
                 </select>
