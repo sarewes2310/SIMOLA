@@ -87,14 +87,9 @@ class DataUser extends CI_Controller {
 
     }
 
-    public function getSaveEditProfil()
-    {
-
-    }
-
     public function saveEditProfil()
     {
-
+        var_dump($this->input->post());
     }
 
     public function checkDevice(){
