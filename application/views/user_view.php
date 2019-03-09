@@ -14,7 +14,7 @@ foreach($data as $key => $value){
                 '.$value['nama'].'
             </td>
             <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return peringatan('.$value['idus'].')">Edit</button></td>
-            <td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return peringatan('.$value['idus'].')">Delete</button></td>        
+            <td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('.$value['idus'].')">Delete</button></td>        
         </tr>
     ';
 }
@@ -198,13 +198,13 @@ th{
             </button>
         </div>
         <div class="modal-body">
-            <div>Apakah anda yakin ingin mematikan device ini ?</div>
-            <div class="form-group row" style="display:none">
+            <div>Apakah anda yakin ingin menghapus user ini ?</div>
+            <div class="form-group row">
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="idus" placeholder="idus">
                 </div>
             </div>
-            <div id="hasil"></div>
+            <div id="hasilDelete"></div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>

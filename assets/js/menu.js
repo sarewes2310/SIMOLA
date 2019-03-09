@@ -200,3 +200,28 @@ function editfingerprint(){
 					console.log("OFF DEVICE",hasil);
 		});
 }
+
+function deleteUser(){
+	document.getElementById("hasilDelete").innerHTML = "";
+}
+
+function deleteUserM(){
+	document.getElementById("hasilDelete").innerHTML = "";
+	const hasil = {
+			"idus" : id
+	};
+	fetch(base_url+"DataUser/deleteUser",{
+	method : "POST",
+	body : parserData(hasil),
+			headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+			}
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+		if(hasil.status == 1) document.getElementById("hasilDelete").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mematikan device<\/div>";
+		else document.getElementById("hasilDelete").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mematikan device<\/div>";
+		console.log("OFF DEVICE",hasil);
+	});
+  return false;
+}

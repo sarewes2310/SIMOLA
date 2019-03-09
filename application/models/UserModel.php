@@ -83,7 +83,7 @@ class UserModel extends CI_Model
         # fungsi yang digunakan untuk DELETE DATA pada tabel users dalam database PostgresSql.
         # hasil bernilai null jika atau 0 saat data yang di delete berhasil.
         # ------------------------------------------------------------------------------------------------------------------------------------
-        return $this->db->query("DELETE FROM users WHERE idus=".$id.";")->result_array();
+        return $this->db->query("DELETE FROM users WHERE idus=".$id.";");
     }
     
     function saveATDropbox()

@@ -13,6 +13,7 @@ class DataUser extends CI_Controller {
 	
 	public function index()
 	{
+        # FUNGSI TIDAK DIPAKAI
 		var_dump($this->UserModel->getListAuth());
 		echo sys_get_temp_dir();
     }
@@ -84,11 +85,24 @@ class DataUser extends CI_Controller {
 
     public function deleteUser()
     {
-
+        $hasil = $this->UserModel->deleteUserM($this->input->post('idus'));
+        if($hasil){
+            echo json_encode(array(
+                'status' => 1
+            ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+        }else{
+            echo json_encode(array(
+                'status' => 0
+            ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
+        }
     }
 
     public function saveEditProfil()
     {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk mengedit data profil pada tabel users dalam database PostgresSql dalam bentuk array.
+        # bernilai 1 jika saat data berhasil disimpan.
+        # ------------------------------------------------------------------------------------------------------------------------------------
         #var_dump($this->input->post());
         $data = array(
             'nama' => $this->input->post('nama'),
@@ -109,6 +123,11 @@ class DataUser extends CI_Controller {
     }
 
     public function checkDevice(){
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk  mengedit keadaan device pada tabel device dalam 
+        # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya
+        # dipanggil pada saat device connect dari server socketio
+        # ------------------------------------------------------------------------------------------------------------------------------------
         #var_dump($this->input->post());   
         $data = array(
             'nama' => $this->input->post('device'),
@@ -128,7 +147,13 @@ class DataUser extends CI_Controller {
         }
     }
 
-    public function disconnectkDevice(){
+    public function disconnectkDevice()
+    {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk  mengedit keadaan device pada tabel device dalam 
+        # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya
+        # dipanggil pada saat device disconnect dari server socketio
+        # ------------------------------------------------------------------------------------------------------------------------------------
         #var_dump($this->input->post());   
         $data = array(
             'nama' => $this->input->post('device'),
@@ -144,6 +169,10 @@ class DataUser extends CI_Controller {
     
     public function getDevice()
     {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk menampilkan data device pada model di file view_online.php dengan mengambil tabel device dalam 
+        # database PostgresSql dalam bentuk array. bernilai  status 1 jika device ada.
+        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = $this->UserModel->checkDeviceMid($this->input->post('device_id'));
         #var_dump($hasil);
         if(!empty($hasil)){
@@ -157,6 +186,10 @@ class DataUser extends CI_Controller {
 
     public function offDevice()
     {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk mengedit data off device pada tabel device dalam database PostgresSql dalam bentuk array.
+        # bernilai 1 jika saat data berhasil disimpan.
+        # ------------------------------------------------------------------------------------------------------------------------------------
         #echo json_encode($this->input->post('device_id'),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         #var_dump($this->input->post('device_id'));
         $curl = curl_init();
@@ -178,7 +211,7 @@ class DataUser extends CI_Controller {
         $err = curl_error($curl);
         curl_close($curl);
         if ($err) {
-            echo "cURL Error #:" . $err;
+            #echo "cURL Error #:" . $err;
             echo json_encode(array(
                 'status' => 0
             ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
