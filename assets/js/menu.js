@@ -82,20 +82,20 @@ $(document).ready(() => {
 								'idus' : data[i].id
 							}
 						}
+						fetch(base_url+'User/getViewEditProfil',{
+							method : 'post',
+							body : parserData1(hasil),
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded",
+							}
+						}).then(response => {
+							return response.json();
+						}).then(hasil => {
+							document.getElementById("sub-content").innerHTML = hasil;
+						});
 					  });
 				}
 				console.log("HASIL",hasil);
-                fetch(base_url+'User/getViewEditProfil',{
-					method : 'post',
-					body : parserData1(hasil),
-					headers: {
-						"Content-Type": "application/x-www-form-urlencoded",
-					}
-				}).then(response => {
-                    return response.json();
-                }).then(hasil => {
-                    document.getElementById("sub-content").innerHTML = hasil;
-                });
 				break;
 		}
 		$('#sidebar').removeClass('active');
