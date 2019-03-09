@@ -88,7 +88,7 @@ echo json_encode('
     </div>
 	<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>
 </form>
-<script type="text/javascript">
+<script>
 '.$js.'
 </script>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
