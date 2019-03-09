@@ -72,7 +72,7 @@ $(document).ready(() => {
 				if ('indexedDB' in window) {
 					readAllData('login')
 					  .then(function(data) {
-						console.log(data);
+						//console.log(data);
 						//hasil = {
 						//	'idus' : data[0].id
 						//};
@@ -84,6 +84,7 @@ $(document).ready(() => {
 						}
 					  });
 				}
+				console.log("HASIL",hasil);
                 fetch(base_url+'User/getViewEditProfil',{
 					method : 'post',
 					body : parserData1(hasil),
