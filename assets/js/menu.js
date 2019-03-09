@@ -186,3 +186,17 @@ function offDevice(){
 	});
   return false;
 }
+
+function editfingerprint(){
+	fetch("simolasocket-nodejs.herokuapp.com/editfingerprint",{
+		method : "GET"
+		}).then(response => {
+			return response.json();
+		}).then(hasil => {
+					//$("div#sub-content").html(hasil);
+					//document.getElementById("device_id").value = hasil.device_id;
+					if(hasil.status == 1) document.getElementById("efp").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mematikan device<\/div>";
+					else document.getElementById("efp").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mematikan device<\/div>";
+					console.log("OFF DEVICE",hasil);
+		});
+}

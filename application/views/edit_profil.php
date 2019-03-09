@@ -46,6 +46,7 @@ echo json_encode('
         <img src="'.base_url().'assets/logo/fingerprints.png">
         <button id="editfingerprint" type="button" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
     </div>
+    <div id="efp"></div>
 	<div class="form-group row" style="display:none">
 	    <div class="col-sm-10">
 	    	<input type="text" class="form-control" id="idus" placeholder="idus"  value="'.$data['idus'].'">

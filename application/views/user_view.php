@@ -1,4 +1,16 @@
 <?php
+$dataT = '';
+foreach($data as $dataH){
+    foreach($dataH as $key => $value){
+        $dataT .= '
+            <tr>
+                <td style="width:80%">'.$value['nama'].'</td>
+                <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return peringatan('.$value['idus'].')">Edit</button></td>
+                <td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return peringatan('.$value['idus'].')">Delete</button></td>        
+            </tr>
+        ';
+    }
+}
 echo json_encode('
 <style>
 .float{
@@ -40,33 +52,7 @@ body{
 <script src="'.base_url().'assets/js/"></script>
 <table class="table">
   <tbody>
-    <tr>
-      <td>Username</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <td>Larry</td>
-    </tr>
-    <tr>
-      <td>Username</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <td>Larry</td>
-    </tr>
-    <tr>
-      <td>Username</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <td>Larry</td>
-    </tr>
+    '.$dataT.'
   </tbody>
 </table>
 <a class="float" id="tambahUserModal" data-toggle="modal" data-target="#inputModal">
@@ -179,6 +165,34 @@ body{
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</form>
+
+<form onsubmit="#" action="#">
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Peringatan</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div>Apakah anda yakin ingin mematikan device ini ?</div>
+            <div class="form-group row" style="display:none">
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="idus" placeholder="idus">
+                </div>
+            </div>
+            <div id="hasil"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+            <button type="submit" class="btn btn-danger">YES</button>
         </div>
         </div>
     </div>

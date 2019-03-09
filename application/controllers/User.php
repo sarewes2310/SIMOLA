@@ -49,7 +49,9 @@ class User extends CI_Controller
     }
 
     public function getViewUser(){
-        $this->load->view('user_view');
+        $hasil = $this->UserModel->getListDevice();
+        $h['data'] = $hasil;
+        $this->load->view('user_view',$h);
     }
 
     public function getViewEditProfil(){
