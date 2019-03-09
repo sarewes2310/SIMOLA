@@ -170,7 +170,7 @@ th{
             </div>
             <div class="boxfingerprint">
                 <img src="'.base_url().'assets/logo/fingerprints.png">
-                <button id="addfingerprint" type="button" class="btn btn-primary" style="width:100%">Add Fingerprint</button>
+                <button id="editfingerprint" type="button" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
             </div>
             <div class="form-group row" style="display:none">
                 <div class="col-sm-10">
