@@ -54,7 +54,7 @@ class User extends CI_Controller
 
     public function getViewEditProfil(){
         #$this->UserModel->getViewEditProfilM($this->input->post('idus'));
-        var_dump($this->input->post('idus'));
+        if(empty($this->input->post('idus')))var_dump($this->input->post('idus'));
         $this->load->view('edit_profil');
     }
 
@@ -119,7 +119,6 @@ class User extends CI_Controller
             //    "cache-control: no-cache"
             //),
         ));
-        $this->UserModel->saveATDropbox($response->{'access_token'});
         $response = curl_exec($ch);
         $err = curl_error($ch);
         curl_close($ch);
