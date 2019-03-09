@@ -51,6 +51,9 @@ echo json_encode('
         margin: 0px calc(100% / 3.5);
     }
 </style>
+<script type="text/javascript">
+'.$js.'
+</script>
 <form onsubmit="return saveProfil();" action="#">
     <div id="hasil"></div>
     <div class="form-group row">
@@ -88,8 +91,5 @@ echo json_encode('
     </div>
 	<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>
 </form>
-<script>
-'.$js.'
-</script>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
 ?>
