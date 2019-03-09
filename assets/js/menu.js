@@ -28,11 +28,12 @@ $(document).ready(() => {
 		console.log($(this).attr('id'));
 		var isi;
 		switch($(this).attr('id')){
-            case "dashboard" :
-                // ------------------------------------------------------------------------------------------------------
-                // Fungsi yang di gunakan untuk memilih menu pilihan dashboard
-                // Output yang dihasilkan berupa page dengan menu pilihan dashboard
-                // ------------------------------------------------------------------------------------------------------
+			case "dashboard" :
+			document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
+        // ------------------------------------------------------------------------------------------------------
+        // Fungsi yang di gunakan untuk memilih menu pilihan dashboard
+        // Output yang dihasilkan berupa page dengan menu pilihan dashboard
+        // ------------------------------------------------------------------------------------------------------
 				cekNavbar = false;
 				fetch(base_url+'User/getViewDashboard',{
 					method : 'GET',
@@ -44,6 +45,7 @@ $(document).ready(() => {
 				});
 				break;
 			case "tambahuser" :
+			document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				fetch(base_url+'User/getViewUser',{
 					method : 'GET'
@@ -54,10 +56,11 @@ $(document).ready(() => {
 				});
 				break;
 			case "dropbox" :
+			document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
-                //window.location.href = base_url + "user/getDropboxLink";
-                //console.log("DROPBOX RUNN");
-                fetch(base_url+'User/getViewDropbox',{
+				//window.location.href = base_url + "user/getDropboxLink";
+				//console.log("DROPBOX RUNN");
+				fetch(base_url+'User/getViewDropbox',{
 					method : 'GET'
 				}).then(response => {
 					return response.json();
@@ -67,6 +70,7 @@ $(document).ready(() => {
 				});
                 break;
 			case "edit_profil" :
+				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				var hasil = null;
 				if ('indexedDB' in window) {
