@@ -142,6 +142,23 @@
             return window.localStorage.getItem('sentToServer') === '1';
         }
 
+        function requestPermission() {
+            console.log('Requesting permission...');
+            // [START request_permission]
+            messaging.requestPermission().then(function() {
+                console.log('Notification permission granted.');
+                // TODO(developer): Retrieve an Instance ID token for use with FCM.
+                // [START_EXCLUDE]
+                // In many cases once an app has been granted notification permission, it
+                // should update its UI reflecting this.
+                resetUI();
+                // [END_EXCLUDE]
+            }).catch(function(err) {
+                console.log('Unable to get permission to notify.', err);
+            });
+            // [END request_permission]
+        }
+
         function resetUI() {
             // [START get_token]
             // Get Instance ID token. Initially this makes a network call, once retrieved
@@ -155,13 +172,13 @@
                     // Show permission request.
                     console.log('No Instance ID token available. Request permission to generate one.');
                     // Show permission UI.
-                    updateUIForPushPermissionRequired();
-                    setTokenSentToServer(false);
+                    //updateUIForPushPermissionRequired();
+                    //setTokenSentToServer(false);
                 }
             }).catch(function(err) {
                 console.log('An error occurred while retrieving token. ', err);
-                showToken('Error retrieving Instance ID token. ', err);
-                setTokenSentToServer(false);
+                //showToken('Error retrieving Instance ID token. ', err);
+                //setTokenSentToServer(false);
             });
             // [END get_token]
         }
