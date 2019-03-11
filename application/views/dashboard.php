@@ -15,6 +15,7 @@
     <script src="<?php echo base_url()?>assets/js/variabel_utama.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/idb.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/utility.js"></script>
+    <link rel="manifest" href="<?php echo base_url()?>/manifest.json">
 </head>
 <body>
     <div class="wrapper">
