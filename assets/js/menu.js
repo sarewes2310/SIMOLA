@@ -104,7 +104,8 @@ $(document).ready(() => {
 				console.log("HASIL",hasil);
 				break;
 			case "notifications" :
-				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
+				requestPermission();
+				/*document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				fetch(base_url+'User/getViewUser',{
 					method : 'GET'
@@ -112,7 +113,7 @@ $(document).ready(() => {
 					return response.json();
 				}).then(hasil => {
 					document.getElementById("sub-content").innerHTML = hasil;
-				});
+				});*/
 				break;
 		}
 		$('#sidebar').removeClass('active');
