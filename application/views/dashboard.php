@@ -56,6 +56,9 @@
                 <li id="edit_profil">
                     <a href="#">Edit Profil</a>
                 </li>
+                <li id="notifications">
+                    <a href="#">Notifications</a>
+                </li>
                 <li id="logout">
                     <a href="<?php echo base_url()?>index.php/user/logout">Log Out</a>
                 </li>	
@@ -82,7 +85,43 @@
         </div>
     </div>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
+    <script>
+        // Initialize Firebase
+        // TODO: Replace with your project's customized code snippet
+        var config = {
+            apiKey: "AIzaSyC3F3aH83p83dcbe65KAQal0X5CClM19xI",
+            authDomain: "simola-5725f.firebaseapp.com",
+            databaseURL: "https://simola-5725f.firebaseio.com",
+            projectId: "simola-5725f",
+            storageBucket: "simola-5725f.appspot.com",
+            messagingSenderId: "741998138956",
+        };
+        firebase.initializeApp(config);
+        messaging.onTokenRefresh(function() {
+            messaging.getToken().then(function(refreshedToken) {
+                console.log('Token refreshed.',refreshedToken);
+                // Indicate that the new Instance ID token has not yet been sent to the
+                // app server.
+                //setTokenSentToServer(false);
+                // Send Instance ID token to app server.
+                //sendTokenToServer(refreshedToken);
+                // [START_EXCLUDE]
+                // Display new Instance ID token and clear UI of all previous messages.
+                //resetUI();
+                // [END_EXCLUDE]
+            }).catch(function(err) {
+                console.log('Unable to retrieve refreshed token ', err);
+                showToken('Unable to retrieve refreshed token ', err);
+            });
+        });
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
+    <script>
+        const messaging = firebase.messaging();
+        messaging.usePublicVapidKey('BDg0UDe89EtfjheFqJkwYDuzPx5FjYMtTTMQQ7d9MlTAOOVddVoBUIRt1QAMWxxUBnCBBa2Y4oENLNeQjFf-r1k');
+    </script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>

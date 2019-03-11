@@ -29,7 +29,7 @@ $(document).ready(() => {
 		var isi;
 		switch($(this).attr('id')){
 			case "dashboard" :
-			document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
+				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
         // ------------------------------------------------------------------------------------------------------
         // Fungsi yang di gunakan untuk memilih menu pilihan dashboard
         // Output yang dihasilkan berupa page dengan menu pilihan dashboard
@@ -45,7 +45,7 @@ $(document).ready(() => {
 				});
 				break;
 			case "tambahuser" :
-			document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
+				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				fetch(base_url+'User/getViewUser',{
 					method : 'GET'
@@ -56,7 +56,7 @@ $(document).ready(() => {
 				});
 				break;
 			case "dropbox" :
-			document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
+				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				//window.location.href = base_url + "user/getDropboxLink";
 				//console.log("DROPBOX RUNN");
@@ -68,7 +68,7 @@ $(document).ready(() => {
 					//$("div#sub-content").html(hasil);
 					document.getElementById("sub-content").innerHTML = hasil;
 				});
-                break;
+				break;
 			case "edit_profil" :
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
@@ -102,6 +102,17 @@ $(document).ready(() => {
 					
 				}
 				console.log("HASIL",hasil);
+				break;
+			case "notifications" :
+				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
+				cekNavbar = false;
+				fetch(base_url+'User/getViewUser',{
+					method : 'GET'
+				}).then(response => {
+					return response.json();
+				}).then(hasil => {
+					document.getElementById("sub-content").innerHTML = hasil;
+				});
 				break;
 		}
 		$('#sidebar').removeClass('active');
