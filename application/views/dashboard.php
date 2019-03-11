@@ -100,7 +100,10 @@
             messagingSenderId: "741998138956",
         };
         firebase.initializeApp(config);
+    </script>
+    <script>
         const messaging = firebase.messaging();
+        messaging.usePublicVapidKey('BDg0UDe89EtfjheFqJkwYDuzPx5FjYMtTTMQQ7d9MlTAOOVddVoBUIRt1QAMWxxUBnCBBa2Y4oENLNeQjFf-r1k');
         messaging.onTokenRefresh(function() {
             messaging.getToken().then(function(refreshedToken) {
                 console.log('Token refreshed.',refreshedToken);
@@ -118,10 +121,6 @@
                 showToken('Unable to retrieve refreshed token ', err);
             });
         });
-    </script>
-    <script>
-        const messaging = firebase.messaging();
-        messaging.usePublicVapidKey('BDg0UDe89EtfjheFqJkwYDuzPx5FjYMtTTMQQ7d9MlTAOOVddVoBUIRt1QAMWxxUBnCBBa2Y4oENLNeQjFf-r1k');
     </script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
