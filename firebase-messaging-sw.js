@@ -45,4 +45,24 @@ messaging.setBackgroundMessageHandler(function(payload) {
 
   return self.registration.showNotification(notificationTitle, notificationOptions);
 });
+
 // [END background_handler]
+self.addEventListener('push', function(event) {
+    console.log('Push Notification received', event);
+  
+    var data = {title: 'New!', content: 'Something new happened!'};
+  
+    if (event.data) {
+      data = JSON.parse(event.data.text());
+    }
+  
+    var options = {
+      body: data.content,
+      icon: '/firebase-logo.png',
+      badge: '/firebase-logo.png'
+    };
+  
+    event.waitUntil(
+      self.registration.showNotification(data.title, options)
+    );
+});
