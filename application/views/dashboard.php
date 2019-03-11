@@ -123,6 +123,13 @@
             });
         });
 
+        messaging.onMessage(function(payload) {
+            console.log('Message received. ', payload);
+            // [START_EXCLUDE]
+            // Update the UI to include the received message.
+            // appendMessage(payload);
+            // [END_EXCLUDE]
+        });
 
         function setTokenSentToServer(sent) {
             window.localStorage.setItem('sentToServer', sent ? '1' : '0');
