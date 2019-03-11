@@ -87,6 +87,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
     <script>
         // Initialize Firebase
         // TODO: Replace with your project's customized code snippet
@@ -118,7 +119,6 @@
             });
         });
     </script>
-    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
     <script>
         const messaging = firebase.messaging();
         messaging.usePublicVapidKey('BDg0UDe89EtfjheFqJkwYDuzPx5FjYMtTTMQQ7d9MlTAOOVddVoBUIRt1QAMWxxUBnCBBa2Y4oENLNeQjFf-r1k');
