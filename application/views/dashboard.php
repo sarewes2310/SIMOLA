@@ -99,6 +99,7 @@
             messagingSenderId: "741998138956",
         };
         firebase.initializeApp(config);
+        const messaging = firebase.messaging();
         messaging.onTokenRefresh(function() {
             messaging.getToken().then(function(refreshedToken) {
                 console.log('Token refreshed.',refreshedToken);
