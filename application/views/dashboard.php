@@ -165,7 +165,7 @@
             });
             // [END get_token]
         }
-        resetUIOP
+        resetUI()
 
     </script>
     <!-- Popper.JS -->
