@@ -109,9 +109,9 @@
                 console.log('Token refreshed.',refreshedToken);
                 // Indicate that the new Instance ID token has not yet been sent to the
                 // app server.
-                //setTokenSentToServer(false);
+                setTokenSentToServer(false);
                 // Send Instance ID token to app server.
-                //sendTokenToServer(refreshedToken);
+                sendTokenToServer(refreshedToken);
                 // [START_EXCLUDE]
                 // Display new Instance ID token and clear UI of all previous messages.
                 //resetUI();
@@ -121,6 +121,52 @@
                 showToken('Unable to retrieve refreshed token ', err);
             });
         });
+
+
+        function setTokenSentToServer(sent) {
+            window.localStorage.setItem('sentToServer', sent ? '1' : '0');
+        }
+
+        function sendTokenToServer(currentToken) {
+            if (!isTokenSentToServer()) {
+                console.log('Sending token to server...');
+                // TODO(developer): Send the current token to your server.
+                setTokenSentToServer(true);
+            } else {
+                console.log('Token already sent to server so won\'t send it again ' +
+                'unless it changes');
+            }
+        }
+
+        function isTokenSentToServer() {
+            return window.localStorage.getItem('sentToServer') === '1';
+        }
+
+        function resetUI() {
+            // [START get_token]
+            // Get Instance ID token. Initially this makes a network call, once retrieved
+            // subsequent calls to getToken will return from cache.
+            messaging.getToken().then(function(currentToken) {
+                if (currentToken) {
+                    //sendTokenToServer(currentToken);
+                    //updateUIForPushEnabled(currentToken);
+                    console.log(currentToken);
+                } else {
+                    // Show permission request.
+                    console.log('No Instance ID token available. Request permission to generate one.');
+                    // Show permission UI.
+                    updateUIForPushPermissionRequired();
+                    setTokenSentToServer(false);
+                }
+            }).catch(function(err) {
+                console.log('An error occurred while retrieving token. ', err);
+                showToken('Error retrieving Instance ID token. ', err);
+                setTokenSentToServer(false);
+            });
+            // [END get_token]
+        }
+        resetUIOP
+
     </script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
