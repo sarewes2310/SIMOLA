@@ -377,6 +377,13 @@ class DataUser extends CI_Controller {
 
     public function updateATDevice()
     {
-        var_dump($this->input->post());
+        #var_dump($this->input->post());
+        $data = array(
+            'at' => $this->input->post('at')
+        );
+        $hasil = $this->UserModel->editDeviceM($this->input->post('nama'),$data);
+        if($hasil){
+            echo "BERHASIL!!!";
+        }
     }
 }

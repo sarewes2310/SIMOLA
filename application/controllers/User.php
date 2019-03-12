@@ -139,7 +139,6 @@ class User extends CI_Controller
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            echo $response;
             //$this->load->view('');
             $this->dashboard();
         }
