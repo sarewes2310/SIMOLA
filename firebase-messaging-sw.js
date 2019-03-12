@@ -60,7 +60,6 @@ self.addEventListener('push', function(event) {
     //console.log(data);
   
     var options = {
-      title: data.notification.title,
       body: data.notification.body,
       icon: data.notification.icon,
       badge: data.notification.icon
@@ -68,6 +67,6 @@ self.addEventListener('push', function(event) {
     console.log("options data:",options);
   
     event.waitUntil(
-      self.registration.showNotification(data.title, options)
+      self.registration.showNotification(data.notification.title, options)
     );
 });
