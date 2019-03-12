@@ -55,7 +55,7 @@ self.addEventListener('push', function(event) {
     //if (event.data) {
     //  data = JSON.parse(event.data.text());
     //}
-    data = event.data.text();
+    data = event.data;
   
     var options = {
       title: data.title,
