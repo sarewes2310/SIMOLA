@@ -24,7 +24,8 @@ class User extends CI_Controller
             $this->load->view('login');
         }
         else {
-            $this->dashboard();
+            #$this->dashboard();
+            redirect("https://simola.herokuapp.com/index.php/user/dashboard");
         }
     }
     
@@ -35,7 +36,7 @@ class User extends CI_Controller
         # Output berupa page dashboard
         # ------------------------------------------------------------------------------------------------------------------------------------
         if(empty($this->session->nama)){
-            $this->index();
+            redirect("https://simola.herokuapp.com");
         }else{
             $this->load->view('dashboard');
         }
