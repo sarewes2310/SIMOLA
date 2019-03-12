@@ -308,7 +308,7 @@ class DataUser extends CI_Controller {
         }
     }
     
-    public function getDevice()
+    public function getDevice() # fungsi yang digunakan untuk menampilkan data device pada model di file view_online.php dengan mengambil tabel device dalam 
     {
         # ------------------------------------------------------------------------------------------------------------------------------------
         # fungsi yang digunakan untuk menampilkan data device pada model di file view_online.php dengan mengambil tabel device dalam 
@@ -383,7 +383,8 @@ class DataUser extends CI_Controller {
         );
         $hasil = $this->UserModel->editDeviceM($this->input->post('nama'),$data);
         if($hasil){
-            echo "BERHASIL!!!";
+            var_dump($this->session->idus);
+            $hasil = $this->UserModel->saveEditProfilM($this->session->idus,$data);
         }
     }
 }

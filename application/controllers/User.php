@@ -75,7 +75,8 @@ class User extends CI_Controller
         # Fungsi yang digunakan untuk memanggil halaman dropbox
         # Output berupa page dropbox
         # ------------------------------------------------------------------------------------------------------------------------------------
-        $this->load->view('dropbox_auth');
+        $hasil = $this->UserModel->getViewEditProfilM($this->session->idus);
+        if(empty($hasil))$this->load->view('dropbox_auth');
     }
 
     public function getDropboxLink()
