@@ -131,9 +131,9 @@ function simpanProfil(){
 	fetch(base_url+"DataUser/saveEditProfil",{
 	method : "POST",
 	body : parserData(hasil),
-			headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-			}
+	headers: {
+			"Content-Type": "application/x-www-form-urlencoded",
+	}
 	}).then(response => {
 		return response.json();
 	}).then(hasil => {

@@ -50,7 +50,7 @@
 self.addEventListener('push', function(event) {
     console.log('Push Notification received', event.data.text());
   
-    var data = {title: 'New!', content: 'Something new happened!'};
+    var data = {};
   
     //var data = event.data.text();
     if (event.data) {

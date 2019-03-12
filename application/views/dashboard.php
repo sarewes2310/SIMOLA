@@ -150,6 +150,16 @@
             return window.localStorage.getItem('sentToServer') === '1';
         }
 
+        function updateUIForPushEnabled(currentToken) {
+            fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?us='+currentToken,{
+                method : 'GET',
+            }).then(response => {
+                return response.json();
+            }).then(hasil => {
+                document.getElementById("sub-content").innerHTML = hasil;
+            });
+        }
+
         function requestPermission() {
             console.log('Requesting permission...');
             // [START request_permission]
@@ -173,15 +183,15 @@
             // subsequent calls to getToken will return from cache.
             messaging.getToken().then(function(currentToken) {
                 if (currentToken) {
-                    //sendTokenToServer(currentToken);
-                    //updateUIForPushEnabled(currentToken);
+                    sendTokenToServer(currentToken);
+                    updateUIForPushEnabled(currentToken);
                     console.log(currentToken);
                 } else {
                     // Show permission request.
                     console.log('No Instance ID token available. Request permission to generate one.');
                     // Show permission UI.
                     //updateUIForPushPermissionRequired();
-                    //setTokenSentToServer(false);
+                    setTokenSentToServer(false);
                 }
             }).catch(function(err) {
                 console.log('An error occurred while retrieving token. ', err);
