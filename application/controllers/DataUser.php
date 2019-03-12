@@ -41,6 +41,7 @@ class DataUser extends CI_Controller {
 				}
             }
             $this->session->set_userdata($session);
+            var_dump($_SESSION);
             #array_push($session, 0, base_url().'index.php/User/dashboard');
             $session['status'] = 0;
             $session['link'] = base_url().'index.php/User/dashboard';
