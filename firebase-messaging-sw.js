@@ -56,7 +56,7 @@ self.addEventListener('push', function(event) {
     //  data = JSON.parse(event.data.text());
     //}
     var data = event.data.text();
-    //console.log(data);
+    console.log(data.notification.title);
     //console.log(data);
   
     var options = {
