@@ -374,4 +374,9 @@ class DataUser extends CI_Controller {
         #   echo json_encode($hasil,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         #}
     }
+
+    public function updateATDevice()
+    {
+        var_dump($this->input->post());
+    }
 }

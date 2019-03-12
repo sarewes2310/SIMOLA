@@ -112,7 +112,7 @@ class User extends CI_Controller
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            echo $response;
+            #   echo $response;
             $response = json_decode($response);
         }
         $ch = curl_init();
@@ -141,6 +141,7 @@ class User extends CI_Controller
         } else {
             echo $response;
             //$this->load->view('');
+            $this->dashboard();
         }
 	}
 
