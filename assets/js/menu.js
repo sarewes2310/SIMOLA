@@ -337,7 +337,7 @@ function removeDropbox(){
 				return response.json();
 			}).then(hasil => {
 				//document.getElementById("sub-content").innerHTML = hasil;
-				//console.log(hasil);
+				//console.log(hasil);	
 				if(hasil.status)window.location = base_url;
 			});
 		});
@@ -362,8 +362,48 @@ function editFingerprint(){
 		return response.json();
 	}).then(hasil => {
 				//$("div#sub-content").html(hasil);
-			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mengedit user<\/div>";
-			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mengedit user<\/div>";
+			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Lakukan langkah sesuai pada lcd device<\/div>";
+			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Device mati<\/div>";
+	});
+  return false;
+}
+
+function addFingerprint(){
+	const hasil = {
+			"username" : document.getElementById('inputusername').value
+	};
+	fetch(base_url+"DataUser/addFingerPrint",{
+	method : "POST",
+	body : parserData(hasil),
+			headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+			}
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+				//$("div#sub-content").html(hasil);
+			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Lakukan langkah sesuai pada lcd device<\/div>";
+			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Device mati<\/div>";
+	});
+  return false;
+}
+
+function removeFingerprint(){
+	const hasil = {
+			"username" : document.getElementById('inputusername').value
+	};
+	fetch(base_url+"DataUser/removeFingerPrint",{
+	method : "POST",
+	body : parserData(hasil),
+			headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+			}
+	}).then(response => {
+		return response.json();
+	}).then(hasil => {
+				//$("div#sub-content").html(hasil);
+			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Lakukan langkah sesuai pada lcd device<\/div>";
+			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Device mati<\/div>";
 	});
   return false;
 }

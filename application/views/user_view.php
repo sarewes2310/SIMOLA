@@ -120,7 +120,7 @@ th{
             </div>
             <div class="boxfingerprint">
                 <img src="'.base_url().'assets/logo/fingerprints.png">
-                <button id="addfingerprint" type="button" class="btn btn-primary" style="width:100%" onclick="return saveFP()">Add Fingerprint</button>
+                <button id="addfingerprint" onclick="return addFingerprint()" type="button" class="btn btn-primary" style="width:100%" onclick="return saveFP()">Add Fingerprint</button>
             </div>
             <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->
         </div>
@@ -179,7 +179,7 @@ th{
             </div>
             <div class="boxfingerprint">
                 <img src="'.base_url().'assets/logo/fingerprints.png">
-                <button id="editfingerprint" type="button" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
+                <button id="editfingerprint" onclick="return editFingerprint()" type="button" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
             </div>
             <div class="form-group row" style="display:none">
                 <div class="col-sm-10">
@@ -213,6 +213,10 @@ th{
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="idus_delete" placeholder="idus" style="display:none">
                 </div>
+            </div>
+            <div class="boxfingerprint">
+                <img src="'.base_url().'assets/logo/fingerprints.png">
+                <button id="removefingerprint" onclick="return removeFingerprint()" type="button" class="btn btn-primary" style="width:100%" onclick="return saveFP()">Add Fingerprint</button>
             </div>
             <div id="hasilDelete"></div>
         </div>
