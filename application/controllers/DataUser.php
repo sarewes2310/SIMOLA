@@ -383,11 +383,8 @@ class DataUser extends CI_Controller {
             'at' => $this->input->post('at')
         );
         $hasil = $this->UserModel->editDeviceM($this->input->post('nama'),$data);
-        var_dump($_SESSION);
         if($hasil){
-            var_dump($this->session->idus);
-            var_dump($_SESSION);
-            #$hasil = $this->UserModel->saveEditProfilM($this->session->idus,$data);
+            $hasil = $this->UserModel->saveEditProfilM($this->input->post('idus'),$data);
         }
     }
 }
