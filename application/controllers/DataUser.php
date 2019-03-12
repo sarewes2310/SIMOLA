@@ -397,7 +397,14 @@ class DataUser extends CI_Controller {
         $hasil = $this->UserModel->saveEditProfilM($this->input->post('id'),$data);
         if($hasil){
         #    $hasil = $this->UserModel->saveEditProfilM($this->input->post('idus'),$data);
-            redirect("https://simola.herokuapp.com/index.php/User/");
+            #redirect("https://simola.herokuapp.com/index.php/User/");
+            echo json_encode(array(
+                'status' => 1
+            ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);   
+        }else{
+            echo json_encode(array(
+                'status' => 0
+            ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }
     }
 }
