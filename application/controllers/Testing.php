@@ -96,6 +96,6 @@ class Testing extends CI_Controller
 
     public function testFCM()
     {
-        $this->load->view('testfcm');
+        redirect("https://simola.herokuapp.com/index.php/User/");
     }
 }
