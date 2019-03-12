@@ -338,7 +338,7 @@ function removeDropbox(){
 			}).then(hasil => {
 				//document.getElementById("sub-content").innerHTML = hasil;
 				//console.log(hasil);
-				window.location = hasil.status;
+				if(hasil.status)window.location = base_url;
 			});
 		});
 	}
