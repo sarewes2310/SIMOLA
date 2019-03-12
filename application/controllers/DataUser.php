@@ -387,4 +387,13 @@ class DataUser extends CI_Controller {
             $hasil = $this->UserModel->saveEditProfilM($this->input->post('idus'),$data);
         }
     }
+
+    public function removeATDevice()
+    {
+        var_dump($this->input->post());
+        #$hasil = $this->UserModel->editDeviceM($this->input->post('nama'),$data);
+        #if($hasil){
+        #    $hasil = $this->UserModel->saveEditProfilM($this->input->post('idus'),$data);
+        #}
+    }
 }

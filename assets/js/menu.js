@@ -147,11 +147,11 @@ function simpanProfil(){
 			"idus" : document.getElementById("idus").value,
 	};
 	fetch(base_url+"DataUser/saveEditProfil",{
-	method : "POST",
-	body : parserData(hasil),
-	headers: {
-			"Content-Type": "application/x-www-form-urlencoded",
-	}
+		method : "POST",
+		body : parserData(hasil),
+		headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+		}
 	}).then(response => {
 		return response.json();
 	}).then(hasil => {
@@ -322,8 +322,25 @@ function insertUserM(){
   return false;
 }
 
-function clickDropbox(){
-	window.location = "https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/index.php/user/getDropBoxAT/";
+function removeDropbox(){
+	if ('indexedDB' in window) {
+		readAllData('login')
+		.then(function(hasil) {
+			//console.log(hasil);
+			fetch(base_url+'DataUser/removeATDevice',{
+				method : "POST",
+				body : parserData(hasil[0]),
+				headers: {
+						"Content-Type": "application/x-www-form-urlencoded",
+				}
+			}).then(response => {
+				return response.json();
+			}).then(hasil => {
+				//document.getElementById("sub-content").innerHTML = hasil;
+				console.log(hasil);
+			});
+		});
+	}
 }
 
 function editFingerprint(){

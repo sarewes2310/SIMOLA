@@ -17,6 +17,6 @@ echo json_encode('
     }
 </style>
 <img src="'.base_url().'assets/logo/dropbox-logo_2.jpg">
-<button id="getdropbox" onclick="return clickDropbox()" type="button" class="btn btn-danger" href="'.base_url().'index.php/user/getDropboxLink">Logout DropBox</button>
+<button id="getdropbox" onclick="return removeDropbox()" type="button" class="btn btn-danger" href="'.base_url().'index.php/user/getDropboxLink">Logout DropBox</button>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
 ?>
