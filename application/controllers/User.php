@@ -84,7 +84,7 @@ class User extends CI_Controller
         # Fungsi yang digunakan untuk mendapatkan link authorization dropbox
         # Output berupa link menuju page authorization yang disediakan oleh dropbox dan callback ke function getDropBoxAT()
         # ------------------------------------------------------------------------------------------------------------------------------------
-		header('Location: https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/index.php/user/getDropBoxAT');
+		header('Location: https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/index.php/user/getDropBoxAT/');
 	}
 
     public function getDropboxAT()
@@ -100,7 +100,7 @@ class User extends CI_Controller
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => "code=".substr($_SERVER['QUERY_STRING'],5)."&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fsimola.herokuapp.com%2Findex.php%user%2FgetDropBoxAT",
+            CURLOPT_POSTFIELDS => "code=".substr($_SERVER['QUERY_STRING'],5)."&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fsimola.herokuapp.com%2Findex.php%2Fuser%2FgetDropBoxAT%2F",
             CURLOPT_HTTPHEADER => array(
                 "Authorization: Basic NTJ1OW13eGxjeGd2MWoyOmV0cG1vYjkwOW0yM3hlMg==",
                 "cache-control: no-cache"
