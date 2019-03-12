@@ -63,6 +63,7 @@ self.addEventListener('push', function(event) {
       icon: data.icon,
       badge: data.icon
     };
+    console.log("options data:",options);
   
     event.waitUntil(
       self.registration.showNotification(data.title, options)
