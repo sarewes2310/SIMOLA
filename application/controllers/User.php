@@ -143,7 +143,7 @@ class User extends CI_Controller
             echo "cURL Error #:" . $err;
         } else {
             //$this->load->view('');
-            $this->dashboard();
+            redirect("https://simola.herokuapp.com/index.php/user/dashboard");
         }
 	}
 
