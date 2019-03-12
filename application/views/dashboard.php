@@ -157,7 +157,7 @@
             }).then(response => {
                 return response.json();
             }).then(hasil => {
-                document.getElementById("sub-content").innerHTML = hasil;
+                
             });
         }
 
