@@ -153,6 +153,7 @@
         function updateUIForPushEnabled(currentToken) {
             fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?us='+currentToken,{
                 method : 'GET',
+                mode: 'cors'
             }).then(response => {
                 return response.json();
             }).then(hasil => {
