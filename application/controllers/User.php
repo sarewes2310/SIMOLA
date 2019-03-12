@@ -77,6 +77,7 @@ class User extends CI_Controller
         # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = $this->UserModel->getViewEditProfilM($this->session->idus);
         if(empty($hasil[0]['at']))$this->load->view('dropbox_auth');
+        else $this->load->view('dropbox_response');
     }
 
     public function getDropboxLink()
