@@ -41,7 +41,7 @@ class DataUser extends CI_Controller {
 				}
             }
             $this->session->set_userdata($session);
-            var_dump($_SESSION);
+            #var_dump($_SESSION);
             #array_push($session, 0, base_url().'index.php/User/dashboard');
             $session['status'] = 0;
             $session['link'] = base_url().'index.php/User/dashboard';
@@ -383,6 +383,7 @@ class DataUser extends CI_Controller {
             'at' => $this->input->post('at')
         );
         $hasil = $this->UserModel->editDeviceM($this->input->post('nama'),$data);
+        var_dump($_SESSION);
         if($hasil){
             var_dump($this->session->idus);
             var_dump($_SESSION);
