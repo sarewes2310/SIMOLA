@@ -390,10 +390,14 @@ class DataUser extends CI_Controller {
 
     public function removeATDevice()
     {
-        var_dump($this->input->post());
-        #$hasil = $this->UserModel->editDeviceM($this->input->post('nama'),$data);
-        #if($hasil){
+        #var_dump($this->input->post());
+        $data = array(
+            'at' => ''
+        );
+        $hasil = $this->UserModel->saveEditProfilM($this->input->post('id'),$data);
+        if($hasil){
         #    $hasil = $this->UserModel->saveEditProfilM($this->input->post('idus'),$data);
-        #}
+            redirect("https://simola.herokuapp.com/index.php/User/");
+        }
     }
 }
