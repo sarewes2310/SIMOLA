@@ -56,13 +56,14 @@ self.addEventListener('push', function(event) {
     //  data = JSON.parse(event.data.text());
     //}
     var data = event.data.text();
-    console.log(data);
+    //console.log(data);
+    //console.log(data);
   
     var options = {
-      title: data.title,
-      body: data.body,
-      icon: data.icon,
-      badge: data.icon
+      title: data.notification.title,
+      body: data.notification.body,
+      icon: data.notification.icon,
+      badge: data.notification.icon
     };
     console.log("options data:",options);
   
