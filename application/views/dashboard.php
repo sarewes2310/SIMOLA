@@ -61,7 +61,7 @@
                     <a href="#">Notifications</a>
                 </li>
                 <li id="logout">
-                    <a href="<?php echo base_url()?>index.php/user/logout">Log Out</a>
+                    <a href="#">Log Out</a>
                 </li>	
             </ul>
         </nav>
@@ -157,7 +157,7 @@
             }).then(response => {
                 return response.json();
             }).then(hasil => {
-                
+
             });
         }
 

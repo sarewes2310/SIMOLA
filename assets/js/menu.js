@@ -115,6 +115,27 @@ $(document).ready(() => {
 					document.getElementById("sub-content").innerHTML = hasil;
 				});*/
 				break;
+			case "logout" :
+				//document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
+				cekNavbar = false;
+				fetch(base_url+'User/logout',{
+					method : 'GET'
+				}).then(response => {
+					return response.json();
+				}).then(hasil => {
+					//document.getElementById("sub-content").innerHTML = hasil;
+					console.log(hasil);
+					if ('indexedDB' in window) {
+						clearAllData('login')
+						.then(function () {
+							return clonedRes.json();
+						})
+						.then(function (data) {
+							window.location = hasil.link;
+						});
+					}
+				});
+				break;
 		}
 		$('#sidebar').removeClass('active');
 	});

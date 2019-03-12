@@ -147,5 +147,8 @@ class User extends CI_Controller
     public function logout()
     {
         $this->session->sess_destroy();
+        $session = array();
+        $session['link'] = base_url().'index.php/User';
+        echo json_encode($session,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);        
     }
 }
