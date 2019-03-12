@@ -48,7 +48,7 @@
 
 // [END background_handler]
 self.addEventListener('push', function(event) {
-    console.log('Push Notification received', event);
+    console.log('Push Notification received', event.data.text());
   
     var data = {title: 'New!', content: 'Something new happened!'};
   
