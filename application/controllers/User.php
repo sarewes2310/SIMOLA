@@ -151,7 +151,7 @@ class User extends CI_Controller
     {
         $this->session->sess_destroy();
         $session = array();
-        $session['link'] = base_url().'index.php/User';
+        $session['link'] = base_url();
         echo json_encode($session,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);        
     }
 }
