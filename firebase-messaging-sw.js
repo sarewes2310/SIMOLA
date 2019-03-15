@@ -75,7 +75,8 @@ var CACHE_STATIC_NAME = 'static-v15';
 var CACHE_DYNAMIC_NAME = 'dynamic-v15';
 
 var STATIC_FILES = [
-    'https://simola.herokuapp.com/manifest.json'
+    'https://simola.herokuapp.com/manifest.json',
+    'https://simola.herokuapp.com/assets/logo/SIM_1.png'
 ];
 
 self.addEventListener('install', function (event) {
