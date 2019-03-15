@@ -407,3 +407,115 @@ function removeFingerprint(){
 	});
   return false;
 }
+
+// Initialize Firebase
+// TODO: Replace with your project's customized code snippet
+var config = {
+	apiKey: "AIzaSyC3F3aH83p83dcbe65KAQal0X5CClM19xI",
+	authDomain: "simola-5725f.firebaseapp.com",
+	databaseURL: "https://simola-5725f.firebaseio.com",
+	projectId: "simola-5725f",
+	storageBucket: "simola-5725f.appspot.com",
+	messagingSenderId: "741998138956",
+};
+firebase.initializeApp(config);
+
+const messaging = firebase.messaging();
+messaging.usePublicVapidKey('BDg0UDe89EtfjheFqJkwYDuzPx5FjYMtTTMQQ7d9MlTAOOVddVoBUIRt1QAMWxxUBnCBBa2Y4oENLNeQjFf-r1k');
+messaging.onTokenRefresh(function() {
+		messaging.getToken().then(function(refreshedToken) {
+				console.log('Token refreshed.',refreshedToken);
+				// Indicate that the new Instance ID token has not yet been sent to the
+				// app server.
+				setTokenSentToServer(false);
+				// Send Instance ID token to app server.
+				sendTokenToServer(refreshedToken);
+				// [START_EXCLUDE]
+				// Display new Instance ID token and clear UI of all previous messages.
+				//resetUI();
+				// [END_EXCLUDE]
+		}).catch(function(err) {
+				console.log('Unable to retrieve refreshed token ', err);
+				showToken('Unable to retrieve refreshed token ', err);
+		});
+});
+
+messaging.onMessage(function(payload) {
+		console.log('Message received. ', payload);
+		// [START_EXCLUDE]
+		// Update the UI to include the received message.
+		// appendMessage(payload);
+		// [END_EXCLUDE]
+});
+
+function setTokenSentToServer(sent) {
+		window.localStorage.setItem('sentToServer', sent ? '1' : '0');
+}
+
+function sendTokenToServer(currentToken) {
+		if (!isTokenSentToServer()) {
+				console.log('Sending token to server...');
+				// TODO(developer): Send the current token to your server.
+				setTokenSentToServer(true);
+		} else {
+				console.log('Token already sent to server so won\'t send it again ' +
+				'unless it changes');
+		}
+}
+
+function isTokenSentToServer() {
+		return window.localStorage.getItem('sentToServer') === '1';
+}
+
+function updateUIForPushEnabled(currentToken) {
+		fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?idus='++'&pushtoken='+currentToken,{
+				method : 'GET',
+				mode: 'cors',
+		}).then(response => {
+				return response.json();
+		}).then(hasil => {
+
+		});
+}
+
+function requestPermission() {
+		console.log('Requesting permission...');
+		// [START request_permission]
+		messaging.requestPermission().then(function() {
+				console.log('Notification permission granted.');
+				// TODO(developer): Retrieve an Instance ID token for use with FCM.
+				// [START_EXCLUDE]
+				// In many cases once an app has been granted notification permission, it
+				// should update its UI reflecting this.
+				resetUI();
+				// [END_EXCLUDE]
+		}).catch(function(err) {
+				console.log('Unable to get permission to notify.', err);
+		});
+		// [END request_permission]
+}
+
+function resetUI() {
+		// [START get_token]
+		// Get Instance ID token. Initially this makes a network call, once retrieved
+		// subsequent calls to getToken will return from cache.
+		messaging.getToken().then(function(currentToken) {
+				if (currentToken) {
+						sendTokenToServer(currentToken);
+						updateUIForPushEnabled(currentToken);
+						console.log(currentToken);
+				} else {
+						// Show permission request.
+						console.log('No Instance ID token available. Request permission to generate one.');
+						// Show permission UI.
+						//updateUIForPushPermissionRequired();
+						setTokenSentToServer(false);
+				}
+		}).catch(function(err) {
+				console.log('An error occurred while retrieving token. ', err);
+				//showToken('Error retrieving Instance ID token. ', err);
+				//setTokenSentToServer(false);
+		});
+		// [END get_token]
+}
+resetUI()
