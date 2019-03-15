@@ -1,4 +1,13 @@
-
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('https://simola.herokuapp.com/firebase-messaging-sw.js')
+      .then(function () {
+        console.log('Service worker registered!');
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+  }
 var form = document.querySelector('form');
 form.addEventListener('submit', function(e){
     const hasil = {
