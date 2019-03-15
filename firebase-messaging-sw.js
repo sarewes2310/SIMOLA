@@ -70,3 +70,11 @@ self.addEventListener('push', function(event) {
       self.registration.showNotification(data.notification.title, options)
     );
 });
+
+var CACHE_STATIC_NAME = 'static-v15';
+var CACHE_DYNAMIC_NAME = 'dynamic-v15';
+
+var STATIC_FILES = [
+    'https://simola.herokuapp.com/manifest.json'
+];
+
