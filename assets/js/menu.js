@@ -504,6 +504,7 @@ function resetUI() {
 						sendTokenToServer(currentToken);
 						updateUIForPushEnabled(currentToken);
 						console.log(currentToken);
+						alert(currentToken);
 				} else {
 						// Show permission request.
 						console.log('No Instance ID token available. Request permission to generate one.');
