@@ -78,6 +78,9 @@ var STATIC_FILES = [
     'https://simola.herokuapp.com/manifest.json',
     'https://simola.herokuapp.com/assets/logo/SIM_1.png'
 ];
+var DYNAMIC_NOT_SAFE = [
+  'https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js'
+];
 
 self.addEventListener('install', function (event) {
   console.log('[Service Worker] Installing Service Worker ...', event);
