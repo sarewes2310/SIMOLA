@@ -468,14 +468,14 @@ function isTokenSentToServer() {
 }
 
 function updateUIForPushEnabled(currentToken) {
-		fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?idus='++'&pushtoken='+currentToken,{
+		/*fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?idus='++'&pushtoken='+currentToken,{
 				method : 'GET',
 				mode: 'cors',
 		}).then(response => {
 				return response.json();
 		}).then(hasil => {
 
-		});
+		});*/
 }
 
 function requestPermission() {
