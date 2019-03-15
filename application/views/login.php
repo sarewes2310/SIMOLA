@@ -10,6 +10,7 @@
     <link href="https://simola.herokuapp.com/assets/css/sigin.css" rel="stylesheet">
     <!--<link rel="manifest" href="assets/manifest.json">-->
     <script src="<?php echo base_url()?>assets/js/variabel_utama.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="manifest" href="<?php echo base_url()?>/manifest.json">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;

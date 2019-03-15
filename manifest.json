@@ -1,4 +1,47 @@
 {
+  "name": "Sistem Keamanan CCTV Online",
+  "short_name": "SIMOLA",
+  "icons": [
+    {
+      "src": "https://simola.herokuapp.com/assets/logo/android/mipmap-hdpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "https://simola.herokuapp.com/assets/logo/android/mipmap-ldpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "36x36"
+    },
+    {
+      "src": "https://simola.herokuapp.com/assets/logo/android/mipmap-mdpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "https://simola.herokuapp.com/assets/logo/android/mipmap-xhdpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "https://simola.herokuapp.com/assets/logo/android/mipmap-xxhdpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "https://simola.herokuapp.com/assets/logo/android/mipmap-xxxhdpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "https://simola.herokuapp.com",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff",
+  "theme_color": "#3f51b5",
+  "description": "Sebuah sistem keamanan CCTV yang digunakan pada suatu lab.",
+  "dir": "ltr",
+  "lang": "en-US",
   "//_comment1": "Some browsers will use this to enable push notifications.",
   "//_comment2": "It is the same for all projects, this is not your project's sender ID",
   "gcm_sender_id": "103953800507"
