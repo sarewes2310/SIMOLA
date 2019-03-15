@@ -34,7 +34,7 @@
     }
   ],
   "start_url": "https://simola.herokuapp.com",
-  "scope": ".",
+  "scope": "https://simola.herokuapp.com",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#fff",
