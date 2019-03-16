@@ -222,7 +222,8 @@ function deleteUser(id){
 	document.getElementById("idus_delete").value = id;
 }
 
-function deleteUserM(){
+function deleteUserM()
+{
 	document.getElementById("hasilDelete").innerHTML = "";
 	const hasil = {
 			"idus" : document.getElementById("idus_delete").value
@@ -296,7 +297,8 @@ function editUserM(){
   return false;
 }
 
-function insertUserM(){
+function insertUserM()
+{
 	document.getElementById("hasilEdit").innerHTML = "";
 	//alert(document.getElementById('editstatus').value);
 	const hasil = {
@@ -322,7 +324,8 @@ function insertUserM(){
   return false;
 }
 
-function removeDropbox(){
+function removeDropbox()
+{
 	if ('indexedDB' in window) {
 		readAllData('login')
 		.then(function(hasil) {
@@ -344,11 +347,13 @@ function removeDropbox(){
 	}
 }
 
-function addDropbox(){
+function addDropbox()
+{
 	window.location = "https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/index.php/user/getDropBoxAT/";
 }
 
-function editFingerprint(){
+function editFingerprint()
+{
 	const hasil = {
 			"username" : document.getElementById('inputusername').value
 	};
@@ -368,7 +373,8 @@ function editFingerprint(){
   return false;
 }
 
-function addFingerprint(){
+function addFingerprint()
+{
 	const hasil = {
 			"username" : document.getElementById('inputusername').value
 	};
@@ -388,7 +394,8 @@ function addFingerprint(){
   return false;
 }
 
-function removeFingerprint(){
+function removeFingerprint()
+{
 	const hasil = {
 			"username" : document.getElementById('inputusername').value
 	};

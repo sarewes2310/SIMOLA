@@ -71,15 +71,38 @@ self.addEventListener('push', function(event) {
     );
 });
 
-var CACHE_STATIC_NAME = 'static-v1';
-var CACHE_DYNAMIC_NAME = 'dynamic-v1';
+var CACHE_STATIC_NAME = 'static-v2';
+var CACHE_DYNAMIC_NAME = 'dynamic-v2';
 
 var STATIC_FILES = [
     'https://simola.herokuapp.com/manifest.json',
     'https://simola.herokuapp.com/assets/logo/SIM_1.png'
 ];
-var DYNAMIC_NOT_SAFE = [
-  'https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js'
+
+var DYNAMIC_FILES_NOT_SAFE = [
+  'https://ucarecdn.com',
+  'https://upload.uploadcare.com',
+  'https://simolasocket-nodejs.herokuapp.com',
+  'https://www.dropbox.com',
+];
+
+var DYNAMIC_NOT_SAFE = [ // link save data
+  'https://simola.herokuapp.com/index.php/User/getViewDashboard',
+  'https://simola.herokuapp.com/index.php/User/getViewDropbox',
+  'https://simola.herokuapp.com/index.php/User/getViewEditProfil',
+  'https://simola.herokuapp.com/index.php/User/logout',
+  'https://simola.herokuapp.com/index.php/DataUser/saveEditProfil',
+  'https://simola.herokuapp.com/index.php/DataUser/getDevice',
+  'https://simola.herokuapp.com/index.php/DataUser/offDevice',
+  'https://simola.herokuapp.com/index.php/DataUser/deleteUser',
+  'https://simola.herokuapp.com/index.php/DataUser/getDataEditUser',
+  'https://simola.herokuapp.com/index.php/DataUser/saveEditUser',
+  'https://simola.herokuapp.com/index.php/DataUser/inputUser',
+  'https://simola.herokuapp.com/index.php/DataUser/saveEditUser',
+  'https://simola.herokuapp.com/index.php/DataUser/removeATDevice',
+  'https://simola.herokuapp.com/index.php/DataUser/editFingerPrint',
+  'https://simola.herokuapp.com/index.php/DataUser/addFingerPrint',
+  'https://simola.herokuapp.com/index.php/DataUser/removeFingerPrint'
 ];
 
 self.addEventListener('install', function (event) {
@@ -143,7 +166,7 @@ self.addEventListener('fetch', function (event) {
     event.respondWith(
       caches.match(event.request)
     );
-  } else if(isInArray(event.request.url, DYNAMIC_NOT_SAFE)){
+  } else if(isDynamicArray(event.request.url, DYNAMIC_FILES_NOT_SAFE) || isDynamicArraySave(event.request.url, DYNAMIC_NOT_SAFE)){
 
   } else {
     event.respondWith(
