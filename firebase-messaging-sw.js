@@ -143,6 +143,22 @@ function isInArray(string, array) {
   return array.indexOf(cachePath) > -1;
 }
 
+function isDynamicArraySave(string, array) {
+  return array.indexOf(string) > -1;
+}
+
+function isDynamicArray(string,array){
+  var pat = /^(https?:\/\/)?(?:www\.)?([^\/]+)/;
+  if (pat.test(string)){
+    var match = string.match(pat);
+    console.log("isDynamicArray: ",match);
+    return array.indexOf(match[0]) > -1;
+  } else{
+    console.log("validation failed");
+    return false;
+  }
+}
+
 self.addEventListener('fetch', function (event) {
 
   var url = 'https://pwagram-99adf.firebaseio.com/posts';

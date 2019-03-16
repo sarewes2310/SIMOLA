@@ -28,7 +28,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm col-ml col-lg">
-        <div class="isi">
+        <div class="isi" style="margin-top: calc(100% / 4);">
             <img src="https://simola.herokuapp.com/assets/logo/SIM_1.png">
         </div>
         <div class="isi">
