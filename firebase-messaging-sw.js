@@ -71,8 +71,8 @@ self.addEventListener('push', function(event) {
     );
 });
 
-var CACHE_STATIC_NAME = 'static-v2';
-var CACHE_DYNAMIC_NAME = 'dynamic-v2';
+var CACHE_STATIC_NAME = 'static-v3';
+var CACHE_DYNAMIC_NAME = 'dynamic-v3';
 
 var STATIC_FILES = [
     'https://simola.herokuapp.com/manifest.json',
@@ -102,6 +102,7 @@ var DYNAMIC_NOT_SAFE = [ // link save data
   'https://simola.herokuapp.com/index.php/DataUser/removeATDevice',
   'https://simola.herokuapp.com/index.php/DataUser/editFingerPrint',
   'https://simola.herokuapp.com/index.php/DataUser/addFingerPrint',
+  'https://simola.herokuapp.com/index.php/DataUser/submitUserLogin',
   'https://simola.herokuapp.com/index.php/DataUser/removeFingerPrint'
 ];
 
