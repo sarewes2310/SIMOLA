@@ -118,6 +118,7 @@ $(document).ready(() => {
 			case "logout" :
 				//document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
+				deleteToken();
 				fetch(base_url+'User/logout',{
 					method : 'GET'
 				}).then(response => {
@@ -474,15 +475,63 @@ function isTokenSentToServer() {
 		return window.localStorage.getItem('sentToServer') === '1';
 }
 
-function updateUIForPushEnabled(currentToken) {
-		/*fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?idus='++'&pushtoken='+currentToken,{
-				method : 'GET',
-				mode: 'cors',
-		}).then(response => {
-				return response.json();
-		}).then(hasil => {
+function updateUIForPushEnabled(currentToken,value) {
+	if ('indexedDB' in window) {
+		readAllData('login')
+			.then(function(data) {
+			//console.log(data);
+			//hasil = {
+			//	'idus' : data[0].id
+			//};
+			var idus = null;
+			for (var i = 0; i < data.length; i++) {
+				idus = data[i].id;
+			}
+			if(value == "add"){
+				fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?idus='+idus+'&pushtoken='+currentToken,{
+						method : 'GET',
+						mode: 'cors',
+				}).then(response => {
+						return response.json();
+				}).then(hasil => {
+		
+				});
+			}else{
+				fetch('https://simolasocket-nodejs.herokuapp.com/removePushUser?idus='+idus+'&pushtoken='+currentToken,{
+						method : 'GET',
+						mode: 'cors',
+				}).then(response => {
+						return response.json();
+				}).then(hasil => {
+		
+				});
+			}
+		});
+	}else{
+		
+	}
+}
 
-		});*/
+function deleteToken() {
+	// Delete Instance ID token.
+	// [START delete_token]
+	messaging.getToken().then(function(currentToken) {
+		messaging.deleteToken(currentToken).then(function() {
+			console.log('Token deleted.');
+			setTokenSentToServer(false);
+			// [START_EXCLUDE]
+			// Once token is deleted update UI.
+			resetUI("remove");
+			// [END_EXCLUDE]
+		}).catch(function(err) {
+			console.log('Unable to delete token. ', err);
+		});
+		// [END delete_token]
+	}).catch(function(err) {
+		console.log('Error retrieving Instance ID token. ', err);
+		showToken('Error retrieving Instance ID token. ', err);
+	});
+
 }
 
 function requestPermission() {
@@ -494,7 +543,7 @@ function requestPermission() {
 				// [START_EXCLUDE]
 				// In many cases once an app has been granted notification permission, it
 				// should update its UI reflecting this.
-				resetUI();
+				resetUI("add");
 				// [END_EXCLUDE]
 		}).catch(function(err) {
 				console.log('Unable to get permission to notify.', err);
@@ -502,16 +551,15 @@ function requestPermission() {
 		// [END request_permission]
 }
 
-function resetUI() {
+function resetUI(value) {
 		// [START get_token]
 		// Get Instance ID token. Initially this makes a network call, once retrieved
 		// subsequent calls to getToken will return from cache.
 		messaging.getToken().then(function(currentToken) {
 				if (currentToken) {
 						sendTokenToServer(currentToken);
-						updateUIForPushEnabled(currentToken);
+						updateUIForPushEnabled(currentToken,value);
 						console.log(currentToken);
-						alert(currentToken);
 				} else {
 						// Show permission request.
 						console.log('No Instance ID token available. Request permission to generate one.');
@@ -526,4 +574,3 @@ function resetUI() {
 		});
 		// [END get_token]
 }
-resetUI()
