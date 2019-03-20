@@ -185,7 +185,7 @@ $(document).ready(() => {
 					if ('indexedDB' in window) {
 						clearAllData('login')
 						.then(function () {
-							//window.location = hasil.link;
+							window.location = hasil.link;
 						});
 					}
 				});
@@ -575,7 +575,7 @@ function updateUIForPushEnabled(currentToken,value) {
 						}).then(hasil => {
 								clearAllData('sync-posts')
 								.then(function () {
-									window.location = hasil.link;
+									//window.location = hasil.link;
 								});
 						});
 					}

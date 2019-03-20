@@ -71,8 +71,8 @@ self.addEventListener('push', function(event) {
     );
 });
 
-var CACHE_STATIC_NAME = 'static-v5';
-var CACHE_DYNAMIC_NAME = 'dynamic-v5';
+var CACHE_STATIC_NAME = 'static-v6';
+var CACHE_DYNAMIC_NAME = 'dynamic-v6';
 
 var STATIC_FILES = [
     'https://simola.herokuapp.com/manifest.json',
@@ -88,6 +88,7 @@ var DYNAMIC_FILES_NOT_SAFE = [
 
 var DYNAMIC_NOT_SAFE = [ // link save data
   'https://simola.herokuapp.com/index.php/User/getViewDashboard',
+  'https://simola.herokuapp.com/index.php/User/dashboard',
   'https://simola.herokuapp.com/index.php/User/getViewDropbox',
   'https://simola.herokuapp.com/index.php/User/getViewEditProfil',
   'https://simola.herokuapp.com/index.php/User/logout',

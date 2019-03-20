@@ -37,14 +37,14 @@ form.addEventListener('submit', function(e){
                 writeData('login', post)
                 .then(function(response){
                     console.log(response);
-                    window.location = base_url + 'User/dashboard/';
+                    window.location = base_url + 'User/dashboard';
                 })
                 .catch(function(err){
                     console.log(err);
                 });
             }else if('localStorage' in window){
                 localStorage.setItem("login", JSON.stringify(post));
-                window.location = base_url + 'User/dashboard/';
+                window.location = base_url + 'User/dashboard';
             }
         }else{
             const card = document.getElementById('status');
