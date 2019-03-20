@@ -533,55 +533,55 @@ function isTokenSentToServer() {
 
 function updateUIForPushEnabled(currentToken,value) {
 	if ('indexedDB' in window) {
-		if(value == "add"){
-			readAllData('login')
-				.then(function(data) {
-				//console.log(data);
-				//hasil = {
-				//	'idus' : data[0].id
-				//};
-				var idus = null;
-				for (var i = 0; i < data.length; i++) {
-					idus = data[i].id;
-				}
-				fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?idus='+idus+'&pushtoken='+currentToken,{
-						method : 'GET',
-						mode: 'cors',
-				}).then(response => {
-						return response.json();
-				}).then(hasil => {
-						var post = {
-							id:1,
-							token:currentToken
-						}
-						writeData('sync-posts', post)
-						.then(function(response){
-								console.log(response);
-						})
-						.catch(function(err){
-								console.log(err);
-						});
-				});
-			});
-		}else{
-			readAllData('sync-posts')
+		readAllData('login')
 			.then(function(data) {
-				for (var i = 0; i < data.length; i++) {
-					//console.log(data[i]);
-					fetch('https://simolasocket-nodejs.herokuapp.com/removePushUser?idus='+idus+'&pushtoken='+data[i],{
-							method : 'GET',
-							mode: 'cors',
-					}).then(response => {
-							return response.json();
-					}).then(hasil => {
-							clearAllData('sync-posts')
-							.then(function () {
-								//window.location = hasil.link;
-							});
-					});
-				}
-			});
-		}
+			//console.log(data);
+			//hasil = {
+			//	'idus' : data[0].id
+			//};
+			var idus = null;
+			for (var i = 0; i < data.length; i++) {
+				idus = data[i].id;
+			}
+			if(value == "add"){
+						fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?idus='+idus+'&pushtoken='+currentToken,{
+								method : 'GET',
+								mode: 'cors',
+						}).then(response => {
+								return response.json();
+						}).then(hasil => {
+								var post = {
+									id:1,
+									token:currentToken
+								}
+								writeData('sync-posts', post)
+								.then(function(response){
+										console.log(response);
+								})
+								.catch(function(err){
+										console.log(err);
+								});
+						});
+			}else{
+				readAllData('sync-posts')
+				.then(function(data) {
+					for (var i = 0; i < data.length; i++) {
+						//console.log(data[i]);
+						fetch('https://simolasocket-nodejs.herokuapp.com/removePushUser?idus='+idus+'&pushtoken='+data[i],{
+								method : 'GET',
+								mode: 'cors',
+						}).then(response => {
+								return response.json();
+						}).then(hasil => {
+								clearAllData('sync-posts')
+								.then(function () {
+									//window.location = hasil.link;
+								});
+						});
+					}
+				});
+			}
+		});
 	}else{
 		
 	}
