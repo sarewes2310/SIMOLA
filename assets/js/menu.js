@@ -193,7 +193,7 @@ $(document).ready(() => {
 					if ('indexedDB' in window) {
 						clearAllData('login')
 						.then(function () {
-							window.location = hasil.link;
+							//window.location = hasil.link;
 						});
 					}
 				});
@@ -643,6 +643,7 @@ function resetUI(value) {
 						sendTokenToServer(currentToken);
 						updateUIForPushEnabled(currentToken,value);
 						console.log(currentToken);
+
 				} else {
 						// Show permission request.
 						console.log('No Instance ID token available. Request permission to generate one.');
