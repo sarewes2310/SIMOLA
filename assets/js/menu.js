@@ -500,7 +500,7 @@ messaging.onTokenRefresh(function() {
 				// [END_EXCLUDE]
 		}).catch(function(err) {
 				console.log('Unable to retrieve refreshed token ', err);
-				showToken('Unable to retrieve refreshed token ', err);
+				//showToken('Unable to retrieve refreshed token ', err);
 		});
 });
 
@@ -585,7 +585,7 @@ function deleteToken() {
 		// [END delete_token]
 	}).catch(function(err) {
 		console.log('Error retrieving Instance ID token. ', err);
-		showToken('Error retrieving Instance ID token. ', err);
+		//showToken('Error retrieving Instance ID token. ', err);
 	});
 
 }
