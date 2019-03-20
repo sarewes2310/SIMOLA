@@ -199,7 +199,7 @@ $(document).ready(() => {
 					if ('indexedDB' in window) {
 						clearAllData('login')
 						.then(function () {
-							//window.location = hasil.link;
+							window.location = hasil.link;
 						});
 					}
 				});
