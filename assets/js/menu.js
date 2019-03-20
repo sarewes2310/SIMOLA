@@ -550,16 +550,34 @@ function updateUIForPushEnabled(currentToken,value) {
 				}).then(response => {
 						return response.json();
 				}).then(hasil => {
-		
+						var post = {
+							token:currentToken
+						}
+						writeData('sync-post', post)
+						.then(function(response){
+								console.log(response);
+						})
+						.catch(function(err){
+								console.log(err);
+						});
 				});
 			}else{
-				fetch('https://simolasocket-nodejs.herokuapp.com/removePushUser?idus='+idus+'&pushtoken='+currentToken,{
-						method : 'GET',
-						mode: 'cors',
-				}).then(response => {
-						return response.json();
-				}).then(hasil => {
-		
+				readAllData('sync-post')
+				.then(function(data) {
+					for (var i = 0; i < data.length; i++) {
+						//console.log(data[i]);
+						fetch('https://simolasocket-nodejs.herokuapp.com/removePushUser?idus='+idus+'&pushtoken='+data[i],{
+								method : 'GET',
+								mode: 'cors',
+						}).then(response => {
+								return response.json();
+						}).then(hasil => {
+								clearAllData('sync-post')
+								.then(function () {
+									//window.location = hasil.link;
+								});
+						});
+					}
 				});
 			}
 		});
