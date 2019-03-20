@@ -182,7 +182,7 @@ $(document).ready(() => {
 			case "logout" :
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
-				deleteToken();
+				//deleteToken();
 				fetch(base_url+'User/logout',{
 					method : 'GET'
 				}).then(response => {
