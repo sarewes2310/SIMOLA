@@ -390,7 +390,7 @@ function insertUserM()
 	}).then(response => {
 		return response.json();
 	}).then(hasil => {
-				//$("div#sub-content").html(hasil);
+			//$("div#sub-content").html(hasil);
 			if(hasil.status == 1) document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mengedit user<\/div>";
 			else document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mengedit user<\/div>";
 	});
