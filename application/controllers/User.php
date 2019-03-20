@@ -83,6 +83,10 @@ class User extends CI_Controller
         #var_dump($this->input->post('idus'));
     }
 
+    public function getViewNotification(){
+        $this->load->view('request_permission');
+    }
+
     public function getViewDropbox()
     {
         # ------------------------------------------------------------------------------------------------------------------------------------

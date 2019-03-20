@@ -123,6 +123,12 @@ $(document).ready(() => {
 						}).then(hasil => {
 							//$("div#sub-content").html(hasil);
 							document.getElementById("sub-content").innerHTML = hasil;
+							readAllData('sync-posts')
+							.then(function(hasil) {
+								if(hasil.length == 0){
+									document.getElementById("dp").style.display="none";
+								}
+							});
 						});
 					});
 				}
@@ -160,16 +166,16 @@ $(document).ready(() => {
 				console.log("HASIL",hasil);
 				break;
 			case "notifications" :
-				requestPermission();
-				/*document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
+				//requestPermission();
+				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
-				fetch(base_url+'User/getViewUser',{
+				fetch(base_url+'User/getViewNotification',{
 					method : 'GET'
 				}).then(response => {
 					return response.json();
 				}).then(hasil => {
 					document.getElementById("sub-content").innerHTML = hasil;
-				});*/
+				});
 				break;
 			case "logout" :
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
