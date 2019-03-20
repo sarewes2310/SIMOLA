@@ -46,7 +46,7 @@
             </div>
             <ul class="list-unstyled components">
                 <li class="active" id="dashboard">
-                    <a href="#dashboard" data-toggle="collapse" aria-expanded="false">Dashboard</a>
+                    <a href="#dashboard">Dashboard</a>
                 </li>
                 <li id="tambahuser">
                     <a href="#">User</a>
