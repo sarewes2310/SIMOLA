@@ -544,30 +544,30 @@ function updateUIForPushEnabled(currentToken,value) {
 				idus = data[i].id;
 			}
 			if(value == "add"){
-						fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?idus='+idus+'&pushtoken='+currentToken,{
-								method : 'GET',
-								mode: 'cors',
-						}).then(response => {
-								return response.json();
-						}).then(hasil => {
-								var post = {
-									id:1,
-									token:currentToken
-								}
-								writeData('sync-posts', post)
-								.then(function(response){
-										console.log(response);
-								})
-								.catch(function(err){
-										console.log(err);
-								});
+				fetch('https://simolasocket-nodejs.herokuapp.com/addPushUser?idus='+idus+'&pushtoken='+currentToken,{
+						method : 'GET',
+						mode: 'cors',
+				}).then(response => {
+						return response.json();
+				}).then(hasil => {
+						var post = {
+							id:1,
+							token:currentToken
+						}
+						writeData('sync-posts', post)
+						.then(function(response){
+								console.log(response);
+						})
+						.catch(function(err){
+								console.log(err);
 						});
+				});
 			}else{
 				readAllData('sync-posts')
 				.then(function(data) {
 					for (var i = 0; i < data.length; i++) {
 						//console.log(data[i]);
-						fetch('https://simolasocket-nodejs.herokuapp.com/removePushUser?idus='+idus+'&pushtoken='+data[i],{
+						fetch('https://simolasocket-nodejs.herokuapp.com/removePushUser?idus='+idus+'&pushtoken='+data[i].token,{
 								method : 'GET',
 								mode: 'cors',
 						}).then(response => {
