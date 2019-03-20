@@ -35,39 +35,83 @@ $(document).ready(() => {
         // Output yang dihasilkan berupa page dengan menu pilihan dashboard
         // ------------------------------------------------------------------------------------------------------
 				cekNavbar = false;
-				fetch(base_url+'User/getViewDashboard',{
-					method : 'GET',
-					mode : 'cors'
-				}).then(response => {
-					return response.json();
-				}).then(hasil => {
-					document.getElementById("sub-content").innerHTML = hasil;
-				});
+				if ('indexedDB' in window) {
+					readAllData('login')
+					.then(function(data) {
+						for (var i = 0; i < data.length; i++) {
+							//console.log(data[i]);
+							hasil = {
+								'idus' : data[i].id
+							}
+						}
+						fetch(base_url+'User/getViewDashboard',{
+							body : parserData(hasil),
+							method : 'POST',
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded",
+							}
+						}).then(response => {
+							return response.json();
+						}).then(hasil => {
+							document.getElementById("sub-content").innerHTML = hasil;
+						});
+					});
+				}
 				break;
 			case "tambahuser" :
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
-				fetch(base_url+'User/getViewUser',{
-					method : 'GET'
-				}).then(response => {
-					return response.json();
-				}).then(hasil => {
-					document.getElementById("sub-content").innerHTML = hasil;
-				});
+				if ('indexedDB' in window) {
+					readAllData('login')
+					.then(function(data) {
+						for (var i = 0; i < data.length; i++) {
+							//console.log(data[i]);
+							hasil = {
+								'idus' : data[i].id
+							}
+						}
+						fetch(base_url+'User/getViewUser',{
+							body : parserData(hasil),
+							method : 'POST',
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded",
+							}
+						}).then(response => {
+							return response.json();
+						}).then(hasil => {
+							document.getElementById("sub-content").innerHTML = hasil;
+						});
+					});
+				}
 				break;
 			case "dropbox" :
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				//window.location.href = base_url + "user/getDropboxLink";
 				//console.log("DROPBOX RUNN");
-				fetch(base_url+'User/getViewDropbox',{
-					method : 'GET'
-				}).then(response => {
-					return response.json();
-				}).then(hasil => {
-					//$("div#sub-content").html(hasil);
-					document.getElementById("sub-content").innerHTML = hasil;
-				});
+				if ('indexedDB' in window) {
+					readAllData('login')
+					.then(function(data) {
+						for (var i = 0; i < data.length; i++) {
+							//console.log(data[i]);
+							hasil = {
+								'idus' : data[i].id
+							}
+						}
+						fetch(base_url+'User/getViewDropbox',{
+							body : parserData(hasil),
+							method : 'POST',
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded",
+							}
+						}).then(response => {
+							return response.json();
+						}).then(hasil => {
+							//$("div#sub-content").html(hasil);
+							document.getElementById("sub-content").innerHTML = hasil;
+						});
+					});
+				}
 				break;
 			case "edit_profil" :
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';

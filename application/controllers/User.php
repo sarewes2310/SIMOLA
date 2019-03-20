@@ -43,26 +43,39 @@ class User extends CI_Controller
     }
 
     public function getViewDashboard(){
-        $hasil = $this->UserModel->getListDevice();
-        $h['data'] = $hasil;
-        $this->load->view('view_online',$h);
+        if(empty($this->session->idus) && empty($this->input->post('idus'))){
+            redirect("https://simola.herokuapp.com");
+        }else{
+            $hasil = $this->UserModel->getListDevice();
+            $h['data'] = $hasil;
+            $this->load->view('view_online',$h);
+        }
     }
 
     public function getViewUser(){
-        $hasil = $this->UserModel->getAllUserM(0);
-        #var_dump($hasil);
-        $h['data'] = $hasil;
-        $this->load->view('user_view',$h);
+        if(empty($this->session->idus) && empty($this->input->post('idus'))){
+            redirect("https://simola.herokuapp.com");
+        }else{
+            $hasil = $this->UserModel->getAllUserM(0);
+            #var_dump($hasil);
+            $h['data'] = $hasil;
+            $this->load->view('user_view',$h);
+        }
     }
 
     public function getViewEditProfil(){
-        if(empty($this->input->post('idus')))
+        if(empty($this->session->idus) && empty($this->input->post('idus')))
         {
-            var_dump($this->input->post('idus'));
+            #var_dump($this->input->post('idus'));
+            redirect("https://simola.herokuapp.com");
         }
         else
         {
-            $hasil = $this->UserModel->getViewEditProfilM($this->input->post('idus'));
+            if(empty($this->session->idus)){
+                $hasil = $this->UserModel->getViewEditProfilM($this->input->post('idus'));
+            }else{
+                $hasil = $this->UserModel->getViewEditProfilM($this->session->idus);
+            }
             #var_dump($hasil);
             $h['data'] = $hasil[0];
             $this->load->view('edit_profil',$h);
@@ -76,9 +89,17 @@ class User extends CI_Controller
         # Fungsi yang digunakan untuk memanggil halaman dropbox
         # Output berupa page dropbox
         # ------------------------------------------------------------------------------------------------------------------------------------
-        $hasil = $this->UserModel->getViewEditProfilM($this->session->idus);
-        if(empty($hasil[0]['at']))$this->load->view('dropbox_auth');
-        else $this->load->view('dropbox_response');
+        if(empty($this->session->idus) && empty($this->input->post('idus'))){
+            redirect("https://simola.herokuapp.com");
+        }else{
+            if(empty($this->session->idus)){
+                $hasil = $this->UserModel->getViewEditProfilM($this->input->post('idus'));
+            }else{
+                $hasil = $this->UserModel->getViewEditProfilM($this->session->idus);
+            }
+            if(empty($hasil[0]['at']))$this->load->view('dropbox_auth');
+            else $this->load->view('dropbox_response');
+        }
     }
 
     public function getDropboxLink()
