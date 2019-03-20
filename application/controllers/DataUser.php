@@ -65,7 +65,7 @@ class DataUser extends CI_Controller {
             );
             $hasil = $this->UserModel->searchUserinputUserMAuth($data);
             if($hasil){
-                var_dump($hasil);
+                #var_dump($hasil);
                 $data = array(
                     "idau" => $this->input->post('idau'),
                     "idus" => $hasil[0]['idus']
