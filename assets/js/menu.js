@@ -566,6 +566,8 @@ function updateUIForPushEnabled(currentToken,value) {
 						.then(function(response){
 								console.log(response);
 								document.getElementById("hasil").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Berhasil menambah permission<\/div>";
+								document.getElementById("dp").style.display="block";
+								document.getElementById("rp").style.display="none";
 						})
 						.catch(function(err){
 								console.log(err);
@@ -586,6 +588,8 @@ function updateUIForPushEnabled(currentToken,value) {
 								.then(function () {
 									//window.location = hasil.link;
 									document.getElementById("hasil").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Berhasil menghapus permission<\/div>";
+									document.getElementById("dp").style.display="none";
+									document.getElementById("rp").style.display="block";
 								});
 						});
 					}
