@@ -372,7 +372,7 @@ function editUserM(){
 
 function insertUserM()
 {
-	document.getElementById("hasilEdit").innerHTML = "";
+	document.getElementById("hasilAdd").innerHTML = "";
 	//alert(document.getElementById('editstatus').value);
 	const hasil = {
 			"nama" : document.getElementById('inputnama').value,
@@ -391,8 +391,8 @@ function insertUserM()
 		return response.json();
 	}).then(hasil => {
 				//$("div#sub-content").html(hasil);
-			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mengedit user<\/div>";
-			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mengedit user<\/div>";
+			if(hasil.status == 1) document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mengedit user<\/div>";
+			else document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mengedit user<\/div>";
 	});
   return false;
 }
