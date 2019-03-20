@@ -567,7 +567,7 @@ function updateUIForPushEnabled(currentToken,value) {
 				.then(function(data) {
 					for (var i = 0; i < data.length; i++) {
 						//console.log(data[i]);
-						fetch('https://simolasocket-nodejs.herokuapp.com/removePushUser?idus='+idus+'&pushtoken='+data[i].token,{
+						fetch('https://simolasocket-nodejs.herokuapp.com/removePushUser?pushtoken='+data[i].token,{
 								method : 'GET',
 								mode: 'cors',
 						}).then(response => {
@@ -575,7 +575,7 @@ function updateUIForPushEnabled(currentToken,value) {
 						}).then(hasil => {
 								clearAllData('sync-posts')
 								.then(function () {
-									//window.location = hasil.link;
+									window.location = hasil.link;
 								});
 						});
 					}
