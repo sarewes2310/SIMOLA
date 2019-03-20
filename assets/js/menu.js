@@ -282,9 +282,10 @@ function offDevice(){
   return false;
 }
 
-function deleteUser(id){
+function deleteUser(id,nama){
 	document.getElementById("hasilDelete").innerHTML = "";
 	document.getElementById("idus_delete").value = id;
+	document.getElementById("usernamedelete").value = nama;
 }
 
 function deleteUserM()
@@ -419,50 +420,58 @@ function addDropbox()
 
 function editFingerprint()
 {
-	const hasil = {
-			"username" : document.getElementById('inputusername').value
-	};
-	fetch(base_url+"DataUser/editFingerPrint",{
-	method : "POST",
-	body : parserData(hasil),
+	if(document.getElementById('editusername').value != ""){
+		const hasil = {
+				"username" : document.getElementById('editusername').value
+		};
+		fetch(base_url+"DataUser/editFingerPrint",{
+			method : "POST",
+			body : parserData(hasil),
 			headers: {
 					"Content-Type": "application/x-www-form-urlencoded",
 			}
-	}).then(response => {
-		return response.json();
-	}).then(hasil => {
-				//$("div#sub-content").html(hasil);
-			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Lakukan langkah sesuai pada lcd device<\/div>";
-			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Device mati<\/div>";
-	});
+		}).then(response => {
+			return response.json();
+		}).then(hasil => {
+					//$("div#sub-content").html(hasil);
+				if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Lakukan langkah sesuai pada lcd device<\/div>";
+				else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Device mati<\/div>";
+		});
+	}else{
+		document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Username harus di isi<\/div>";
+	}
   return false;
 }
 
 function addFingerprint()
 {
-	const hasil = {
-			"username" : document.getElementById('inputusername').value
-	};
-	fetch(base_url+"DataUser/addFingerPrint",{
-	method : "POST",
-	body : parserData(hasil),
-			headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-			}
-	}).then(response => {
-		return response.json();
-	}).then(hasil => {
-				//$("div#sub-content").html(hasil);
-			if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Lakukan langkah sesuai pada lcd device<\/div>";
-			else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Device mati<\/div>";
-	});
+	if(document.getElementById('inputusername').value != ""){
+		const hasil = {
+				"username" : document.getElementById('inputusername').value
+		};
+		fetch(base_url+"DataUser/addFingerPrint",{
+		method : "POST",
+		body : parserData(hasil),
+				headers: {
+						"Content-Type": "application/x-www-form-urlencoded",
+				}
+		}).then(response => {
+			return response.json();
+		}).then(hasil => {
+					//$("div#sub-content").html(hasil);
+				if(hasil.status == 1) document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Lakukan langkah sesuai pada lcd device<\/div>";
+				else document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Device mati<\/div>";
+		});
+	}else{
+		document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Username harus di isi<\/div>";
+	}
   return false;
 }
 
 function removeFingerprint()
 {
 	const hasil = {
-			"username" : document.getElementById('inputusername').value
+			"username" : document.getElementById('usernamedelete').value
 	};
 	fetch(base_url+"DataUser/removeFingerPrint",{
 	method : "POST",

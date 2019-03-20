@@ -14,7 +14,7 @@ foreach($data as $key => $value){
                 '.$value['nama'].'
             </td>
             <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return editUser('.$value['idus'].')">Edit</button></td>
-            <td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('.$value['idus'].')">Delete</button></td>        
+            <td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('.$value['idus'].','.$value['nama'].')">Delete</button></td>        
         </tr>
     ';
 }
@@ -123,6 +123,7 @@ th{
                 <button id="addfingerprint" onclick="return addFingerprint()" type="button" class="btn btn-primary" style="width:100%" onclick="return saveFP()">Add Fingerprint</button>
             </div>
             <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->
+            <div id="hasilAdd"></div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -145,7 +146,6 @@ th{
             </button>
         </div>
         <div class="modal-body">
-            <div id="hasilEdit"></div>
             <div class="form-group row">
                 <label for="editnama" class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-sm-10">
@@ -187,6 +187,7 @@ th{
                 </div>
             </div>
             <!--<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>-->
+            <div id="hasilEdit"></div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -212,6 +213,7 @@ th{
             <div class="form-group row">
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="idus_delete" placeholder="idus" style="display:none">
+                    <input type="text" class="form-control" id="usernamedelete" placeholder="usernamedelete" style="display:none">
                 </div>
             </div>
             <div class="boxfingerprint">

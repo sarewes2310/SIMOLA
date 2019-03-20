@@ -44,7 +44,7 @@ echo json_encode('
     </div>
     <div id="boxfingerprint">
         <img src="'.base_url().'assets/logo/fingerprints.png">
-        <button id="editfingerprint" type="button" class="btn btn-primary" style="width:100%">Edit Fingerprint</button>
+        <button id="editfingerprint" type="button" class="btn btn-primary" onclick="return editFingerprint()" style="width:100%">Edit Fingerprint</button>
     </div>
     <div id="efp"></div>
 	<div class="form-group row" style="display:none">
