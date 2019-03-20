@@ -553,7 +553,7 @@ function updateUIForPushEnabled(currentToken,value) {
 						var post = {
 							token:currentToken
 						}
-						writeData('sync-post', post)
+						writeData('sync-posts', post)
 						.then(function(response){
 								console.log(response);
 						})
@@ -563,7 +563,7 @@ function updateUIForPushEnabled(currentToken,value) {
 				});
 			});
 		}else{
-			readAllData('sync-post')
+			readAllData('sync-posts')
 			.then(function(data) {
 				for (var i = 0; i < data.length; i++) {
 					//console.log(data[i]);
@@ -573,7 +573,7 @@ function updateUIForPushEnabled(currentToken,value) {
 					}).then(response => {
 							return response.json();
 					}).then(hasil => {
-							clearAllData('sync-post')
+							clearAllData('sync-posts')
 							.then(function () {
 								//window.location = hasil.link;
 							});
