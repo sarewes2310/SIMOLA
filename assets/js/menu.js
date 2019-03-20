@@ -5,14 +5,28 @@ function load(){
     // Output yang dihasilkan berupa page dengan menu pilihan dashboard
     // ------------------------------------------------------------------------------------------------------
 	document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
-	fetch(base_url+'user/getViewDashboard',{
-		method : 'GET',
-		mode : 'cors'
-	}).then(response => {
-		return response.json();
-	}).then(hasil => {
-		document.getElementById("sub-content").innerHTML = hasil;
-	});
+	if ('indexedDB' in window) {
+		readAllData('login')
+		.then(function(data) {
+			for (var i = 0; i < data.length; i++) {
+				//console.log(data[i]);
+				hasil = {
+					'idus' : data[i].id
+				}
+			}
+			fetch(base_url+'User/getViewDashboard',{
+				body : parserData(hasil),
+				method : 'POST',
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+				}
+			}).then(response => {
+				return response.json();
+			}).then(hasil => {
+				document.getElementById("sub-content").innerHTML = hasil;
+			});
+		});
+	}
 }
 
 $(document).ready(() => {
