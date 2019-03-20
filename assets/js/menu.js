@@ -391,8 +391,8 @@ function insertUserM()
 		return response.json();
 	}).then(hasil => {
 			//$("div#sub-content").html(hasil);
-			if(hasil.status == 1) document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mengedit user<\/div>";
-			else document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mengedit user<\/div>";
+			if(hasil.status == 1) document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil menambah user<\/div>";
+			else document.getElementById("hasilAdd").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal menambah user<\/div>";
 	});
   return false;
 }
@@ -679,3 +679,16 @@ function resetUI(value) {
 		});
 		// [END get_token]
 }
+
+window.onscroll = function() {
+  var d = document.documentElement;
+  var offset = d.scrollTop + window.innerHeight;
+  var height = d.offsetHeight;
+
+  console.log('offset = ' + offset);
+  console.log('height = ' + height);
+
+  if (offset >= (height-1)) {
+    console.log('At the bottom');
+  }
+};
