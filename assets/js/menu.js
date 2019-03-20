@@ -551,6 +551,7 @@ function updateUIForPushEnabled(currentToken,value) {
 						return response.json();
 				}).then(hasil => {
 						var post = {
+							id:1,
 							token:currentToken
 						}
 						writeData('sync-posts', post)
