@@ -61,6 +61,7 @@ $(document).ready(() => {
 						fetch(base_url+'User/getViewDashboard',{
 							body : parserData(hasil),
 							method : 'POST',
+							cache : 'no-cache',
 							headers: {
 								"Content-Type": "application/x-www-form-urlencoded",
 							}
@@ -87,6 +88,7 @@ $(document).ready(() => {
 						fetch(base_url+'User/getViewUser',{
 							body : parserData(hasil),
 							method : 'POST',
+							cache : 'no-cache',
 							headers: {
 								"Content-Type": "application/x-www-form-urlencoded",
 							}
@@ -115,6 +117,7 @@ $(document).ready(() => {
 						fetch(base_url+'User/getViewDropbox',{
 							body : parserData(hasil),
 							method : 'POST',
+							cache : 'no-cache',
 							headers: {
 								"Content-Type": "application/x-www-form-urlencoded",
 							}
@@ -147,6 +150,7 @@ $(document).ready(() => {
 						fetch(base_url+'User/getViewEditProfil',{
 								method : 'post',
 								body : parserData(hasil),
+								cache : 'no-cache',
 								headers: {
 									"Content-Type": "application/x-www-form-urlencoded",
 								}
@@ -164,7 +168,8 @@ $(document).ready(() => {
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				fetch(base_url+'User/getViewNotification',{
-					method : 'GET'
+					method : 'GET',
+					cache : 'no-cache',
 				}).then(response => {
 					return response.json();
 				}).then(hasil => {
@@ -184,7 +189,8 @@ $(document).ready(() => {
 				cekNavbar = false;
 				//deleteToken();
 				fetch(base_url+'User/logout',{
-					method : 'GET'
+					method : 'GET',
+					cache : 'no-cache',
 				}).then(response => {
 					return response.json();
 				}).then(hasil => {
