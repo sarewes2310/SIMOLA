@@ -300,12 +300,13 @@ function deleteUserM()
 	const hasil = {
 			"idus" : document.getElementById("idus_delete").value
 	};
+	console.log(hasil);
 	fetch(base_url+"DataUser/deleteUser",{
-	method : "POST",
-	body : parserData(hasil),
-			headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-			}
+		method : "POST",
+		body : parserData(hasil),
+		headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+		}
 	}).then(response => {
 		return response.json();
 	}).then(hasil => {
@@ -480,11 +481,11 @@ function removeFingerprint()
 			"username" : document.getElementById('usernamedelete').value
 	};
 	fetch(base_url+"DataUser/removeFingerPrint",{
-	method : "POST",
-	body : parserData(hasil),
-			headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-			}
+		method : "POST",
+		body : parserData(hasil),
+		headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+		}
 	}).then(response => {
 		return response.json();
 	}).then(hasil => {

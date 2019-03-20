@@ -14,7 +14,7 @@ foreach($data as $key => $value){
                 '.$value['nama'].'
             </td>
             <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return editUser('.$value['idus'].')">Edit</button></td>
-            <td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('.$value['idus'].','.$value['nama'].')">Delete</button></td>        
+            <td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('.$value['idus'].',\''.$value['nama'].'\')">Delete</button></td>        
         </tr>
     ';
 }
