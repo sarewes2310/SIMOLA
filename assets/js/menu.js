@@ -156,8 +156,6 @@ $(document).ready(() => {
 								document.getElementById("sub-content").innerHTML = hasil;
 							});
 					});
-				}else{
-					
 				}
 				console.log("HASIL",hasil);
 				break;
@@ -174,7 +172,7 @@ $(document).ready(() => {
 				});*/
 				break;
 			case "logout" :
-				//document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
+				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				deleteToken();
 				fetch(base_url+'User/logout',{
@@ -628,7 +626,7 @@ function resetUI(value) {
 		}).catch(function(err) {
 				console.log('An error occurred while retrieving token. ', err);
 				//showToken('Error retrieving Instance ID token. ', err);
-				//setTokenSentToServer(false);
+				setTokenSentToServer(false);
 		});
 		// [END get_token]
 }
