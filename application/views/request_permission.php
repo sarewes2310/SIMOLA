@@ -9,7 +9,10 @@ echo json_encode('
         width: calc(100%);
         margin: 10px 0px;
     }
-    #getdropbox{
+    #dp{
+        width:100%;
+    }
+    #rp{
         width:100%;
     }
     body{
@@ -24,8 +27,8 @@ echo json_encode('
     <tr>
         <td>Notifications</td>
         <td>
-            <button id="rp" onclick="return requestPermission()" type="button" class="btn btn-primary">Add Permision</button>
-            <button id="dp" onclick="return deleteToken()" type="button" class="btn btn-danger">Remove Permision</button>
+            <button id="rp" onclick="return requestPermission()" type="button" class="btn btn-primary">Add</button>
+            <button id="dp" onclick="return deleteToken()" type="button" class="btn btn-danger">Remove</button>
         </td>
     </tr>
     <tr><div id="hasil"></div></tr>
