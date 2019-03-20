@@ -21,11 +21,14 @@ echo json_encode('
 </style>
 <table class="table">
 <tbody>
-    <td>Notifications</td>
-    <td>
-        <button id="rp" onclick="return requestPermission()" type="button" class="btn btn-primary">Add Permision</button>
-        <button id="dp" onclick="return deleteToken()" type="button" class="btn btn-danger">Remove Permision</button>
-    </td>
+    <tr>
+        <td>Notifications</td>
+        <td>
+            <button id="rp" onclick="return requestPermission()" type="button" class="btn btn-primary">Add Permision</button>
+            <button id="dp" onclick="return deleteToken()" type="button" class="btn btn-danger">Remove Permision</button>
+        </td>
+    </tr>
+    <tr><div id="hasil"></div></tr>
 </tbody>
 </table>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);

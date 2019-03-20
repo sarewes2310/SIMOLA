@@ -565,6 +565,7 @@ function updateUIForPushEnabled(currentToken,value) {
 						writeData('sync-posts', post)
 						.then(function(response){
 								console.log(response);
+								document.getElementById("hasil").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Berhasil menambah permission<\/div>";
 						})
 						.catch(function(err){
 								console.log(err);
@@ -584,6 +585,7 @@ function updateUIForPushEnabled(currentToken,value) {
 								clearAllData('sync-posts')
 								.then(function () {
 									//window.location = hasil.link;
+									document.getElementById("hasil").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Berhasil menghapus permission<\/div>";
 								});
 						});
 					}
@@ -643,7 +645,6 @@ function resetUI(value) {
 						sendTokenToServer(currentToken);
 						updateUIForPushEnabled(currentToken,value);
 						console.log(currentToken);
-
 				} else {
 						// Show permission request.
 						console.log('No Instance ID token available. Request permission to generate one.');
