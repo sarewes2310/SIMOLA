@@ -71,8 +71,8 @@ self.addEventListener('push', function(event) {
     );
 });
 
-var CACHE_STATIC_NAME = 'static-v6';
-var CACHE_DYNAMIC_NAME = 'dynamic-v6';
+var CACHE_STATIC_NAME = 'static-v7';
+var CACHE_DYNAMIC_NAME = 'dynamic-v7';
 
 var STATIC_FILES = [
     'https://simola.herokuapp.com/manifest.json',
