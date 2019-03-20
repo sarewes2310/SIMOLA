@@ -218,7 +218,7 @@ th{
             </div>
             <div class="boxfingerprint">
                 <img src="'.base_url().'assets/logo/fingerprints.png">
-                <button id="removefingerprint" onclick="return removeFingerprint()" type="button" class="btn btn-primary" style="width:100%" onclick="return saveFP()">Add Fingerprint</button>
+                <button id="removefingerprint" onclick="return removeFingerprint()" type="button" class="btn btn-primary" style="width:100%" onclick="return saveFP()">Delete Fingerprint</button>
             </div>
             <div id="hasilDelete"></div>
         </div>
