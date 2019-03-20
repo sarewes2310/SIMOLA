@@ -123,12 +123,6 @@ $(document).ready(() => {
 						}).then(hasil => {
 							//$("div#sub-content").html(hasil);
 							document.getElementById("sub-content").innerHTML = hasil;
-							readAllData('sync-posts')
-							.then(function(hasil) {
-								if(hasil.length == 0){
-									document.getElementById("dp").style.display="none";
-								}
-							});
 						});
 					});
 				}
@@ -175,6 +169,14 @@ $(document).ready(() => {
 					return response.json();
 				}).then(hasil => {
 					document.getElementById("sub-content").innerHTML = hasil;
+					readAllData('sync-posts')
+					.then(function(hasil) {
+						if(hasil.length == 0){
+							document.getElementById("dp").style.display="none";
+						}else{
+							document.getElementById("rp").style.display="none";
+						}
+					});
 				});
 				break;
 			case "logout" :
