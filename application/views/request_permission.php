@@ -20,8 +20,8 @@ echo json_encode('
 <table class="table">
 <tbody>
     <td>Notifications</td>
-    <td><button id="rp" onclick="return requestPermission()" type="button" class="btn btn-primary" href="'.base_url().'index.php/user/getDropboxLink">Login DropBox</button></td>
-    <td><button id="dp" onclick="return deleteToken()" type="button" class="btn btn-danger" href="'.base_url().'index.php/user/getDropboxLink">Login DropBox</button></td>
+    <td><button id="rp" onclick="return requestPermission()" type="button" class="btn btn-primary">Login DropBox</button></td>
+    <td><button id="dp" onclick="return deleteToken()" type="button" class="btn btn-danger">Login DropBox</button></td>
 </tbody>
 </table>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
