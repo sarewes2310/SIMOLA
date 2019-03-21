@@ -693,7 +693,7 @@ function scroll_user(){
 	
 		if (offset >= (height-1)) {
 			console.log('At the bottom');
-			z_index++;
+			z_index+=12;
 			if ('indexedDB' in window) {
 				readAllData('login')
 				.then(function(data) {
