@@ -718,6 +718,7 @@ function scroll_user(){
 						for(child in hasil){
 							//var x = document.createElement("TD");
 							//var t = document.createTextNode(hasil.nama);
+							console.log("child:",child);
 							var str = '<tr><td style="width:80%">'+child.nama+'</td><td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return editUser('+child.nama+')">Edit</button></td><td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('+child.idus+',\''+child.nama+'\')">Delete</button></td></tr>';
 							document.getElementById("sub-content").insertAdjacentHTML( 'beforeend', str );
 						}
