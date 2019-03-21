@@ -50,6 +50,7 @@ $(document).ready(() => {
         // Output yang dihasilkan berupa page dengan menu pilihan dashboard
         // ------------------------------------------------------------------------------------------------------
 				cekNavbar = false;
+				z_index = 0;
 				if ('indexedDB' in window) {
 					readAllData('login')
 					.then(function(data) {
@@ -75,6 +76,7 @@ $(document).ready(() => {
 				}
 				break;
 			case "tambahuser" :
+				z_index = 0;
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				if ('indexedDB' in window) {
@@ -103,6 +105,7 @@ $(document).ready(() => {
 				}
 				break;
 			case "dropbox" :
+				z_index = 0;
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				//window.location.href = base_url + "user/getDropboxLink";
@@ -133,6 +136,7 @@ $(document).ready(() => {
 				}
 				break;
 			case "edit_profil" :
+				z_index = 0;
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				var hasil = null;
@@ -167,6 +171,7 @@ $(document).ready(() => {
 				break;
 			case "notifications" :
 				//requestPermission();
+				z_index = 0;
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
 				fetch(base_url+'User/getViewNotification',{
