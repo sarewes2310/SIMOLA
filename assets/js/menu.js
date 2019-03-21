@@ -715,6 +715,11 @@ function scroll_user(){
 						return response.json();
 					}).then(hasil => {
 						console.log("HASIL SCROLL",hasil);
+						for(child in hasil){
+							var x = document.createElement("TD");
+							var t = document.createTextNode(hasil.nama);
+							//document.getElementById("sub-content").appendChild() = has;
+						}
 						//document.getElementById("sub-content").innerHTML = has;
 					});
 				});
