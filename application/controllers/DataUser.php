@@ -88,7 +88,7 @@ class DataUser extends CI_Controller {
     {
         $ch = curl_init();
         curl_setopt_array($ch, array(
-            CURLOPT_URL => "https://simolasocket-nodejs.herokuapp.com/editfingerprint?us=".$this->input->post("username"),
+            CURLOPT_URL => "https://simolasocket-nodejs.herokuapp.com/editfingerprint?us=".$this->input->post("username")."&usold=".$this->input->post("usernameold"),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,

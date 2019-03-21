@@ -155,6 +155,7 @@ th{
                 <label for="editusername" class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="editusername" placeholder="Username">
+                    <input type="text" class="form-control" id="editusernameold" placeholder="Username" style="display:none;">
                 </div>
             </div>
             <div class="form-group row">

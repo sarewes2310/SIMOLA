@@ -327,7 +327,7 @@ function deleteUserM()
 function editUser(id){
 	document.getElementById("hasilEdit").innerHTML = "";
 	const hasil = {
-			"idus" : id
+			"idus" : id,
 	};
 	fetch(base_url+"DataUser/getDataEditUser",{
 	method : "POST",
@@ -342,6 +342,7 @@ function editUser(id){
 				//$("div#sub-content").html(hasil);
 				document.getElementById('editnama').value = hasil[0].nama;
 				document.getElementById('editusername').value = hasil[0].username;
+				document.getElementById('editusernameold').value = hasil[0].username;
 				document.getElementById('editpassword').value = hasil[0].password;
 				document.getElementById('editemail').value = hasil[0].email;
 				document.getElementById('editidus').value = hasil[0].idus;
@@ -436,7 +437,8 @@ function editFingerprint()
 {
 	if(document.getElementById('editusername').value != ""){
 		const hasil = {
-				"username" : document.getElementById('editusername').value
+				"username" : document.getElementById('editusername').value,
+				"usernameold" : document.getElementById('editusernameold').value
 		};
 		fetch(base_url+"DataUser/editFingerPrint",{
 			method : "POST",
