@@ -66,7 +66,7 @@ th{
         <th colspan="2">Aksi</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="pushuser">
     '.$dataT.'
   </tbody>
 </table>

@@ -721,7 +721,7 @@ function scroll_user(){
 								//var t = document.createTextNode(hasil.nama);
 								console.log("hasil[i]:",hasil[i]);
 								var str = '<tr><td style="width:80%">'+hasil[i].nama+'</td><td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return editUser('+hasil[i].nama+')">Edit</button></td><td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('+hasil[i].idus+',\''+hasil[i].nama+'\')">Delete</button></td></tr>';
-								document.getElementById("sub-content").insertAdjacentHTML( 'beforeend', str );
+								document.getElementById("pushuser").insertAdjacentHTML( 'beforeend', str );
 							}
 						}
 						//document.getElementById("sub-content").innerHTML = has;
