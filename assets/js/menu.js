@@ -1,3 +1,4 @@
+var z_index = 0;
 var base_url = "https://simola.herokuapp.com/index.php/";
 function load(){
     // ------------------------------------------------------------------------------------------------------
@@ -687,11 +688,37 @@ function scroll_user(){
 		var offset = d.scrollTop + window.innerHeight;
 		var height = d.offsetHeight;
 	
-		console.log('offset = ' + offset);
-		console.log('height = ' + height);
+		//console.log('offset = ' + offset);
+		//console.log('height = ' + height);
 	
 		if (offset >= (height-1)) {
 			console.log('At the bottom');
+			z_index++;
+			if ('indexedDB' in window) {
+				readAllData('login')
+				.then(function(data) {
+					for (var i = 0; i < data.length; i++) {
+						//console.log(data[i]);
+						hasil = {
+							'idus'	: data[i].id,
+							'offset': z_index 
+						}
+					}
+					fetch(base_url+'DataUser/viewUser',{
+						body : parserData(hasil),
+						method : 'POST',
+						cache : 'no-cache',
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded",
+						}
+					}).then(response => {
+						return response.json();
+					}).then(hasil => {
+						document.getElementById("sub-content").innerHTML = hasil;
+						scroll_user();
+					});
+				});
+			}
 		}
 	};
 }

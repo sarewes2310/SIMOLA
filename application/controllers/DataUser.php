@@ -407,4 +407,15 @@ class DataUser extends CI_Controller {
             ),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         }
     }
+
+    public function viewUser(){
+        if(empty($this->session->idus) && empty($this->input->post('idus'))){
+            redirect("https://simola.herokuapp.com");
+        }else{
+            $hasil = $this->UserModel->getAllUserM($this->input->post('offset'));
+            #var_dump($hasil);
+            $h['data'] = $hasil;
+            echo json_encode($hasil,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);  
+        }
+    }
 }

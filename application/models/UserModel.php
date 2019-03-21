@@ -42,7 +42,7 @@ class UserModel extends CI_Model
         # fungsi yang digunakan untuk menghasilkan output SEMUA DATA pada tabel users dalam database PostgresSql dalam bentuk array.
         # bernilai null atau 0 jika data tidak ada.
         # ------------------------------------------------------------------------------------------------------------------------------------
-        return $this->db->query("SELECT * FROM users INNER JOIN authorizations ON users.idus = authorizations.idus LIMIT 20 OFFSET ".$offset.";")->result_array();
+        return $this->db->query("SELECT * FROM users INNER JOIN authorizations ON users.idus = authorizations.idus LIMIT 12 OFFSET ".$offset.";")->result_array();
     }
 
     function inputUserM($data)
