@@ -715,12 +715,14 @@ function scroll_user(){
 						return response.json();
 					}).then(hasil => {
 						console.log("HASIL SCROLL",hasil);
-						for(child in hasil){
-							//var x = document.createElement("TD");
-							//var t = document.createTextNode(hasil.nama);
-							console.log("child:",child);
-							var str = '<tr><td style="width:80%">'+child.nama+'</td><td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return editUser('+child.nama+')">Edit</button></td><td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('+child.idus+',\''+child.nama+'\')">Delete</button></td></tr>';
-							document.getElementById("sub-content").insertAdjacentHTML( 'beforeend', str );
+						if(hasil.length != 0){
+							for (var i = 0; i < hasil.length; i++) {
+								//var x = document.createElement("TD");
+								//var t = document.createTextNode(hasil.nama);
+								console.log("hasil[i]:",hasil[i]);
+								var str = '<tr><td style="width:80%">'+hasil[i].nama+'</td><td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return editUser('+hasil[i].nama+')">Edit</button></td><td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('+hasil[i].idus+',\''+hasil[i].nama+'\')">Delete</button></td></tr>';
+								document.getElementById("sub-content").insertAdjacentHTML( 'beforeend', str );
+							}
 						}
 						//document.getElementById("sub-content").innerHTML = has;
 					});
