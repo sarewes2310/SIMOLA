@@ -35,7 +35,7 @@ class User extends CI_Controller
         # Fungsi yang digunakan untuk memanggil halaman login 
         # Output berupa page dashboard
         # ------------------------------------------------------------------------------------------------------------------------------------
-        if(empty($this->session->nama)){
+        if(empty($this->session->idus) && empty($this->input->get('idus'))){
             redirect("https://simola.herokuapp.com");
         }else{
             $this->load->view('dashboard');
