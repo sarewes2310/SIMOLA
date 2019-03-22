@@ -749,7 +749,7 @@ function stopbuzzer(){
 				'offset': z_index 
 			}
 		}
-		fetch(base_url+'DataUser/stopbuzzer',{
+		fetch('https://simolasocket-nodejs.herokuapp.com/stopbuzzer',{
 			body : parserData(hasil),
 			method : 'POST',
 			cache : 'no-cache',
