@@ -220,7 +220,7 @@ function simpanProfil(){
 	const hasil = {
 			"nama" : document.getElementById("nama").value,
 			"email" : document.getElementById("email").value,
-			"username" : document.getElementById("username").value,
+			"username" : document.getElementById("editusername").value,
 			"password" : document.getElementById("password").value,
 			"idus" : document.getElementById("idus").value,
 	};
@@ -235,8 +235,8 @@ function simpanProfil(){
 	}).then(hasil => {
 				//$("div#sub-content").html(hasil);
 				//document.getElementById("device_id").value = hasil.device_id;
-				if(hasil.status == 1) document.getElementById("hasil").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mengedit data profil<\/div>";
-				else document.getElementById("hasil").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mengedit data profil<\/div>";
+				if(hasil.status == 1) document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"> Berhasil mengedit data profil<\/div>";
+				else document.getElementById("hasilEdit").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"> Gagal mengedit data profil<\/div>";
 				console.log("OFF DEVICE",hasil);
 	});
 	return false;

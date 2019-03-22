@@ -26,7 +26,8 @@ echo json_encode('
     <div class="form-group row">
 		<label for="username" class="col-sm-2 col-form-label">Username</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" id="username" placeholder="Username" value="'.$data['username'].'">
+            <input type="text" class="form-control" id="editusername" placeholder="Username" value="'.$data['username'].'">
+            <input type="text" class="form-control" id="editusernameold" placeholder="Username" style="display:none;">
 	    </div>
     </div>
     <div class="form-group row">
@@ -51,7 +52,7 @@ echo json_encode('
 	    	<input type="text" class="form-control" id="idus" placeholder="idus"  value="'.$data['idus'].'">
 	    </div>
     </div>
-    <div id="hasil"></div>
+    <div id="hasilEdit"></div>
 	<div><button id="buttonSubmit" type="submit" class="btn btn-success" style="width:100%">SUBMIT</button></div>
 </form>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
