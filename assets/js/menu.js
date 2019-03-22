@@ -738,3 +738,38 @@ function scroll_user(){
 		}
 	};
 }
+
+function stopbuzzer(){
+	readAllData('login')
+	.then(function(data) {
+		for (var i = 0; i < data.length; i++) {
+			//console.log(data[i]);
+			hasil = {
+				'idus'	: data[i].id,
+				'offset': z_index 
+			}
+		}
+		fetch(base_url+'DataUser/stopbuzzer',{
+			body : parserData(hasil),
+			method : 'POST',
+			cache : 'no-cache',
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+			}
+		}).then(response => {
+			return response.json();
+		}).then(hasil => {
+			console.log("HASIL SCROLL",hasil);
+			if(hasil.length != 0){
+				for (var i = 0; i < hasil.length; i++) {
+					//var x = document.createElement("TD");
+					//var t = document.createTextNode(hasil.nama);
+					console.log("hasil[i]:",hasil[i]);
+					var str = '<tr><td style="width:80%">'+hasil[i].nama+'</td><td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return editUser('+hasil[i].idus+')">Edit</button></td><td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('+hasil[i].idus+',\''+hasil[i].nama+'\')">Delete</button></td></tr>';
+					document.getElementById("pushuser").insertAdjacentHTML( 'beforeend', str );
+				}
+			}
+			//document.getElementById("sub-content").innerHTML = has;
+		});
+	});
+}

@@ -8,7 +8,12 @@ foreach($data as $key => $value){
     if($value['check_connect'] == 1){
         $dataT .= '<td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#inputModal" onclick="return peringatan('.$value['device_id'].')">ON</button></td>';
     }else{
-        $dataT .= '<td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#inputModal">OFF</button></td>';
+        $dataT .= '<td><button type="button" class="btn btn-outline-danger" data-toggle="modal" disabled>OFF</button></td>';
+    }
+    if($value['buzzer'] == 1){
+        $dataT .= '<td><button type="button" class="btn btn-outline-primary" onclick="return stopbuzzer('.$value['device_id'].')">STOP</button></td>';
+    }else{
+        $dataT .= '<td><button type="button" class="btn btn-outline-primary" disabled>STOP</button></td>';
     }
     $dataT .= '
         </tr>
@@ -60,7 +65,7 @@ th{
   <thead>
     <tr>
         <th>Nama</th>
-        <th>Aksi</th>
+        <th colspan="2">Aksi</th>
     </tr>
   </thead>
   <tbody>

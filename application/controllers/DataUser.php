@@ -418,4 +418,30 @@ class DataUser extends CI_Controller {
             echo json_encode($hasil,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);  
         }
     }
+    
+    public function updatebuzzer()
+    {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # fungsi yang digunakan untuk  mengedit keadaan device pada tabel device dalam 
+        # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya
+        # dipanggil pada saat device connect dari server socketio
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        #var_dump($this->input->post());   
+        $data = array(
+            'nama' => $this->input->post('device'),
+            'buzzer' => $this->input->post('buzzer')
+        );
+        $check = $this->UserModel->checkDeviceM($data['nama']);
+        var_dump(empty($check));
+        if(empty($check)){
+            $hasil = $this->UserModel->saveDeviceM($data);
+            var_dump($hasil);
+        }else{
+            $data1 = array(
+                'buzzer' => $this->input->post('buzzer')
+            );
+            $hasil = $this->UserModel->editDeviceM($data['nama'],$data1);
+            var_dump($hasil);
+        }
+    }
 }
