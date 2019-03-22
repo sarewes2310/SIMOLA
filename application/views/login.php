@@ -54,5 +54,29 @@
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/idb.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/utility.js"></script>
 <script src="<?php echo base_url()?>assets/js/login.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  setTimeout(function(){
+    if ('indexedDB' in window) {
+      readAllData('login')
+        .then(function(data) {
+          if(data != 0)console.log(data);
+          if(data.length != 0){
+            window.location = "https://simola.herokuapp.com/index.php/User";
+          }
+        });
+    }
+  },1000);
+  $(document).ready(function() {
+    if ('indexedDB' in window) {
+      readAllData('login')
+        .then(function(data) {
+          if(data != 0)console.log(data);
+          if(data.length != 0){
+            window.location = "https://simola.herokuapp.com/index.php/User";
+          }
+        });
+    }
+  });
+</script>
 </body>
 </html>
