@@ -61,7 +61,10 @@
         .then(function(data) {
           if(data != 0)console.log(data);
           if(data.length != 0){
-            window.location = "https://simola.herokuapp.com/index.php/User";
+            for (var i = 0; i < data.length; i++) {
+              idus = data[i].id;
+            }
+            window.location = "https://simola.herokuapp.com/index.php/User?idus="+idus;
           }
         });
     }
@@ -72,7 +75,10 @@
         .then(function(data) {
           if(data != 0)console.log(data);
           if(data.length != 0){
-            window.location = "https://simola.herokuapp.com/index.php/User";
+            for (var i = 0; i < data.length; i++) {
+              idus = data[i].id;
+            }
+            window.location = "https://simola.herokuapp.com/index.php/User?idus="+idus;
           }
         });
     }

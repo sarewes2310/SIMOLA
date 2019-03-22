@@ -20,7 +20,7 @@ class User extends CI_Controller
         # Fungsi yang digunakan untuk memanggil halaman login 
         # Output berupa page login
         # ------------------------------------------------------------------------------------------------------------------------------------
-        if(empty($this->session->idus) && empty($this->input->post('idus'))){
+        if(empty($this->session->idus) && empty($this->input->get('idus'))){
             $this->load->view('login');
         }
         else {
