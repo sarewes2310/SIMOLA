@@ -759,8 +759,8 @@ function stopbuzzer(){
 			return response.json();
 		}).then(hasil => {
 			console.log("HASIL SCROLL",hasil);
-			if(hasil.status == 1) document.getElementById("hasilBuzzer").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Buzzer dimatika<\/div>";
-			else document.getElementById("hasilBuzzer").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Buzzer gagal mati<\/div>";
+			if(hasil.status == 1) document.getElementById("hasilBuzzer").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Buzzer berhasil di matikan<\/div>";
+			else document.getElementById("hasilBuzzer").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Buzzer gagal di matikan<\/div>";
 			//document.getElementById("sub-content").innerHTML = has;
 		});
 	});
