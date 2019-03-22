@@ -426,7 +426,7 @@ class DataUser extends CI_Controller {
         # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya
         # dipanggil pada saat device connect dari server socketio
         # ------------------------------------------------------------------------------------------------------------------------------------
-        #var_dump($this->input->post());   
+        var_dump($this->input->post());   
         $data = array(
             'nama' => $this->input->post('device'),
             'buzzer' => $this->input->post('buzzer')
