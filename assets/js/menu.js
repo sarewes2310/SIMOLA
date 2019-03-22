@@ -750,8 +750,7 @@ function stopbuzzer(){
 			}
 		}
 		fetch('https://simolasocket-nodejs.herokuapp.com/stopbuzzer',{
-			body : parserData(hasil),
-			method : 'POST',
+			method : 'GET',
 			cache : 'no-cache',
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded",
@@ -760,15 +759,8 @@ function stopbuzzer(){
 			return response.json();
 		}).then(hasil => {
 			console.log("HASIL SCROLL",hasil);
-			if(hasil.length != 0){
-				for (var i = 0; i < hasil.length; i++) {
-					//var x = document.createElement("TD");
-					//var t = document.createTextNode(hasil.nama);
-					console.log("hasil[i]:",hasil[i]);
-					var str = '<tr><td style="width:80%">'+hasil[i].nama+'</td><td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#editModal" onclick="return editUser('+hasil[i].idus+')">Edit</button></td><td><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal" onclick="return deleteUser('+hasil[i].idus+',\''+hasil[i].nama+'\')">Delete</button></td></tr>';
-					document.getElementById("pushuser").insertAdjacentHTML( 'beforeend', str );
-				}
-			}
+			if(hasil.status == 1) document.getElementById("hasilBuzzer").innerHTML = "<div class=\"alert alert-primary\" role=\"alert\">Buzzer dimatika<\/div>";
+			else document.getElementById("hasilBuzzer").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Buzzer gagal mati<\/div>";
 			//document.getElementById("sub-content").innerHTML = has;
 		});
 	});

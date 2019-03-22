@@ -61,6 +61,7 @@ th{
     text-align:center;
 }
 </style>
+<div id="hasilBuzzer"></div>
 <table class="table">
   <thead>
     <tr>
