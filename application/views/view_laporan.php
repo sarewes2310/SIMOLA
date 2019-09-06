@@ -25,13 +25,13 @@ echo json_encode('
 <div class="container">
     <div class="row">
         <form>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 col-12">
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary" type="button">Tanggal Awal</button>
                 </div>
                 <input type="date" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="tgl_awal">
             </div>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 col-12">
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary" type="button">Tanggal Akhir</button>
                 </div>
