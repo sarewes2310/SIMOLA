@@ -1,13 +1,13 @@
 <?php
+/*
+# CLASS yang digunakan untuk mengambil atau memanggil data dari database PostgresSql
+# parameter default dari semua function yaitu:
+# 1. $data   (mengambil data dari controller)
+# 2. $id     (mengambil id dari controller)
+# 3. $offset (mengambil kelipatan dari sebuah pencarian data hanya digunakan pada function getAllUserM)
+*/
 class UserModel extends CI_Model
 {
-    ##########################################################################################################################################
-    # CLASS yang digunakan untuk mengambil atau memanggil data dari database PostgresSql
-    # parameter default dari semua function yaitu:
-    # 1. $data   (mengambil data dari controller)
-    # 2. $id     (mengambil id dari controller)
-    # 3. $offset (mengambil kelipatan dari sebuah pencarian data hanya digunakan pada function getAllUserM)
-    ##########################################################################################################################################
 
     function getListDevice()
     {
