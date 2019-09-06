@@ -197,7 +197,7 @@ $(document).ready(() => {
 				z_index = 0;
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
-				fetch(base_url+'User/view_print_pdf',{
+				fetch(base_url+'DataUser/view_print_pdf',{
 					method : 'GET',
 					cache : 'no-cache',
 				}).then(response => {
