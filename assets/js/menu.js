@@ -1,6 +1,7 @@
 var z_index = 0;
 var base_url = "https://simola.herokuapp.com/index.php/";
-function load(){
+function load()
+{
     // ------------------------------------------------------------------------------------------------------
     // Fungsi yang di gunakan untuk memanggil load page dashboard awal
     // Output yang dihasilkan berupa page dengan menu pilihan dashboard
@@ -44,11 +45,11 @@ $(document).ready(() => {
 		var isi;
 		switch($(this).attr('id')){
 			case "dashboard" :
+				// ------------------------------------------------------------------------------------------------------
+		        // Fungsi yang di gunakan untuk memilih menu pilihan dashboard
+		        // Output yang dihasilkan berupa page dengan menu pilihan dashboard
+		        // ------------------------------------------------------------------------------------------------------
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
-        // ------------------------------------------------------------------------------------------------------
-        // Fungsi yang di gunakan untuk memilih menu pilihan dashboard
-        // Output yang dihasilkan berupa page dengan menu pilihan dashboard
-        // ------------------------------------------------------------------------------------------------------
 				cekNavbar = false;
 				z_index = 0;
 				if ('indexedDB' in window) {
@@ -191,6 +192,28 @@ $(document).ready(() => {
 					});
 				});
 				break;
+			case "laporan" :
+				//requestPermission();
+				z_index = 0;
+				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
+				cekNavbar = false;
+				fetch(base_url+'User/view_print_pdf',{
+					method : 'GET',
+					cache : 'no-cache',
+				}).then(response => {
+					return response.json();
+				}).then(hasil => {
+					document.getElementById("sub-content").innerHTML = hasil;
+					readAllData('sync-posts')
+					.then(function(hasil) {
+						if(hasil.length == 0){
+							document.getElementById("dp").style.display="none";
+						}else{
+							document.getElementById("rp").style.display="none";
+						}
+					});
+				});
+				break;
 			case "logout" :
 				document.getElementById('sub-content').innerHTML = '<div class="text-center"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>';
 				cekNavbar = false;
@@ -216,7 +239,8 @@ $(document).ready(() => {
 	});
 });
 
-function simpanProfil(){
+function simpanProfil()
+{
 	const hasil = {
 			"nama" : document.getElementById("nama").value,
 			"email" : document.getElementById("email").value,
@@ -242,7 +266,8 @@ function simpanProfil(){
 	return false;
 }
 
-function parserData(data){
+function parserData(data)
+{
 	hasil = "";
 	for(var i in data){
 		hasil = hasil+(i+"="+data[i]);
@@ -273,7 +298,8 @@ function peringatan(id)
   return false;
 }
 
-function offDevice(){
+function offDevice()
+{
 	const hasil = {
 			"device_id" : document.getElementById("device_id").value
 	};
@@ -295,7 +321,8 @@ function offDevice(){
   return false;
 }
 
-function deleteUser(id,nama){
+function deleteUser(id,nama)
+{
 	document.getElementById("hasilDelete").innerHTML = "";
 	document.getElementById("idus_delete").value = id;
 	document.getElementById("usernamedelete").value = nama;
@@ -324,7 +351,8 @@ function deleteUserM()
   return false;
 }
 
-function editUser(id){
+function editUser(id)
+{
 	document.getElementById("hasilEdit").innerHTML = "";
 	const hasil = {
 			"idus" : id,
@@ -351,7 +379,8 @@ function editUser(id){
   return false;
 }
 
-function editUserM(){
+function editUserM()
+{
 	document.getElementById("hasilEdit").innerHTML = "";
 	//alert(document.getElementById('editstatus').value);
 	const hasil = {
@@ -519,52 +548,58 @@ firebase.initializeApp(config);
 
 const messaging = firebase.messaging();
 messaging.usePublicVapidKey('BDg0UDe89EtfjheFqJkwYDuzPx5FjYMtTTMQQ7d9MlTAOOVddVoBUIRt1QAMWxxUBnCBBa2Y4oENLNeQjFf-r1k');
-messaging.onTokenRefresh(function() {
-		messaging.getToken().then(function(refreshedToken) {
-				console.log('Token refreshed.',refreshedToken);
-				// Indicate that the new Instance ID token has not yet been sent to the
-				// app server.
-				setTokenSentToServer(false);
-				// Send Instance ID token to app server.
-				sendTokenToServer(refreshedToken);
-				// [START_EXCLUDE]
-				// Display new Instance ID token and clear UI of all previous messages.
-				//resetUI();
-				// [END_EXCLUDE]
-		}).catch(function(err) {
-				console.log('Unable to retrieve refreshed token ', err);
-				//showToken('Unable to retrieve refreshed token ', err);
-		});
+messaging.onTokenRefresh(function() 
+{
+	messaging.getToken().then(function(refreshedToken) {
+			console.log('Token refreshed.',refreshedToken);
+			// Indicate that the new Instance ID token has not yet been sent to the
+			// app server.
+			setTokenSentToServer(false);
+			// Send Instance ID token to app server.
+			sendTokenToServer(refreshedToken);
+			// [START_EXCLUDE]
+			// Display new Instance ID token and clear UI of all previous messages.
+			//resetUI();
+			// [END_EXCLUDE]
+	}).catch(function(err) {
+			console.log('Unable to retrieve refreshed token ', err);
+			//showToken('Unable to retrieve refreshed token ', err);
+	});
 });
 
-messaging.onMessage(function(payload) {
-		console.log('Message received. ', payload);
-		// [START_EXCLUDE]
-		// Update the UI to include the received message.
-		// appendMessage(payload);
-		// [END_EXCLUDE]
+messaging.onMessage(function(payload) 
+{
+	console.log('Message received. ', payload);
+	// [START_EXCLUDE]
+	// Update the UI to include the received message.
+	// appendMessage(payload);
+	// [END_EXCLUDE]
 });
 
-function setTokenSentToServer(sent) {
-		window.localStorage.setItem('sentToServer', sent ? '1' : '0');
+function setTokenSentToServer(sent) 
+{
+	window.localStorage.setItem('sentToServer', sent ? '1' : '0');
 }
 
-function sendTokenToServer(currentToken) {
-		if (!isTokenSentToServer()) {
-				console.log('Sending token to server...');
-				// TODO(developer): Send the current token to your server.
-				setTokenSentToServer(true);
-		} else {
-				console.log('Token already sent to server so won\'t send it again ' +
-				'unless it changes');
-		}
+function sendTokenToServer(currentToken) 
+{
+	if (!isTokenSentToServer()) {
+		console.log('Sending token to server...');
+		// TODO(developer): Send the current token to your server.
+		setTokenSentToServer(true);
+	} else {
+		console.log('Token already sent to server so won\'t send it again ' +
+		'unless it changes');
+	}
 }
 
-function isTokenSentToServer() {
-		return window.localStorage.getItem('sentToServer') === '1';
+function isTokenSentToServer() 
+{
+	return window.localStorage.getItem('sentToServer') === '1';
 }
 
-function updateUIForPushEnabled(currentToken,value) {
+function updateUIForPushEnabled(currentToken,value) 
+{
 	if ('indexedDB' in window) {
 		readAllData('login')
 			.then(function(data) {
@@ -626,7 +661,8 @@ function updateUIForPushEnabled(currentToken,value) {
 	}
 }
 
-function deleteToken() {
+function deleteToken() 
+{
 	// Delete Instance ID token.
 	// [START delete_token]
 	messaging.getToken().then(function(currentToken) {
@@ -645,51 +681,53 @@ function deleteToken() {
 		console.log('Error retrieving Instance ID token. ', err);
 		//showToken('Error retrieving Instance ID token. ', err);
 	});
-
 }
 
-function requestPermission() {
-		console.log('Requesting permission...');
-		// [START request_permission]
-		messaging.requestPermission().then(function() {
-				console.log('Notification permission granted.');
-				// TODO(developer): Retrieve an Instance ID token for use with FCM.
-				// [START_EXCLUDE]
-				// In many cases once an app has been granted notification permission, it
-				// should update its UI reflecting this.
-				resetUI("add");
-				// [END_EXCLUDE]
-		}).catch(function(err) {
-				console.log('Unable to get permission to notify.', err);
-		});
-		// [END request_permission]
+function requestPermission() 
+{
+	console.log('Requesting permission...');
+	// [START request_permission]
+	messaging.requestPermission().then(function() {
+			console.log('Notification permission granted.');
+			// TODO(developer): Retrieve an Instance ID token for use with FCM.
+			// [START_EXCLUDE]
+			// In many cases once an app has been granted notification permission, it
+			// should update its UI reflecting this.
+			resetUI("add");
+			// [END_EXCLUDE]
+	}).catch(function(err) {
+			console.log('Unable to get permission to notify.', err);
+	});
+	// [END request_permission]
 }
 
-function resetUI(value) {
-		// [START get_token]
-		// Get Instance ID token. Initially this makes a network call, once retrieved
-		// subsequent calls to getToken will return from cache.
-		messaging.getToken().then(function(currentToken) {
-				if (currentToken) {
-						sendTokenToServer(currentToken);
-						updateUIForPushEnabled(currentToken,value);
-						console.log(currentToken);
-				} else {
-						// Show permission request.
-						console.log('No Instance ID token available. Request permission to generate one.');
-						// Show permission UI.
-						//updateUIForPushPermissionRequired();
-						setTokenSentToServer(false);
-				}
-		}).catch(function(err) {
-				console.log('An error occurred while retrieving token. ', err);
-				//showToken('Error retrieving Instance ID token. ', err);
+function resetUI(value) 
+{
+	// [START get_token]
+	// Get Instance ID token. Initially this makes a network call, once retrieved
+	// subsequent calls to getToken will return from cache.
+	messaging.getToken().then(function(currentToken) {
+		if (currentToken) {
+				sendTokenToServer(currentToken);
+				updateUIForPushEnabled(currentToken,value);
+				console.log(currentToken);
+		} else {
+				// Show permission request.
+				console.log('No Instance ID token available. Request permission to generate one.');
+				// Show permission UI.
+				//updateUIForPushPermissionRequired();
 				setTokenSentToServer(false);
-		});
-		// [END get_token]
+		}
+	}).catch(function(err) {
+		console.log('An error occurred while retrieving token. ', err);
+		//showToken('Error retrieving Instance ID token. ', err);
+		setTokenSentToServer(false);
+	});
+	// [END get_token]
 }
 
-function scroll_user(){
+function scroll_user()
+{
 	window.onscroll = function() {
 		var d = document.documentElement;
 		var offset = d.scrollTop + window.innerHeight;
@@ -739,9 +777,9 @@ function scroll_user(){
 	};
 }
 
-function stopbuzzer(){
-	readAllData('login')
-	.then(function(data) {
+function stopbuzzer()
+{
+	readAllData('login').then(function(data) {
 		for (var i = 0; i < data.length; i++) {
 			//console.log(data[i]);
 			hasil = {

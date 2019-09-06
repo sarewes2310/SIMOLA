@@ -7,7 +7,7 @@ if ('serviceWorker' in navigator) {
       .catch(function(err) {
         console.log(err);
       });
-  }
+}
 var form = document.querySelector('form');
 form.addEventListener('submit', function(e){
     const hasil = {

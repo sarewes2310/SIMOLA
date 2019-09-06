@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+/*
+# Class yang digunakan untuk mentest function dari seluruh controller sebelum di pakai.
+# hanya digunakan pada saat proses debugging saja.
+*/
 class Testing extends CI_Controller 
 {
-    ##########################################################################################################################################
-    # Class yang digunakan untuk mentest function dari seluruh controller sebelum di pakai.
-    # hanya digunakan pada saat proses debugging saja.
-    ##########################################################################################################################################
     public function __construct()
     {
         parent::__construct();

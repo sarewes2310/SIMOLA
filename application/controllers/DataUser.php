@@ -1,11 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-#
-# Class yang digunakan untuk memanggil fungsi yang ada pada website (sebagai CRUD dari aplikasi)
-#
+/*#
+*
+* Class yang digunakan untuk memanggil fungsi yang ada pada website (sebagai CRUD dari aplikasi)
+*
+*/
 class DataUser extends CI_Controller {
 
-	public function __construct(){
+	public function __construct()
+    {
         parent::__construct();
         header('Access-Control-Allow-Origin: *');
         $this->load->model("UserModel");

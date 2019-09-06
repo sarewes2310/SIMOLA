@@ -1,12 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+/*
+# Class yang digunakan untuk memanggil tammpilan pada website (sebagai route dari aplikasi)
+# seluruh tampilan di control dengan menggunakan kelas ini. untuk alur proses penggunaan data menggunakan class Controller DataUser
+*/
 class User extends CI_Controller 
-{
-    ##########################################################################################################################################
-    # Class yang digunakan untuk memanggil tammpilan pada website (sebagai route dari aplikasi)
-    # seluruh tampilan di control dengan menggunakan kelas ini. untuk alur proses penggunaan data menggunakan class Controller DataUser
-    ##########################################################################################################################################
-    
+{   
     public function __construct()
     {
         parent::__construct();
@@ -174,9 +173,23 @@ class User extends CI_Controller
 
     public function logout()
     {
+        # ------------------------------------------------------------------------------------------------------------------------------------
+        # Fungsi yang digunakan untuk logout session user
+        # Output berupa menghapus session user
+        # ------------------------------------------------------------------------------------------------------------------------------------
         $this->session->sess_destroy();
         $session = array();
         $session['link'] = base_url();
         echo json_encode($session,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);        
+    }
+
+    public function print_pdf()
+    {
+        $this->load->library('pdf');
+    }
+
+    public function view_print_pdf()
+    {
+        $this->load->view('view_laporan');
     }
 }

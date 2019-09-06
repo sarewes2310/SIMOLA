@@ -60,6 +60,9 @@
                 <li id="notifications">
                     <a href="#">Notifications</a>
                 </li>
+                <li id="laporan">
+                    <a href="#">Laporan</a>
+                </li>
                 <li id="logout">
                     <a href="#">Log Out</a>
                 </li>	
