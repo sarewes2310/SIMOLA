@@ -241,5 +241,10 @@ class UserModel extends CI_Model
         }
         return $this->db->query("UPDATE users ".$hasil." WHERE idus=".$id.";");
     }
+
+    function get_data_pdf($tgl_awal,$tgl_akhir)
+    {
+        return $this->db->query("SELECT * FROM users WHERE tgl_awal=".$tgl_awal." AND tgl_akhir=".$tgl_akhir.";");   
+    }
 }
 ?>
