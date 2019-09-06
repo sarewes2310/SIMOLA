@@ -447,4 +447,14 @@ class DataUser extends CI_Controller {
             var_dump($hasil);
         }
     }
+
+    public function print_pdf()
+    {
+        $this->load->library('pdf');
+    }
+
+    public function view_print_pdf()
+    {
+        $this->load->view('view_laporan');
+    }
 }

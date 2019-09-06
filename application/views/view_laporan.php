@@ -22,19 +22,23 @@ echo json_encode('
         padding:0px;
     }
 </style>
-<form>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button">Tanggal Awal</button>
-        </div>
-        <input type="date" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="tgl_awal">
+<div class="container">
+    <div class="row">
+        <form>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button">Tanggal Awal</button>
+                </div>
+                <input type="date" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="tgl_awal">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button">Tanggal Akhir</button>
+                </div>
+                <input type="date" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="tgl_akhir">
+            </div>
+        </form>
     </div>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button">Tanggal Akhir</button>
-        </div>
-        <input type="date" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="tgl_akhir">
-    </div>
-</form>
+</div>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
 ?>

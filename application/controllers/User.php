@@ -181,14 +181,4 @@ class User extends CI_Controller
         $session['link'] = base_url();
         echo json_encode($session,JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);        
     }
-
-    public function print_pdf()
-    {
-        $this->load->library('pdf');
-    }
-
-    public function view_print_pdf()
-    {
-        $this->load->view('view_laporan');
-    }
 }

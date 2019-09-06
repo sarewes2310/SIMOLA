@@ -109,7 +109,8 @@ var DYNAMIC_NOT_SAFE = [ // link save data
   'https://simola.herokuapp.com/index.php/user/getViewEditProfil',
   'https://simola.herokuapp.com/index.php/user/getViewDropbox',
   'https://simola.herokuapp.com/index.php/user/logout',
-  'https://simola.herokuapp.com/index.php/DataUser/removeFingerPrint'
+  'https://simola.herokuapp.com/index.php/DataUser/removeFingerPrint',
+  'https://simola.herokuapp.com/index.php/DataUser/print_pdf'
 ];
 
 self.addEventListener('install', function (event) {
