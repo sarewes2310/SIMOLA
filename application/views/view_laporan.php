@@ -24,7 +24,7 @@ echo json_encode('
 </style>
 <div class="container">
     <div class="row">
-        <form>
+        <form method="" actions="">
             <div class="input-group mb-3 col-12">
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary" type="button">Tanggal Awal</button>
@@ -38,6 +38,9 @@ echo json_encode('
                 <input type="date" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="tgl_akhir">
             </div>
         </form>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" style="width:100%">Download</button>
+        </div>
     </div>
 </div>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
