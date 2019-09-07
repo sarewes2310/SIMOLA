@@ -39,7 +39,7 @@ echo json_encode('
             </div>
         </form>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary" style="width:100%">Download</button>
+            <button type="submit" class="btn btn-primary">Download</button>
         </div>
     </div>
 </div>
