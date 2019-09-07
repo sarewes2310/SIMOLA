@@ -37,10 +37,10 @@ echo json_encode('
                 </div>
                 <input type="date" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="tgl_akhir">
             </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Download</button>
+            </div>
         </form>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Download</button>
-        </div>
     </div>
 </div>
 ',JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
