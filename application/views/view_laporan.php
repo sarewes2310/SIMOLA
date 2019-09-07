@@ -24,7 +24,7 @@ echo json_encode('
 </style>
 <div class="container">
     <div class="row">
-        <form method="" actions="">
+        <form>
             <div class="input-group mb-3 col-12">
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary" type="button">Tanggal Awal</button>
