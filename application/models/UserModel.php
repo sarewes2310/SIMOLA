@@ -249,7 +249,7 @@ class UserModel extends CI_Model
 
     function search_pdf_users($username)
     {
-        return $this->db->query("SELECT * FROM users WHERE username=".$username.";")->result_array();      
+        return $this->db->query("SELECT * FROM users WHERE username='".$username."';")->result_array();      
     }  
     function insert_data_pdf($data)
     {   
