@@ -244,12 +244,12 @@ class UserModel extends CI_Model
 
     function get_data_pdf($tgl_awal,$tgl_akhir)
     {
-        return $this->db->query("SELECT * FROM users WHERE tgl_awal=".$tgl_awal." AND tgl_akhir=".$tgl_akhir.";");   
+        return $this->db->query("SELECT * FROM users WHERE tgl_awal=".$tgl_awal." AND tgl_akhir=".$tgl_akhir.";")->result_array();   
     }
 
     function search_pdf_users($username)
     {
-        return $this->db->query("SELECT * FROM users WHERE username=".$username.";");      
+        return $this->db->query("SELECT * FROM users WHERE username=".$username.";")->result_array();      
     }  
     function insert_data_pdf($data)
     {   
