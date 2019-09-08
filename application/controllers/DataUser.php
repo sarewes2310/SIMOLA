@@ -473,7 +473,7 @@ class DataUser extends CI_Controller {
                 # code...
                 $new_data = array(
                     'idus' => $value,
-                    'last_masuk' => $data['tanggal'],
+                    'tanggal' => $data['tanggal'],
                 );
                 $cek = $this->UserModel->insert_data_pdf($new_data);
                 if($cek)
