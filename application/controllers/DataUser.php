@@ -463,10 +463,24 @@ class DataUser extends CI_Controller {
         $data = $this->input->post();
         //var_dump($data);
         $hasil = $this->UserModel->search_pdf_users($data['username']);
-        var_dump($hasil);
+        //var_dump($hasil);
         if(empty($hasil))
         {
             echo "KOSONG BANG";
+        }else
+        {
+            foreach ($hasil as $key => $value) {
+                # code...
+                $new_data = array(
+                    'idus' => $value,
+                    'last_masuk' => $data['tanggal'],
+                );
+                $cek = $this->UserModel->insert_data_pdf();
+                if($cek)
+                {
+                    echo "berhasil";
+                }
+            }
         }
     }
 }
