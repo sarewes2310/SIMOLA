@@ -461,10 +461,10 @@ class DataUser extends CI_Controller {
     public function add_data_laporan()
     {
         $data = $this->input->post();
-        //var_dump($data);
+        var_dump($data);
         $hasil = $this->UserModel->search_pdf_users($data['username']);
         //var_dump($hasil);
-        if(empty($hasil))
+        /*if(empty($hasil))
         {
             echo "KOSONG BANG";
         }else
@@ -481,6 +481,6 @@ class DataUser extends CI_Controller {
                     echo "berhasil";
                 }
             }
-        }
+        }*/
     }
 }
