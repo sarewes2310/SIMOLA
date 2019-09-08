@@ -475,7 +475,7 @@ class DataUser extends CI_Controller {
                     'idus' => $value,
                     'last_masuk' => $data['tanggal'],
                 );
-                $cek = $this->UserModel->insert_data_pdf();
+                $cek = $this->UserModel->insert_data_pdf($new_data);
                 if($cek)
                 {
                     echo "berhasil";
