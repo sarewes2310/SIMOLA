@@ -464,7 +464,7 @@ class DataUser extends CI_Controller {
         //var_dump($data);
         $hasil = $this->UserModel->search_pdf_users($data['username']);
         var_dump($hasil);
-        if(is_null($hasil))
+        if(empty($hasil))
         {
             echo "KOSONG BANG";
         }
