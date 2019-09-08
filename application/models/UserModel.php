@@ -253,7 +253,7 @@ class UserModel extends CI_Model
     }  
     function insert_data_pdf($data)
     {   
-        return $this->db->query("INSERT INTO laporan (idus,tanggal) VALUES(".$data['idus'].",".$data['tanggal'].");"); 
+        return $this->db->query("INSERT INTO laporan (idus,tanggal) VALUES('".$data['idus']."','".$data['tanggal']."');"); 
     }
 }
 ?>
