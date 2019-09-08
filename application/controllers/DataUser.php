@@ -472,7 +472,7 @@ class DataUser extends CI_Controller {
             foreach ($hasil as $key => $value) {
                 # code...
                 $new_data = array(
-                    'idus' => $value,
+                    'idus' => $value['idus'],
                     'tanggal' => $data['tanggal'],
                 );
                 $cek = $this->UserModel->insert_data_pdf($new_data);
