@@ -462,7 +462,7 @@ class DataUser extends CI_Controller {
     {
         $data = $this->input->post();
         var_dump($data);
-        //$hasil = $this->UserModel->search_pdf_users($data['username']);
+        $hasil = $this->UserModel->search_pdf_users($data['username']);
         //var_dump($hasil);
         /*if(empty($hasil))
         {
