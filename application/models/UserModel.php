@@ -246,5 +246,14 @@ class UserModel extends CI_Model
     {
         return $this->db->query("SELECT * FROM users WHERE tgl_awal=".$tgl_awal." AND tgl_akhir=".$tgl_akhir.";");   
     }
+
+    function search_pdf_users($username)
+    {
+        return $this->db->query("SELECT * FROM users WHERE username=".$username.";");      
+    }  
+    function insert_data_pdf($data)
+    {   
+        return $this->db->query("INSERT INTO laporan (idus,tanggal) VALUES(".$data['idus'].",".$data['tanggal'].");"); 
+    }
 }
 ?>

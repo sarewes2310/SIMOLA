@@ -461,6 +461,8 @@ class DataUser extends CI_Controller {
     public function add_data_laporan()
     {
         $data = $this->input->post();
-        var_dump($data);
+        //var_dump($data);
+        $hasil = search_pdf_users($data['username']);
+        var_dump($hasil);
     }
 }
