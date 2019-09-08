@@ -23,7 +23,7 @@ echo json_encode('
     }
 </style>
 <div class="container">
-    <div class="row">
+    <div class="row" style="padding:12px">
         <form>
             <div class="input-group mb-3 col-12">
                 <div class="input-group-prepend">
@@ -38,7 +38,7 @@ echo json_encode('
                 <input type="date" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="tgl_akhir">
             </div>
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Download</button>
+                <button type="submit" style="width:100%" class="btn btn-primary">Download</button>
             </div>
         </form>
     </div>

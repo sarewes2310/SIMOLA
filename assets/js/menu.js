@@ -803,3 +803,8 @@ function stopbuzzer()
 		});
 	});
 }
+
+function download_laporan()
+{
+	
+}

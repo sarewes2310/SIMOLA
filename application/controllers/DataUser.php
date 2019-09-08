@@ -457,4 +457,10 @@ class DataUser extends CI_Controller {
     {
         $this->load->view('view_laporan');
     }
+
+    public function add_data_laporan()
+    {
+        $data = $this->input->post();
+        var_dump($data);
+    }
 }
