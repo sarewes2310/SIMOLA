@@ -98,4 +98,15 @@ class Testing extends CI_Controller
     {
         redirect("https://simola.herokuapp.com/index.php/User/");
     }
+
+    public function test_Laporan()
+    {
+        $this->load->model("UserModel");
+        $data = array(
+            'tgl_awal'  => $this->input->post('tgl_awal'),
+            'tgl_akhir' => $this->input->post('tgl_akhir')
+        );
+        $hasil = $this->UserModel->get_data_pdf($data);
+        echo json_encode($hasil);
+    }
 }
