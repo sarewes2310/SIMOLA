@@ -483,4 +483,14 @@ class DataUser extends CI_Controller {
             }
         }
     }
+
+    public function download_pdf_laporan()
+    {
+        $data = $this->input->post();
+        $data = array(
+            'tgl_awal'  => $data['tgl_awal'],
+            'tgl_akhir' => $data['tgl_akhir'], 
+        );
+        $hasil = $this->UserModel->search_pdf_users($data);
+    }
 }
