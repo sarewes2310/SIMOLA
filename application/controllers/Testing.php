@@ -102,9 +102,13 @@ class Testing extends CI_Controller
     public function test_Laporan()
     {
         $this->load->model("UserModel");
-        $data = array(
+        /*$data = array(
             'tgl_awal'  => $this->input->post('tgl_awal'),
             'tgl_akhir' => $this->input->post('tgl_akhir')
+        );*/
+        $data = array(
+            'tgl_awal'  => '2019-08-08',
+            'tgl_akhir' => '2019-08-10'
         );
         $hasil = $this->UserModel->get_data_pdf($data);
         //echo json_encode($hasil);
@@ -122,6 +126,7 @@ class Testing extends CI_Controller
         $pdf->Cell(190, 7, 'DAFTAR PENGGUNA LAB KOMPUTER SMA NEGERI', 0.1, 'C');
         $pdf->Cell(10, 7, '', 0, 1);
         $pdf->SetFont('Arial', 'B', 10);
+        $pdf->Output();
         //$pdf->Cell();   
         /*foreach ($hasil as $key => $value) {
                         
