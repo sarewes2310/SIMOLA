@@ -113,7 +113,7 @@ class Testing extends CI_Controller
 
     public function screen_pdf($hasil)
     {
-        $this->load->library('pdf');
+        $this->load->library('Pdf');
         $pdf = new FPDF('l','mm','A5');
         $pdf->AddPage();
         $pdf->SetFont('Arial', 'B', 16);
