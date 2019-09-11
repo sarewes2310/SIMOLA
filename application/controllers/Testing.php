@@ -107,6 +107,24 @@ class Testing extends CI_Controller
             'tgl_akhir' => $this->input->post('tgl_akhir')
         );
         $hasil = $this->UserModel->get_data_pdf($data);
-        echo json_encode($hasil);
+        //echo json_encode($hasil);
+        screen_pdf($hasil);
+    }
+
+    public function screen_pdf($hasil)
+    {
+        $this->load->library('pdf');
+        $pdf = new FPDF('l','mm','A5');
+        $pdf->AddPage();
+        $pdf->SetFont('Arial', 'B', 16);
+        $pdf->Cell(190, 7, 'SEKOLAH MENENGAH ATAS NEGERI .....', 0.1, 'C');
+        $pdf->SetFont('Arial', 'B', 12);
+        $pdf->Cell(190, 7, 'DAFTAR PENGGUNA LAB KOMPUTER SMA NEGERI', 0.1, 'C');
+        $pdf->Cell(10, 7, '', 0, 1);
+        $pdf->SetFont('Arial', 'B', 10);
+        //$pdf->Cell();   
+        /*foreach ($hasil as $key => $value) {
+                        
+        }*/
     }
 }
