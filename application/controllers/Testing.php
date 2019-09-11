@@ -135,9 +135,9 @@ class Testing extends CI_Controller
         $i = 1;
         foreach ($hasil as $key => $value) {
             $pdf->Cell(20,6,$i,1,0);
-            $pdf->Cell(85,6,$value->nama,1,0);
-            $pdf->Cell(27,6,$value->last_masuk,1,0);
-            $pdf->Cell(25,6,$value->last_masuk,1,1);                
+            $pdf->Cell(85,6,$value['nama'],1,0);
+            $pdf->Cell(27,6,$value['last_masuk'],1,0);
+            $pdf->Cell(25,6,$value['last_masuk'],1,1);                
             $i++;
         }
     }
