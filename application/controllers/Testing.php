@@ -108,7 +108,7 @@ class Testing extends CI_Controller
         );
         $hasil = $this->UserModel->get_data_pdf($data);
         //echo json_encode($hasil);
-        screen_pdf($hasil);
+        $this->screen_pdf($hasil);
     }
 
     public function screen_pdf($hasil)
