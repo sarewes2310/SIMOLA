@@ -121,15 +121,24 @@ class Testing extends CI_Controller
         $pdf = new FPDF('l','mm','A5');
         $pdf->AddPage();
         $pdf->SetFont('Arial', 'B', 16);
-        $pdf->Cell(190, 7, 'SEKOLAH MENENGAH ATAS NEGERI .....', 0.1, 'C');
-        $pdf->SetFont('Arial', 'B', 12);
-        $pdf->Cell(190, 7, 'DAFTAR PENGGUNA LAB KOMPUTER SMA NEGERI', 0.1, 'C');
-        $pdf->Cell(10, 7, '', 0, 1);
-        $pdf->SetFont('Arial', 'B', 10);
+        $pdf->Cell(190,7,'SEKOLAH MENENGAH KEJURUSAN NEEGRI 2 LANGSA',0,1,'C');
+        $pdf->SetFont('Arial','B',12);
+        $pdf->Cell(190,7,'DAFTAR PENGGUNA LAB KOMPUTER SMA NEGERI 12',0,1,'C');
         $pdf->Output();
-        //$pdf->Cell();   
-        /*foreach ($hasil as $key => $value) {
-                        
-        }*/
+        $pdf->Cell(10,7,'',0,1);
+        $pdf->SetFont('Arial','B',10);
+        $pdf->Cell(20,6,'NO',1,0);
+        $pdf->Cell(85,6,'NAMA ',1,0);
+        $pdf->Cell(27,6,'JAM',1,0);
+        $pdf->Cell(25,6,'TANGGAL',1,1);
+        $pdf->SetFont('Arial','',10);
+        $i = 1;
+        foreach ($hasil as $key => $value) {
+            $pdf->Cell(20,6,$i,1,0);
+            $pdf->Cell(85,6,$value->nama,1,0);
+            $pdf->Cell(27,6,$value->last_masuk,1,0);
+            $pdf->Cell(25,6,$value->last_masuk,1,1);                
+            $i++;
+        }
     }
 }
