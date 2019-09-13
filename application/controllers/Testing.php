@@ -124,21 +124,24 @@ class Testing extends CI_Controller
         $pdf->Cell(190,7,'SEKOLAH MENENGAH KEJURUSAN NEEGRI 2 LANGSA',0,1,'C');
         $pdf->SetFont('Arial','B',12);
         $pdf->Cell(190,7,'DAFTAR PENGGUNA LAB KOMPUTER SMA NEGERI 12',0,1,'C');
-        $pdf->Output();
         $pdf->Cell(10,7,'',0,1);
         $pdf->SetFont('Arial','B',10);
-        $pdf->Cell(20,6,'NO',1,0);
+        $pdf->Cell(15,6,'NO',1,0);
         $pdf->Cell(85,6,'NAMA ',1,0);
         $pdf->Cell(27,6,'JAM',1,0);
         $pdf->Cell(25,6,'TANGGAL',1,1);
         $pdf->SetFont('Arial','',10);
         $i = 1;
         foreach ($hasil as $key => $value) {
-            $pdf->Cell(20,6,$i,1,0);
+            $pdf->Cell(15,6,$i,1,0);
             $pdf->Cell(85,6,$value['nama'],1,0);
-            $pdf->Cell(27,6,$value['last_masuk'],1,0);
-            $pdf->Cell(25,6,$value['last_masuk'],1,1);                
+            $pdf->Cell(27,6,$value['time'],1,0);
+            $pdf->Cell(25,6,$value['tanggal'],1,1);                
             $i++;
         }
+        /*foreach ($hasil as $key => $value) {
+            var_dump($value['nama']);
+        }*/
+        $pdf->Output();
     }
 }

@@ -244,7 +244,8 @@ class UserModel extends CI_Model
 
     function get_data_pdf($data)
     {
-        return $this->db->query("SELECT * FROM laporan INNER JOIN users ON laporan.idus = users.idus WHERE laporan.last_masuk BETWEEN '".$data['tgl_awal']."' AND '".$data['tgl_akhir']."';")->result_array();   
+        return $this->db->query("SELECT users.nama AS nama, DATE(laporan.last_masuk) AS tanggal, cast(laporan.last_masuk::timestamp as time) AS time FROM laporan INNER JOIN users ON 
+            laporan.idus = users.idus WHERE laporan.last_masuk BETWEEN '".$data['tgl_awal']."' AND '".$data['tgl_akhir']."';")->result_array();   
     }
 
     function search_pdf_users($username)
