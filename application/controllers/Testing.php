@@ -144,4 +144,9 @@ class Testing extends CI_Controller
         }*/
         $pdf->Output();
     }
+
+    public function test_download_pdf_ajax()
+    {
+        $this->load->view('download_ajax');
+    }
 }

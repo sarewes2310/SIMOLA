@@ -24,8 +24,8 @@ echo json_encode('
 </style>
 <div class="container">
     <div class="row" style="padding:12px">
-    <form method="post" action="'.base_url('DataUser/download_pdf_laporan').'">
-    <!--<form method="post" action="http://127.0.0.1:81/index.php/DataUser/download_pdf_laporan">-->
+    <!--<form method="post" action="'.base_url('DataUser/download_pdf_laporan').'">-->
+    <form method="post" action="http://127.0.0.1:81/index.php/DataUser/download_pdf_laporan">
             <div class="input-group mb-3 col-12">
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary" type="button">Tanggal Awal</button>
