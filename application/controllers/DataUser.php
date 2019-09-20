@@ -89,6 +89,10 @@ class DataUser extends CI_Controller {
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk mengedit sidik jari pada rasoberry
+    # bernilai 1 jika saat data berhasil disimpan.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function editFingerPrint()
     {
         $ch = curl_init();
@@ -116,6 +120,10 @@ class DataUser extends CI_Controller {
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk menambah sidik jari pada raspberry
+    # bernilai 1 jika saat data berhasil disimpan.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function addFingerPrint()
     {
         $ch = curl_init();
@@ -142,7 +150,11 @@ class DataUser extends CI_Controller {
             echo $response;
         }
     }
-    
+
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk menghapus sidik jari pada raspberry
+    # bernilai 1 jika saat data berhasil disimpan.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function removeFingerPrint()
     {
         $ch = curl_init();

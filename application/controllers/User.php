@@ -12,12 +12,12 @@ class User extends CI_Controller
         $this->load->model("UserModel");
     }
 	
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk memanggil halaman login 
+    # Output berupa page login
+    # ------------------------------------------------------------------------------------------------------------------------------------
 	public function index() 
 	{
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # Fungsi yang digunakan untuk memanggil halaman login 
-        # Output berupa page login
-        # ------------------------------------------------------------------------------------------------------------------------------------
         if(empty($this->session->idus) && empty($this->input->get('idus'))){
             $this->load->view('login');
         }
@@ -27,12 +27,12 @@ class User extends CI_Controller
         }
     }
     
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk memanggil halaman login 
+    # Output berupa page login
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function dashboard()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # Fungsi yang digunakan untuk memanggil halaman login 
-        # Output berupa page dashboard
-        # ------------------------------------------------------------------------------------------------------------------------------------
         if(empty($this->session->idus) && empty($this->input->get('idus'))){
             redirect("https://simola.herokuapp.com");
         }else{
@@ -40,6 +40,10 @@ class User extends CI_Controller
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk memanggil halaman dashboard user dan admin
+    # Output berupa page dashboard
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function getViewDashboard(){
         if(empty($this->session->idus) && empty($this->input->post('idus'))){
             redirect("https://simola.herokuapp.com");
@@ -50,6 +54,10 @@ class User extends CI_Controller
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk memanggil halaman dashboard user dan admin
+    # Output berupa page daftar user dan admin
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function getViewUser(){
         if(empty($this->session->idus) && empty($this->input->post('idus'))){
             redirect("https://simola.herokuapp.com");
@@ -61,6 +69,10 @@ class User extends CI_Controller
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk memanggil halaman profil dari pengguna yang masuk sistem
+    # Output berupa page editprofil
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function getViewEditProfil(){
         if(empty($this->session->idus) && empty($this->input->post('idus')))
         {
@@ -81,16 +93,20 @@ class User extends CI_Controller
         #var_dump($this->input->post('idus'));
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk memanggil halaman settings notification
+    # Output berupa page setting_notification
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function getViewNotification(){
         $this->load->view('request_permission');
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk memanggil halaman dropbox
+    # Output berupa page dropbox
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function getViewDropbox()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # Fungsi yang digunakan untuk memanggil halaman dropbox
-        # Output berupa page dropbox
-        # ------------------------------------------------------------------------------------------------------------------------------------
         if(empty($this->session->idus) && empty($this->input->post('idus'))){
             redirect("https://simola.herokuapp.com");
         }else{
@@ -104,15 +120,19 @@ class User extends CI_Controller
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk mendapatkan link authorization dropbox
+    # Output berupa link menuju page authorization yang disediakan oleh dropbox dan callback ke function getDropBoxAT()
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function getDropboxLink()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # Fungsi yang digunakan untuk mendapatkan link authorization dropbox
-        # Output berupa link menuju page authorization yang disediakan oleh dropbox dan callback ke function getDropBoxAT()
-        # ------------------------------------------------------------------------------------------------------------------------------------
 		header('Location: https://www.dropbox.com/oauth2/authorize?client_id=52u9mwxlcxgv1j2&response_type=code&redirect_uri=https://simola.herokuapp.com/index.php/user/getDropBoxAT/');
 	}
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk mendapatkan access token dari dropbox
+    # Output berupa value access token
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function getDropboxAT()
     {
 		#echo $_SERVER['HTTP_HOST']; 
@@ -170,12 +190,12 @@ class User extends CI_Controller
         }
 	}
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang digunakan untuk logout session user
+    # Output berupa menghapus session user
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function logout()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # Fungsi yang digunakan untuk logout session user
-        # Output berupa menghapus session user
-        # ------------------------------------------------------------------------------------------------------------------------------------
         $this->session->sess_destroy();
         $session = array();
         $session['link'] = base_url();
