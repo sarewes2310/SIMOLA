@@ -14,23 +14,25 @@ class DataUser extends CI_Controller {
         $this->load->model("UserModel");
     }
 	
-	public function index()
+	# ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang dippakai untuk checl session dari user
+    # bernilai 1 jika saat data yang dicari tidak ada.
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    public function index()
 	{
         # FUNGSI TIDAK DIPAKAI
 		var_dump($this->UserModel->getListAuth());
 		echo sys_get_temp_dir();
     }
+
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk menghasilkan output SESSION LOGIN pada tabel users dalam database PostgresSql dalam bentuk array.
+    # bernilai 1 jika saat data yang dicari tidak ada.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function submitUserLogin()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk menghasilkan output SESSION LOGIN pada tabel users dalam database PostgresSql dalam bentuk array.
-        # bernilai 1 jika saat data yang dicari tidak ada.
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        // foreach($this->input->post() as $key => $value){
-        //    echo $key." ".$value."<br>";
-        // }
         $hasil = $this->UserModel->searchUserMAND($this->input->post()); # Get from UserModel Model Class
-        //var_dump($hasil);
+        //var_dump($hasil); # MODE DEBUGGING
         if(empty($hasil)){
             $satus = array(
                 'status' => 1 # Inisialisasi dari data yang tidak ditemukan   
@@ -55,10 +57,10 @@ class DataUser extends CI_Controller {
     public function inputUser()
     {
         $data = array(
-            'nama' => $this->input->post('nama'),
-            'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
-            'email' => $this->input->post('email')
+            'nama' => $this->input->post('nama'), # mengambil data post dengan index "nama"
+            'username' => $this->input->post('username'), # mengambil data post dengan index "username"
+            'password' => $this->input->post('password'), # mengambil data post dengan index "password"
+            'email' => $this->input->post('email') # mengambil data post dengan index "email"
         );   
         $hasil = $this->UserModel->inputUserM($data);
         if($hasil){
@@ -174,12 +176,12 @@ class DataUser extends CI_Controller {
         $this->UserModel->saveSHA256FP($this->input->post());
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk menampilkan data users pada tabel users untuk diedit dalam database PostgresSql dalam bentuk array.
+    # bernilai 1 jika saat data berhasil disimpan.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function getDataEditUser()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk menampilkan data users pada tabel users untuk diedit dalam database PostgresSql dalam bentuk array.
-        # bernilai 1 jika saat data berhasil disimpan.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = $this->UserModel->getViewEditProfilM($this->input->post('idus'));
         if(!empty($hasil)){
             echo json_encode(array(
@@ -188,12 +190,12 @@ class DataUser extends CI_Controller {
         }
     }
     
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk mengedit data users pada tabel users dalam database PostgresSql dalam bentuk array.
+    # bernilai 1 jika saat data berhasil disimpan.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function saveEditUser()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk mengedit data users pada tabel users dalam database PostgresSql dalam bentuk array.
-        # bernilai 1 jika saat data berhasil disimpan.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         $data = array(
             'nama' => $this->input->post('nama'),
             'email' => $this->input->post('email'),
@@ -223,12 +225,12 @@ class DataUser extends CI_Controller {
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk menghapus data user pada tabel users dalam database PostgresSql dalam bentuk array.
+    # bernilai 1 jika saat data berhasil disimpan.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function deleteUser()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk menghapus data user pada tabel users dalam database PostgresSql dalam bentuk array.
-        # bernilai 1 jika saat data berhasil disimpan.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = $this->UserModel->deleteUserM($this->input->post('idus'));
         if($hasil){
             echo json_encode(array(
@@ -241,12 +243,12 @@ class DataUser extends CI_Controller {
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk mengedit data profil pada tabel profil dalam database PostgresSql dalam bentuk array.
+    # bernilai 1 jika saat data berhasil disimpan.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function saveEditProfil()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk mengedit data profil pada tabel profil dalam database PostgresSql dalam bentuk array.
-        # bernilai 1 jika saat data berhasil disimpan.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         #var_dump($this->input->post());
         $data = array(
             'nama' => $this->input->post('nama'),
@@ -266,13 +268,13 @@ class DataUser extends CI_Controller {
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk  mengedit keadaan device pada tabel device dalam 
+    # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya
+    # dipanggil pada saat device connect dari server socketio
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function checkDevice()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk  mengedit keadaan device pada tabel device dalam 
-        # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya
-        # dipanggil pada saat device connect dari server socketio
-        # ------------------------------------------------------------------------------------------------------------------------------------
         #var_dump($this->input->post());   
         $data = array(
             'nama' => $this->input->post('device'),
@@ -292,13 +294,13 @@ class DataUser extends CI_Controller {
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk  mengedit keadaan device pada tabel device dalam 
+    # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya
+    # dipanggil pada saat device disconnect dari server socketio
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function disconnectkDevice()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk  mengedit keadaan device pada tabel device dalam 
-        # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya
-        # dipanggil pada saat device disconnect dari server socketio
-        # ------------------------------------------------------------------------------------------------------------------------------------
         #var_dump($this->input->post());   
         $data = array(
             'nama' => $this->input->post('device'),
@@ -311,13 +313,32 @@ class DataUser extends CI_Controller {
             var_dump($hasil);
         }
     }
+
+    public function curl_settings($url)
+    {
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_POSTFIELDS => "",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache"
+            ),
+        ));
+        return $curl;
+    }
     
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk menampilkan data device pada model di file view_online.php dengan mengambil tabel device dalam 
+    # database PostgresSql dalam bentuk array. bernilai  status 1 jika device ada.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function getDevice() # fungsi yang digunakan untuk menampilkan data device pada model di file view_online.php dengan mengambil tabel device dalam 
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk menampilkan data device pada model di file view_online.php dengan mengambil tabel device dalam 
-        # database PostgresSql dalam bentuk array. bernilai  status 1 jika device ada.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = $this->UserModel->checkDeviceMid($this->input->post('device_id'));
         #var_dump($hasil);
         if(!empty($hasil)){
@@ -329,12 +350,12 @@ class DataUser extends CI_Controller {
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk mengedit data off device pada tabel device dalam database PostgresSql dalam bentuk array.
+    # bernilai 1 jika saat data berhasil disimpan.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function offDevice()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk mengedit data off device pada tabel device dalam database PostgresSql dalam bentuk array.
-        # bernilai 1 jika saat data berhasil disimpan.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         #echo json_encode($this->input->post('device_id'),JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_HEX_APOS);
         #var_dump($this->input->post('device_id'));
         $curl = curl_init();
@@ -379,6 +400,9 @@ class DataUser extends CI_Controller {
         #}
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang dipakai untuk mengedit access token dropbox pada sistem
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function updateATDevice()
     {
         #var_dump($this->input->post());
@@ -391,6 +415,9 @@ class DataUser extends CI_Controller {
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang dipakai untuk menghapus access token dropbox pada sistem
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function removeATDevice()
     {
         #var_dump($this->input->post());
@@ -422,13 +449,13 @@ class DataUser extends CI_Controller {
         }
     }
     
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk  mengedit keadaan device pada tabel device dalam 
+    # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya
+    # dipanggil pada saat device connect dari server socketio
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function updatebuzzer()
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk  mengedit keadaan device pada tabel device dalam 
-        # database PostgresSql dalam bentuk array. dipanggil dari server socketio. hanya
-        # dipanggil pada saat device connect dari server socketio
-        # ------------------------------------------------------------------------------------------------------------------------------------
         #var_dump($this->input->post());   
         $data = array(
             'nama' => $this->input->post('device'),
@@ -448,11 +475,17 @@ class DataUser extends CI_Controller {
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang dipakai untuk menampilkan menu laporan
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function view_print_pdf()
     {
         $this->load->view('view_laporan');
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang dipakai untuk menambah data laporan user yang masuk lab pada sistem
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function add_data_laporan()
     {
         $data = $this->input->post();
@@ -479,6 +512,9 @@ class DataUser extends CI_Controller {
         }
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # Fungsi yang dipakai untuk menjalankan perintah dowload file pdf dari laporan pada sistem
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function download_print_pdf_laporan()
     {
         $data = $this->input->post();
@@ -491,6 +527,9 @@ class DataUser extends CI_Controller {
         $this->screen_pdf($hasil);
     }
     
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # FORMAT LAPORAN PDF
+    # ------------------------------------------------------------------------------------------------------------------------------------
     public function screen_pdf($hasil)
     {
         $this->load->library('Pdf');
@@ -500,7 +539,7 @@ class DataUser extends CI_Controller {
         $pdf->Cell(190,7,'SEKOLAH MENENGAH KEJURUSAN NEEGRI 2 LANGSA',0,1,'C');
         $pdf->SetFont('Arial','B',12);
         $pdf->Cell(190,7,'DAFTAR PENGGUNA LAB KOMPUTER SMA NEGERI 12',0,1,'C');
-        $pdf->Cell(10,7,'',0,1);
+        $pdf->Cell(10,7,'',0,1); 
         $pdf->SetFont('Arial','B',10);
         $pdf->Cell(15,6,'NO',1,0);
         $pdf->Cell(85,6,'NAMA ',1,0);
@@ -519,5 +558,10 @@ class DataUser extends CI_Controller {
             var_dump($value['nama']);
         }*/
         $pdf->Output();
+    }
+
+    public function download_settings_pdf()
+    {
+
     }
 }
