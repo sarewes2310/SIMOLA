@@ -8,13 +8,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<!-- Our Custom CSS -->
     <link rel="stylesheet" href="https://simola.herokuapp.com/assets/css/style.css">
-
-    <!-- Font Awesome JS-->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <script src="<?php echo base_url()?>assets/js/variabel_utama.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/js/idb.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/js/utility.js"></script>
     <link rel="manifest" href="<?php echo base_url()?>manifest.json">
 </head>
 <body>
@@ -90,6 +83,12 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
+    <!-- Font Awesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script src="<?php echo base_url()?>assets/js/variabel_utama.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/idb.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/utility.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
     <!-- Popper.JS -->
