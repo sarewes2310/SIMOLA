@@ -19,12 +19,12 @@ class UserModel extends CI_Model
         return $this->db->query("SELECT * FROM users;")->result_array();
     }
     
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk menghasilkan output PENCARIAN DATA pada tabel users dalam database PostgresSql dalam bentuk array.
+    # bernilai null atau 0 jika saat data yang dicari tidak ada.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     function searchUserMAND($data)
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk menghasilkan output PENCARIAN DATA pada tabel users dalam database PostgresSql dalam bentuk array.
-        # bernilai null atau 0 jika saat data yang dicari tidak ada.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = '';
         $length = count($data); # menghitung jumlah panjang dari array variabel data
         $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
@@ -36,21 +36,21 @@ class UserModel extends CI_Model
         return $this->db->query("SELECT * FROM users INNER JOIN authorizations ON users.idus = authorizations.idus WHERE ".$hasil." AND authorizations.idau=4;")->result_array();      
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk menghasilkan output SEMUA DATA pada tabel users dalam database PostgresSql dalam bentuk array.
+    # bernilai null atau 0 jika data tidak ada.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     function getAllUserM($offset)
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk menghasilkan output SEMUA DATA pada tabel users dalam database PostgresSql dalam bentuk array.
-        # bernilai null atau 0 jika data tidak ada.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         return $this->db->query("SELECT * FROM users INNER JOIN authorizations ON users.idus = authorizations.idus ORDER BY users.idus LIMIT 12 OFFSET ".$offset.";")->result_array();
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk INPUT DATA pada tabel users dalam database PostgresSql.
+    # hasil bernilai null jika atau 0 saat data yang di simpan berhasil.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     function inputUserM($data)
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk INPUT DATA pada tabel users dalam database PostgresSql.
-        # hasil bernilai null jika atau 0 saat data yang di simpan berhasil.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = 'VALUES (';
         $length = count($data); # menghitung jumlah panjang dari array variabel data
         $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
@@ -63,12 +63,12 @@ class UserModel extends CI_Model
         return $this->db->query("INSERT INTO users (nama,username,password,email) ".$hasil.";");
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk INPUT DATA pada tabel authorizations dalam database PostgresSql.
+    # hasil bernilai null jika atau 0 saat data yang di simpan berhasil.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     function inputUserMAuth($data)
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk INPUT DATA pada tabel authorizations dalam database PostgresSql.
-        # hasil bernilai null jika atau 0 saat data yang di simpan berhasil.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = 'VALUES (';
         $length = count($data); # menghitung jumlah panjang dari array variabel data
         $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
@@ -81,12 +81,12 @@ class UserModel extends CI_Model
         return $this->db->query("INSERT INTO authorizations (idau,idus) ".$hasil.";");
     }
 
+    # ------------------------------------------------------------------------------------------------------------------------------------
+    # fungsi yang digunakan untuk menghasilkan output PENCARIAN DATA pada tabel users dalam database PostgresSql dalam bentuk array.
+    # bernilai null atau 0 jika saat data yang dicari tidak ada.
+    # ------------------------------------------------------------------------------------------------------------------------------------
     function searchUserinputUserMAuth($data)
     {
-        # ------------------------------------------------------------------------------------------------------------------------------------
-        # fungsi yang digunakan untuk menghasilkan output PENCARIAN DATA pada tabel users dalam database PostgresSql dalam bentuk array.
-        # bernilai null atau 0 jika saat data yang dicari tidak ada.
-        # ------------------------------------------------------------------------------------------------------------------------------------
         $hasil = '';
         $length = count($data); # menghitung jumlah panjang dari array variabel data
         $num = 1; # set awal dari sebuah variabel penghitung jumlah iterasi (alasan menggunakan angka set awal 1 bukan 0 karena ingin dimudahkan saat membaca)
