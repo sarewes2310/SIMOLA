@@ -110,7 +110,7 @@ var DYNAMIC_NOT_SAFE = [ // link save data
     'https://simola.herokuapp.com/index.php/user/getViewDropbox',
     'https://simola.herokuapp.com/index.php/user/logout',
     'https://simola.herokuapp.com/index.php/DataUser/removeFingerPrint',
-    'https://simola.herokuapp.com/index.php/DataUser/print_pdf',
+    'https://simola.herokuapp.com/index.php/DataUser/view_print_pdf',
     'https://simola.herokuapp.com/index.php/DataUser/download_print_pdf_laporan'
 ];
 
