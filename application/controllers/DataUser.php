@@ -520,7 +520,7 @@ class DataUser extends CI_Controller {
                     echo json_encode(array('messages' => 1));
                 }else
                 {
-                    echo json_encode(array('messages' => 0))
+                    echo json_encode(array('messages' => 0));
                 }
             }
         }
