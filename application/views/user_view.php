@@ -70,7 +70,7 @@ th{
     '.$dataT.'
   </tbody>
 </table>
-<div>
+<div style="width:100%">
     <button class="btn btn-primary" type="button" id="tambahUserModal" data-toggle="modal" data-target="#inputModal" style="color:white">
         <i class="fa fa-plus my-float"></i>
     </button>
