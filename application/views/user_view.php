@@ -70,14 +70,9 @@ th{
     '.$dataT.'
   </tbody>
 </table>
-<div style="width:100%">
-    <button class="btn btn-primary" type="button" id="tambahUserModal" data-toggle="modal" data-target="#inputModal" style="color:white">
-        <i class="fa fa-plus my-float"></i>
-    </button>
-</div>
-<!--<a class="float" id="tambahUserModal" data-toggle="modal" data-target="#inputModal" style="color:white">
+<a class="float" id="tambahUserModal" data-toggle="modal" data-target="#inputModal" style="color:white">
     <i class="fa fa-plus my-float"></i>
-</a>-->
+</a>
 
 <!-- Modal Tambah User-->
 <form onsubmit="return insertUserM();" action="#">
