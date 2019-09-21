@@ -501,12 +501,11 @@ class DataUser extends CI_Controller {
     public function add_data_laporan()
     {
         $data = $this->input->post();
-        var_dump($data);
         $hasil = $this->UserModel->search_pdf_users($data['username']);
         //var_dump($hasil);
         if(empty($hasil))
         {
-            echo "KOSONG BANG";
+            echo json_encode(array('messages' => 0));
         }else
         {
             foreach ($hasil as $key => $value) {
@@ -518,7 +517,10 @@ class DataUser extends CI_Controller {
                 $cek = $this->UserModel->insert_data_pdf($new_data);
                 if($cek)
                 {
-                    echo "berhasil";
+                    echo json_encode(array('messages' => 1));
+                }else
+                {
+                    echo json_encode(array('messages' => 0))
                 }
             }
         }

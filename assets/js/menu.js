@@ -733,8 +733,8 @@ function scroll_user()
 		var offset = d.scrollTop + window.innerHeight;
 		var height = d.offsetHeight;
 	
-		//console.log('offset = ' + offset);
-		//console.log('height = ' + height);
+		console.log('offset = ' + offset);
+		console.log('height = ' + height);
 	
 		if (offset >= (height-1)) {
 			console.log('At the bottom');
@@ -759,7 +759,7 @@ function scroll_user()
 					}).then(response => {
 						return response.json();
 					}).then(hasil => {
-						console.log("HASIL SCROLL",hasil);
+						//console.log("HASIL SCROLL",hasil);
 						if(hasil.length != 0){
 							for (var i = 0; i < hasil.length; i++) {
 								//var x = document.createElement("TD");
