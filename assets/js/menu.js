@@ -738,7 +738,7 @@ function scroll_user()
 	
 		if (offset >= (height-1)) {
 			//console.log('At the bottom');
-			//$("#tambahUserModal").css("margin-top","100px");
+			$("#tambahUserModal").css("display","none");
 			z_index+=12;
 			if ('indexedDB' in window) {
 				readAllData('login')
@@ -774,6 +774,9 @@ function scroll_user()
 					});
 				});
 			}
+		}else
+		{
+			$("#tambahUserModal").css("display","block");
 		}
 	};
 }
