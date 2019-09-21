@@ -548,7 +548,7 @@ class DataUser extends CI_Controller {
         $pdf = new FPDF('l','mm','A5');
         $pdf->AddPage();
         $pdf->SetFont('Arial', 'B', 16);
-        $pdf->Cell(190,7,'SEKOLAH MENENGAH ATAS NEEGRI 1 LIMBANGAN',0,1,'C');
+        $pdf->Cell(190,7,'SEKOLAH MENENGAH ATAS NEGRI 1 LIMBANGAN',0,1,'C');
         $pdf->SetFont('Arial','B',12);
         $pdf->Cell(190,7,'DAFTAR PENGGUNA LAB KOMPUTER SMA NEGERI 1 LIMBANGAN',0,1,'C');
         $pdf->Cell(10,7,'',0,1); 
