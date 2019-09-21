@@ -71,9 +71,9 @@ th{
   </tbody>
 </table>
 <div>
-    <a class="#" id="tambahUserModal" data-toggle="modal" data-target="#inputModal" style="color:white">
+    <button class="btn btn-primary" type="button" id="tambahUserModal" data-toggle="modal" data-target="#inputModal" style="color:white">
         <i class="fa fa-plus my-float"></i>
-    </a>
+    </button>
 </div>
 <!--<a class="float" id="tambahUserModal" data-toggle="modal" data-target="#inputModal" style="color:white">
     <i class="fa fa-plus my-float"></i>
