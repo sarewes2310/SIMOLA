@@ -737,7 +737,8 @@ function scroll_user()
 		console.log('height = ' + height);
 	
 		if (offset >= (height-1)) {
-			console.log('At the bottom');
+			//console.log('At the bottom');
+			$("#tambahUserModal").css("margin-top","100px");
 			z_index+=12;
 			if ('indexedDB' in window) {
 				readAllData('login')
