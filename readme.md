@@ -15,12 +15,3 @@ Merupakan sebuah sistem autonomus yang berfungsi untuk mengawasi keadaan dari la
 
 Minimal menggunakan PHP version 5.6 atau yang lebih baru direkomendasikan.
 
-<h3>Installation</h3>
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-<h3>License</h3>
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
