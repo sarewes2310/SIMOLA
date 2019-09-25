@@ -6,9 +6,10 @@ Merupakan sebuah sistem autonomus yang berfungsi untuk mengawasi keadaan dari la
 
 <h3>Release Information</h3>
 
-<h6>Version 1.1</h6>
-<p>[#] Penambahan fitur laporan</p>
-<p>[#] Perubahan metode deteksi</p>
+<h6>Version 1.2</h6>
+<p>[#] Fixed Bug Fitur Laporan</p>
+<p>[#] Fixed Tampilan Laporan</p>
+<p>[#] Fixed Button pada menu Users</p>
 
 <h3>Server Requirements</h3>
 
